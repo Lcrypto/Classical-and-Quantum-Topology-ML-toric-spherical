@@ -1,4 +1,4 @@
-# Classical and Quantum Topology Machine Learning: Spherical and Hyperbolic TORIC TOPOLOGIES
+# Classical and Quantum Topology Machine Learning:Spherical and Hyperbolic Toric Topologies
 The GitHub repositories referenced in this paper, titled “Spherical and Hyperbolic Toric Topology-Based Codes On Graph Embedding for Ising MRF Models: Classical and Quantum Topology Machine Learning”, contain the source code related to the research [https://doi.org/10.48550/arXiv.2307.15778](https://arxiv.org/abs/2307.15778). 
 
 
