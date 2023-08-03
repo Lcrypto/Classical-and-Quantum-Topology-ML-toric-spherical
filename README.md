@@ -2,6 +2,25 @@
 The GitHub repositories referenced in this paper, titled “Spherical and Hyperbolic Toric Topology-Based Codes On Graph Embedding for Ising MRF Models: Classical and Quantum Topology Machine Learning”, contain the source code related to the research [https://doi.org/10.48550/arXiv.2307.15778](https://arxiv.org/abs/2307.15778). 
 
 
+Coded based Sparse Matrix Factorization application represented bellow: 
+
+
+The Sparse Factorization (SF) can thus be formulated as the following optimization problem:
+
+
+
+\begin{align}
+
+\mathop{\min }\limits_{W^{(1)} ,\ldots ,W^{(M)} } \left\| X-\prod _{m=1}^{M}W^{(M)}  \right\| _{F}^{2}
+\end{align}
+
+
+
+
+
+where~$W^{(M)} $'s are sparse square matrices with non-zero positions specified by the Chord protocol (SF Chord), LDPC codes parity-check  using PEG+ACE and QC-LDPC codes parity-check matrix, MET QC-LDPC codes with circulant more than 1 and product multigraph MET QC-LDPC codes parity-check  using SA+EMD, Simulated Annealing with exact cycle extrinsic message degree optimization (EMD). 
+
+![alt text](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/Table_1_v1.png)
 
 
 
