@@ -9,10 +9,10 @@ The Sparse Factorization (SF) can thus be formulated as the following optimizati
 
 
 
-\begin{align}
+
 
 \mathop{\min }\limits_{W^{(1)} ,\ldots ,W^{(M)} } \left\| X-\prod _{m=1}^{M}W^{(M)}  \right\| _{F}^{2}
-\end{align}
+
 
 
 
