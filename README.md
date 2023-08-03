@@ -4,9 +4,7 @@ The paper introduces the application of information geometry to describe the gro
 
 
 
-
-
-Codes on the Graph based Sparse Matrix Factorization application represented bellow: 
+Matrix factorization can be considered as a special case of (Ising spin-glass) embedding, low dimension projection. Codes on the Graph based Sparse Matrix Factorization application represented bellow: 
 
 
 The Sparse Factorization (SF) can thus be formulated as the following optimization problem:
