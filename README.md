@@ -2,7 +2,7 @@
 The GitHub repositories referenced in this paper, titled “Spherical and Hyperbolic Toric Topology-Based Codes On Graph Embedding for Ising MRF Models: Classical and Quantum Topology Machine Learning”, contain the source code related to the research [https://doi.org/10.48550/arXiv.2307.15778](https://arxiv.org/abs/2307.15778). 
 
 
-Coded based Sparse Matrix Factorization application represented bellow: 
+Codes on the Graph based Sparse Matrix Factorization application represented bellow: 
 
 
 The Sparse Factorization (SF) can thus be formulated as the following optimization problem:
