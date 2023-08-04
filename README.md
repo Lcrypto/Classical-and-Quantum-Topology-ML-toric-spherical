@@ -47,14 +47,16 @@ $$
 $$
 
 Now let's collapse the matrix along the radii:
-$$H=\left(\begin{array}{c} {\begin{array}{cccccc} {C_{8}^{0} } & {C_{8}^{0} } & {C_{8}^{2} } & {C_{8}^{2} } & {C_{8}^{2} } & {C_{8}^{2} } \end{array}} \\ {C_{48}^{1} +C_{48}^{7} +C_{48}^{13} +C_{48}^{19} +C_{48}^{25} +C_{48}^{31} } \\ {C_{48}^{23} +C_{48}^{17} +C_{48}^{47} +C_{48}^{41} +C_{48}^{35} +C_{48}^{29} } \end{array}\right)  \to \left(\begin{array}{c} {\begin{array}{cccccc} {I_{8} } & {I_{8} } & {I_{8} } & {I_{8}} & {I_{8}} & {I_{8} } \end{array}} \\ {C_{48}^{1} +C_{48}^{7} +C_{48}^{13} +C_{48}^{19} +C_{48}^{25} +C_{48}^{31} } \\ {C_{48}^{23} +C_{48}^{17} +C_{48}^{47} +C_{48}^{41} +C_{48}^{35} +C_{48}^{29} } \end{array}\right) $$
+$$ 
+H=\left(\begin{array}{c} {\begin{array}{cccccc} {C_{8}^{0} } & {C_{8}^{0} } & {C_{8}^{2} } & {C_{8}^{2} } & {C_{8}^{2} } & {C_{8}^{2} } \end{array}} \cr {C_{48}^{1} +C_{48}^{7} +C_{48}^{13} +C_{48}^{19} +C_{48}^{25} +C_{48}^{31} } \cr {C_{48}^{23} +C_{48}^{17} +C_{48}^{47} +C_{48}^{41} +C_{48}^{35} +C_{48}^{29} } \end{array}\right)  \to \left(\begin{array}{c} {\begin{array}{cccccc} {I_{8} } & {I_{8} } & {I_{8} } & {I_{8}} & {I_{8}} & {I_{8} } \end{array}} \cr {C_{48}^{1} +C_{48}^{7} +C_{48}^{13} +C_{48}^{19} +C_{48}^{25} +C_{48}^{31} } \cr {C_{48}^{23} +C_{48}^{17} +C_{48}^{47} +C_{48}^{41} +C_{48}^{35} +C_{48}^{29} } \end{array}\right) 
+$$
 
 
 
 The first row, on which the collapse was carried out, contains 6 circulants of size 8 and weight 1. 2 shift 0 circulants correspond to the first energy level, 4 shift 2 circulants correspond to the second energy level:
-\begin{equation} \label{1.13)} 
+$$
 1s^{2} ;2s^{2} 2p^{2}  
-\end{equation} 
+$$
 
 
 
