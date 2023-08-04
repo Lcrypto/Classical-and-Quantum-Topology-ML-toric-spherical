@@ -17,7 +17,9 @@ The Mega-chunk model with two chunks of length 3 is represented in the Fig. \ref
  H_{MEGA} = \begin{bmatrix}1 & 1 & 1 & 1 \\0 & 1 & 1 & 1 \\0 & 0 & 1 & 1 \\0 & 0 & 0 & 1 \\ 
  \end{pmatrix}
 \end{equation}
-$$ {\left\lbrack \matrix{1 & 1 & 1 & 1\cr 0 & 1 & 1 & 1 \cr 0 & 0 & 1 & 1 \cr 0 & 0 & 0 & 1} \right\rbrack} 
+
+
+$$ {\left\lbrack \matrix{1 & 1 & 1 & 1\cr 0 & 1 & 1 & 1 \cr 0 & 0 & 1 & 1 \cr 0 & 0 & 0 & 1} \right\rbrack} $$
 
 The Mega and Mega-chunk Attention models use an Generalized Irregular Repeat Accumulate (GeIRA) protograph QC-LDPC codes (for detail read article https://arxiv.org/abs/2307.15778).
 
