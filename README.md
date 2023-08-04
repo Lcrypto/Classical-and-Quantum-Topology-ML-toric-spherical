@@ -7,7 +7,7 @@ The paper introduces the application of information geometry to describe the gro
 Matrix factorization can be considered as a special case of (Ising spin-glass) embedding, low dimension projection. Codes on the Graph based Sparse Matrix Factorization application represented bellow: 
 
 
-The Sparse Factorization (SF) can thus be formulated as the following optimization problem:
+The Sparse Factorization (SF) can thus be formulated as the following optimization problem, paper [1]:
 
 
 
@@ -26,7 +26,10 @@ where $W^{(M)} $'s are sparse square matrices with non-zero positions specified 
 
 
 
-We modified the Matlab platform described in the paper “Sparse factorization of square matrices with application to neural attention modeling” by Ruslan Khalitov, Tong Yu, Lei Cheng, and Zhirong Yang, published in Neural Networks, Volume 152, 2022, Pages 160-168, as the base platform for Non-parametric Sparse Factorisation using LDPC codes, MET QC-LDPC codes and Multi-graph Product codes in our work https://github.com/RuslanKhalitov/SparseFactorization.  
+We modified the Matlab platform described in the paper “Sparse factorization of square matrices with application to neural attention modeling” by Ruslan Khalitov, Tong Yu, Lei Cheng, and Zhirong Yang, published in Neural Networks, Volume 152, 2022, Pages 160-168, as the base platform for Non-parametric Sparse Factorisation using LDPC codes, MET QC-LDPC codes and Multi-graph Product codes in our work https://github.com/RuslanKhalitov/SparseFactorization for using Code on the Graph: LDPC Codes constructed using Progressive Edge Grown method with ACE optimization [2,3]; QC-LDPC Codes, Multi-Edge QC-LDPC Code, Multigraph product code (Chord like) using Simulated Annealing method with EMD and code distance sieving optimization [4, 5]. 
+
+
+
 
 
 Parity-check matrix of code on the graph use the following notation:
@@ -202,9 +205,28 @@ Hastie, T., Tibshirani, R., Friedman, J., 2001. The Elements of Statistical Lear
 **Votes** (N = 16): This dataset contains voting records from the US Congress, and is often used as a benchmark for supervised learning algorithms. It contains 435 instances with 16 dimensions representing different attributes related to congressional voting.
 
 
+References:
 
 
-# **Cite**
+1.  Ruslan Khalitov, Tong Yu, Lei Cheng, Zhirong Yang, Sparse factorization of square matrices with application to neural attention modeling, Neural Networks, Volume 152, 2022, Pages 160-168
+
+
+
+2. Xiao-Yu Hu, Eleftheriou E., Arnold D. M.  "Regular and irregular progressive edge-growth tanner graphs," in IEEE TiT, vol. 51, no. 1, pp. 386-398, Jan. 2005, 
+
+
+3. Diouf M., Declercq D., Fossorier  M., S. Ouya, B. Vasic, "Improved PEG construction of large girth QC-LDPC codes", 9th International Symposium on Turbo Codes and Iterative Information Processing (ISTC), pp. 146-150,
+2016.    Implementation available at:  https://github.com/Lcrypto/classic-PEG-
+
+
+4. Usatyuk V. , Vorobyev I. "Simulated Annealing Method for Construction of High-Girth QC-LDPC Codes," 2018 41st International Conference on Telecommunications and Signal Processing (TSP), Athens, Greece, 2018, pp. 1-5 Implementation available at: https://github.com/Lcrypto/Simulated-annealing-lifting-QC-LDPC
+
+
+5. Usatyuk V. S., Egorov S., Svistunov G. Construction of Length and Rate Adaptive MET QC-LDPC Codes by Cyclic Group Decomposition. IEEE East-West Design & Test Symposium (EWDTS), Batumi, Georgia, 2019, pp. 1-5
+
+
+ 
+# **Cite this reseach**
 ```
 @article{Usatyuk2023TopoML,
   title={Spherical and Hyperbolic Toric Topology-Based Codes On Graph Embedding for Ising MRF Models: Classical and Quantum Topology Machine Learning},
