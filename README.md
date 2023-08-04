@@ -74,7 +74,7 @@ A99m factorization QC-LDPC parity-check matrix  "13_13_18A99m.txt" :
 
 consist of 13 columns 13 rows with QC circulant of size 18 of weigth 1 (where -1, it zero circulat of size 19x19):
   13	13	18
-  14	1	1	-1	0	17	-1	-1	-1	12	17	-1	-1	
+        14	1	1	-1	0	17	-1	-1	-1	12	17	-1	-1	
   3	11	6	17	-1	-1	-1	14	8	-1	16	-1	-1	
   -1	-1	-1	-1	9	2	-1	-1	-1	13	1	4	13	
   8	5	9	0	5	-1	1	14	-1	10	6	-1	-1	
