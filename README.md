@@ -52,7 +52,7 @@ circulant have weight 8 with shifts:  0, 154, 3, 2, 65, 85, 70, 97
 WebkbCornell factorization Multi-edge Type (MET) QC-LDPC parity-check matrix  "3_3_65weight3.txt" :
 
 
-3 column 3 row and QC circulant of size 65
+3 columns 3 rows and QC circulant of size 65
 
 
 3	3	65
