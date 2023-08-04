@@ -18,6 +18,8 @@ The Mega-chunk model with two chunks of length 3 is represented in the Figure. A
 $$  H_{MEGA} =  {\left\lbrack \matrix{1 & 1 & 1 & 1\cr 0 & 1 & 1 & 1 \cr 0 & 0 & 1 & 1 \cr 0 & 0 & 0 & 1} \right\rbrack} $$
 
 The Mega and Mega-chunk Attention models use an Generalized Irregular Repeat Accumulate (GeIRA) protograph QC-LDPC codes (for detail read article https://arxiv.org/abs/2307.15778). Another state-of-the-art attention architecture from the long-range arena is presented in the article by ~\cite{Kha22}, which is based on the P2P Chord protocol, left.  ChordMixer utilizes Cage graphs as distance graphs to design its attention mechanism, as shown in the research paper by [1[. Using Cage graphs allows ChordMixer to construct the attention mechanism in a way that is equivalent to the parity-check matrix of cage/distance graph LDPC codes (for detail read article https://arxiv.org/abs/2307.15778).
+![alt text](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/Chord_protocol_cage_distance_graph_parity-check_matrix.png)
+![alt text](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/CDIL.png)
 
 
 
@@ -29,8 +31,29 @@ QC codes correspond to certain types of chemical elements, with the carbon eleme
 
 
 
+\begin{equation} \label{1.1)} 
+H=\left(\begin{array}{c} {\begin{array}{ccccc} {I_{17} } & {I_{17} } & {I_{17} } & {I_{17} } & {I_{17} } \end{array}} \\ {H_{1} } \\ {H_{2} } \\ {H_{3} } \\ {H_{4} } \end{array}\right)=\left(\begin{array}{c} {\begin{array}{ccccc} {I_{17} } & {I_{17} } & {I_{17} } & {I_{17} } & {I_{17} } \end{array}} \\ {C_{85}^{0} +C_{85}^{24} +C_{85}^{40} +C_{85}^{71} +C_{85}^{84} } \\ {C_{85}^{1} +C_{85}^{49} +C_{85}^{58} +C_{85}^{81} +C_{85}^{84} } \\ {C_{85}^{3} +C_{85}^{14} +C_{85}^{32} +C_{85}^{78} +C_{85}^{84} } \\ {C_{85}^{16} +C_{85}^{33} +C_{85}^{50} +C_{85}^{67} +C_{85}^{84} } \end{array}\right) 
+\end{equation} 
 
 
+To determine the values of  spherical coordinate system $\varphi $, $\theta $, we use the criterion for the presence of a cycle of length 6 (\textbf{call it cycle based gauge)} in the quasi-cyclic check matrix, \cite{Fossorier04}. Based on the electron cloud associated with an atom of a chemical element, we can refer this equation as the Schrödinger-Heisenberg-Bohr-Fossorier electron cloud Gauge (SHBF Cycle Gauge):
+
+
+\begin{equation} 
+\left(\sum _{i=1}^{N-1}\Delta _{ji,ji+1} \left(l_{i} \right) \right) \mod {k}=0 
+\end{equation} 
+
+Now let's collapse the matrix along the radii:
+\begin{equation} \label{1.12)} 
+H=\left(\begin{array}{c} {\begin{array}{cccccc} {C_{8}^{0} } & {C_{8}^{0} } & {C_{8}^{2} } & {C_{8}^{2} } & {C_{8}^{2} } & {C_{8}^{2} } \end{array}} \\ {C_{48}^{1} +C_{48}^{7} +C_{48}^{13} +C_{48}^{19} +C_{48}^{25} +C_{48}^{31} } \\ {C_{48}^{23} +C_{48}^{17} +C_{48}^{47} +C_{48}^{41} +C_{48}^{35} +C_{48}^{29} } \end{array}\right)  \to \left(\begin{array}{c} {\begin{array}{cccccc} {I_{8} } & {I_{8} } & {I_{8} } & {I_{8}} & {I_{8}} & {I_{8} } \end{array}} \\ {C_{48}^{1} +C_{48}^{7} +C_{48}^{13} +C_{48}^{19} +C_{48}^{25} +C_{48}^{31} } \\ {C_{48}^{23} +C_{48}^{17} +C_{48}^{47} +C_{48}^{41} +C_{48}^{35} +C_{48}^{29} } \end{array}\right)
+\end{equation} 
+
+
+
+The first row, on which the collapse was carried out, contains 6 circulants of size 8 and weight 1. 2 shift 0 circulants correspond to the first energy level, 4 shift 2 circulants correspond to the second energy level:
+\begin{equation} \label{1.13)} 
+1s^{2} ;2s^{2} 2p^{2}  
+\end{equation} 
 
 
 
