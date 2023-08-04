@@ -150,6 +150,8 @@ non-euclidean dissimilarity data. Pattern Recognition 47, 3709--3725.
 
 
 **Strike** (N = 24): This dataset is a social network about informal communication within a sawmill on strike. It is a sparse matrix with 38 non-zero entries.
+
+
 **Webkb Cornell** (N = 195): This dataset is about citations among 195 publications from Cornell. It is a sparse matrix with 304 non-zero entries. Data available at https://linqs.soe.ucsc.edu/data
 
 
