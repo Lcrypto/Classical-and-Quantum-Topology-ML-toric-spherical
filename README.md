@@ -26,7 +26,7 @@ where $W^{(M)} $'s are sparse square matrices with non-zero positions specified 
 
 
 
-We modified the Matlab platform described in the paper “Sparse factorization of square matrices with application to neural attention modeling” by Ruslan Khalitov, Tong Yu, Lei Cheng, and Zhirong Yang, published in Neural Networks, Volume 152, 2022, Pages 160-168, as the base platform for Non-parametric Sparse Factorisation using LDPC codes, MET QC-LDPC codes and Multi-graph Product codes in our work https://github.com/RuslanKhalitov/SparseFactorization for using Code on the Graph: LDPC Codes constructed using Progressive Edge Grown method with ACE optimization [2,3,4]; QC-LDPC Codes, Multi-Edge QC-LDPC Code, Multigraph product code (Chord like) using Simulated Annealing method with EMD and code distance sieving optimization [5, 6]. 
+We modified the Matlab platform from the paper [1], as the base platform for Non-parametric Sparse Factorisation using LDPC codes, MET QC-LDPC codes and Multi-graph Product codes in our work https://github.com/RuslanKhalitov/SparseFactorization for using Code on the Graph: LDPC Codes constructed using Progressive Edge Grown method with ACE optimization [2,3,4]; QC-LDPC Codes, Multi-Edge QC-LDPC Code, Multigraph product code (Chord like) using Simulated Annealing method with EMD and code distance sieving optimization [5, 6]. 
 
 
 
