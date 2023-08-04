@@ -89,6 +89,7 @@ Additionally, the layer depth in QAOA correlates to the number of decoding belie
 Overall, this work has the potential to advance multiple fields, from Information Theory, DNN architecture design (sparse and structured prior graph topology), efficient hardware design for Quantum and Classical DPU/TPU (graph, quantize and shift register architect.) to Materials Science and beyond.
 
 
+# Matrix factorization
 
 
 Matrix factorization can be considered as a special case of (Ising spin-glass and equivivalent to them code on the graph) embedding, low dimension projection. Codes on the Graph based Sparse Matrix Factorization application represented bellow: 
