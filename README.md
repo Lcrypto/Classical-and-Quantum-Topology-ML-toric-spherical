@@ -10,7 +10,13 @@ The paper introduces the application of information geometry to describe the gro
 This proposed approach has implications for the development of new embedding methods based on trapping sets. Statistical physics and number geometry are utilized to optimize error-correcting codes, leading to these embedding and sparse factorization methods. The paper establishes a direct connection between DNN architecture and error-correcting coding by demonstrating how state-of-the-art DNN architectures (ChordMixer, Mega, Mega-chunk, CDIL, ...) from the long-range arena can be equivalent to specific types (Cage-graph, Repeat Accumulate) of block and convolutional LDPC codes.
 
 The Mega-chunk model with two chunks of length 3 is represented in the Fig. \ref{Mega_chunk}. A bipartite graph representation shows that such a neural network is equivalent to a parity-check matrix of protograph:
- $H_{MEGA} = \begin{bmatrix}1 & 1 & 1 & 1 \\0 & 1 & 1 & 1 \\0 & 0 & 1 & 1 \\0 & 0 & 0 & 1 \\ \end{bmatrix}$
+ 
+ \begin{equation}
+\begin{pmatrix}
+ 
+ H_{MEGA} = \begin{bmatrix}1 & 1 & 1 & 1 \\0 & 1 & 1 & 1 \\0 & 0 & 1 & 1 \\0 & 0 & 0 & 1 \\ 
+ \end{pmatrix}
+\end{equation}
  
 
 The Mega and Mega-chunk Attention models use an Generalized Irregular Repeat Accumulate (GeIRA) protograph QC-LDPC codes (for detail read article https://arxiv.org/abs/2307.15778).
