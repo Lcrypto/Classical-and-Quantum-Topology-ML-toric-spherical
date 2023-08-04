@@ -64,7 +64,29 @@ $$
 
 
 
-The Quantum Approximate Optimization Algorithm (QAOA) used in the Sherrington-Kirkpatrick Ising model can be seen as analogous to the back-propagation loss function landscape in training DNNs. This similarity creates a comparable problem with TS pseudo-codeword, resembling the belief propagation method. Additionally, the layer depth in QAOA correlates to the number of decoding belief propagation iterations in the Wiberg decoding tree. Overall, this work has the potential to advance multiple fields, from Information Theory, DNN architecture design (sparse and structured prior graph topology), efficient hardware design for Quantum and Classical DPU/TPU (graph, quantize and shift register architect.) to Materials Science and beyond.
+The Quantum Approximate Optimization Algorithm (QAOA) used in the Sherrington-Kirkpatrick Ising model can be seen as analogous to the back-propagation loss function landscape in training DNNs. This similarity creates a comparable problem with TS pseudo-codeword, resembling the belief propagation method. 
+QAOA can solve binary optimization problems known as QUBOs (Quadratic Unconstrained Binary Optimization). QUBO problems fall under the NP-complete class, guaranteeing that any NP-complete problem can be efficiently transformed into a QUBO problem. This mapping of Karp's 21 NP-complete problems to QUBO is extensively discussed in paper \cite{Lu23}. In addition to MaxCut, other relevant optimization problems such as Graph Coloring   \cite{Ta20}, Number Partitioning, and Quadratic Knapsack (\cite{Glo19}) have been successfully formulated as QUBO problems.
+
+
+In a QUBO problem, the unknown vector $\mathbf{x} = (x_1,\ldots,x_n)$ consists of decision variables taking discrete binary values, i.e., $\mathbf{x} \in \{0,1\}^n$. The problem is defined by a square symmetric matrix $\mathbf{Q} \in \mathbb{R}^{n \times n}$. The objective is to find the optimal vector $\mathbf{x}^*$ that minimizes the cost function:
+
+
+$$
+C(\mathbf{x}) = \mathbf{x}^T \mathbf{Q} \mathbf{x} = \sum_{i, j=1}^{n} Q_{ij}x_i x_j
+$$
+
+QUBO problems can also be framed as maximization problems by inverting the sign of the cost function. It is important to note that QUBO problems do not have any constraints on the variables $\mathbf{x}$.
+
+QUBO instances are closely related to Ising models. They can be mapped to each other with a one-to-one correspondence, where the QUBO variables $\mathbf{x} \in \{0,1\}^n$ are replaced by Ising variables $\mathbf{z} \in \{-1,1\}^n$, with $z_i = 2x_i - 1$ for $i=1,\ldots,n$. The Ising Hamiltonian, dependent on $\mathbf{z}$, is equivalent to the QUBO cost function, with a constant term irrelevant for optimization.
+
+
+
+
+Additionally, the layer depth in QAOA correlates to the number of decoding belief propagation iterations in the Wiberg decoding tree.
+
+
+
+Overall, this work has the potential to advance multiple fields, from Information Theory, DNN architecture design (sparse and structured prior graph topology), efficient hardware design for Quantum and Classical DPU/TPU (graph, quantize and shift register architect.) to Materials Science and beyond.
 
 
 
