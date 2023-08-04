@@ -215,14 +215,17 @@ References:
 2. Xiao-Yu Hu, Eleftheriou E., Arnold D. M.  "Regular and irregular progressive edge-growth tanner graphs," in IEEE TiT, vol. 51, no. 1, pp. 386-398, Jan. 2005, 
 
 
-3. Diouf M., Declercq D., Fossorier  M., S. Ouya, B. Vasic, "Improved PEG construction of large girth QC-LDPC codes", 9th International Symposium on Turbo Codes and Iterative Information Processing (ISTC), pp. 146-150,
-2016.    Implementation available at:  https://github.com/Lcrypto/classic-PEG-
+3. Diouf M., Declercq D., Fossorier  M., S. Ouya, B. Vasic, "Improved PEG construction of large girth QC-LDPC codes", 9th International Symposium on Turbo Codes and Iterative Information Processing (ISTC), pp. 146-150,2016.
 
 
-4. Usatyuk V. , Vorobyev I. "Simulated Annealing Method for Construction of High-Girth QC-LDPC Codes," 2018 41st International Conference on Telecommunications and Signal Processing (TSP), Athens, Greece, 2018, pp. 1-5 Implementation available at: https://github.com/Lcrypto/Simulated-annealing-lifting-QC-LDPC
+4.  Usatyuk V., Minenkov A. Progressive edge growth for LDPC code construction C++ and Matlab PEG+ACE implementations, avaliable at
+ https://github.com/Lcrypto/classic-PEG-
 
 
-5. Usatyuk V. S., Egorov S., Svistunov G. Construction of Length and Rate Adaptive MET QC-LDPC Codes by Cyclic Group Decomposition. IEEE East-West Design & Test Symposium (EWDTS), Batumi, Georgia, 2019, pp. 1-5
+5. Usatyuk V. , Vorobyev I. "Simulated Annealing Method for Construction of High-Girth QC-LDPC Codes," 2018 41st International Conference on Telecommunications and Signal Processing (TSP), Athens, Greece, 2018, pp. 1-5 Implementation available at: https://github.com/Lcrypto/Simulated-annealing-lifting-QC-LDPC
+
+
+6. Usatyuk V. S., Egorov S., Svistunov G. Construction of Length and Rate Adaptive MET QC-LDPC Codes by Cyclic Group Decomposition. IEEE East-West Design & Test Symposium (EWDTS), Batumi, Georgia, 2019, pp. 1-5
 
 
  
