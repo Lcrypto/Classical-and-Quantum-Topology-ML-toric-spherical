@@ -90,6 +90,7 @@ Overall, this work has the potential to advance multiple fields, from Informatio
 
 
 
+
 Matrix factorization can be considered as a special case of (Ising spin-glass and equivivalent to them code on the graph) embedding, low dimension projection. Codes on the Graph based Sparse Matrix Factorization application represented bellow: 
 
 
