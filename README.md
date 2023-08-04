@@ -11,13 +11,6 @@ This proposed approach has implications for the development of new embedding met
 
 The Mega-chunk model with two chunks of length 3 is represented in the Fig. \ref{Mega_chunk}. A bipartite graph representation shows that such a neural network is equivalent to a parity-check matrix of protograph:
  
- \begin{equation}
-\begin{pmatrix}
- 
-\begin{bmatrix}1 & 1 & 1 & 1 \\0 & 1 & 1 & 1 \\0 & 0 & 1 & 1 \\0 & 0 & 0 & 1 \\ 
- \end{pmatrix}
-\end{equation}
-
 
 $$  H_{MEGA} =  {\left\lbrack \matrix{1 & 1 & 1 & 1\cr 0 & 1 & 1 & 1 \cr 0 & 0 & 1 & 1 \cr 0 & 0 & 0 & 1} \right\rbrack} $$
 
