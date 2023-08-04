@@ -43,7 +43,7 @@ H=\left(\begin{array}{c} {\begin{array}{ccccc} {I_{17} } & {I_{17} } & {I_{17} }
 To determine the values of  spherical coordinate system $\varphi $, $\theta $, we use the criterion for the presence of a cycle of length 6 (call it cycle based gauge) in the quasi-cyclic check matrix, (Fossorier04). Based on the electron cloud associated with an atom of a chemical element, we can refer this equation as the Schrödinger-Heisenberg-Bohr-Fossorier electron cloud Gauge (SHBF Cycle Gauge):
 
 $$ 
-\left( \sum _{i=1}^{N-1} \Delta _{ji,ji+1} \left(l_{i} \right) \right) \mod {k}=0 
+\left( \sum_{i=1}^{N-1} \Delta_{ji,ji+1} \left( l_{i} \right) \right) \mod {k}=0 
 $$
 
 Now let's collapse the matrix along the radii:
