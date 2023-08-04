@@ -233,7 +233,7 @@ Hastie, T., Tibshirani, R., Friedman, J., 2001. The Elements of Statistical Lear
 # **Cite this reseach**
 ```
 @article{Usatyuk2023TopoML,
-       author = {{Usatyuk}, Vasiliy and {Sapozhnikov}, and Denis {Egorov}, Sergey},
+       author = {{Usatyuk}, Vasiliy and {Sapozhnikov}, Denis and {Egorov}, Sergey},
         title = "{Spherical and Hyperbolic Toric Topology-Based Codes On Graph Embedding for Ising MRF Models: Classical and Quantum Topology Machine Learning}",
       journal = {arXiv e-prints},
      keywords = {Computer Science - Information Theory, Computer Science - Artificial Intelligence, Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning, Mathematics - Dynamical Systems},
