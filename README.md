@@ -36,7 +36,7 @@ QC codes correspond to certain types of chemical elements, with the carbon eleme
 
 
 $$  
-H=\left(\begin{array}{c} {\begin{array}{ccccc} {I_{17} } & {I_{17} } & {I_{17} } & {I_{17} } & {I_{17} } \end{array}} \cr {H_{1} } \cr {H_{2} } \cr {H_{3} } \cr {H_{4} } \end{array}\right)=\left(\begin{array}{c} {\begin{array}{ccccc} {I_{17} } & {I_{17} } & {I_{17} } & {I_{17} } & {I_{17} } \end{array}} \\ {C_{85}^{0} +C_{85}^{24} +C_{85}^{40} +C_{85}^{71} +C_{85}^{84} } \\ {C_{85}^{1} +C_{85}^{49} +C_{85}^{58} +C_{85}^{81} +C_{85}^{84} } \\ {C_{85}^{3} +C_{85}^{14} +C_{85}^{32} +C_{85}^{78} +C_{85}^{84} } \\ {C_{85}^{16} +C_{85}^{33} +C_{85}^{50} +C_{85}^{67} +C_{85}^{84} } \end{array}\right) 
+H=\left(\begin{array}{c} {\begin{array}{ccccc} {I_{17} } & {I_{17} } & {I_{17} } & {I_{17} } & {I_{17} } \end{array}} \cr {H_{1} } \cr {H_{2} } \cr {H_{3} } \cr {H_{4} } \end{array}\right)=\left(\begin{array}{c} {\begin{array}{ccccc} {I_{17} } & {I_{17} } & {I_{17} } & {I_{17} } & {I_{17} } \end{array}} \cr {C_{85}^{0} +C_{85}^{24} +C_{85}^{40} +C_{85}^{71} +C_{85}^{84} } \cr {C_{85}^{1} +C_{85}^{49} +C_{85}^{58} +C_{85}^{81} +C_{85}^{84} } \cr {C_{85}^{3} +C_{85}^{14} +C_{85}^{32} +C_{85}^{78} +C_{85}^{84} } \cr {C_{85}^{16} +C_{85}^{33} +C_{85}^{50} +C_{85}^{67} +C_{85}^{84} } \end{array}\right) 
  $$
 
 
