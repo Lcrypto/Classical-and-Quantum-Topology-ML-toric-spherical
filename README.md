@@ -33,12 +33,42 @@ Parity-check matrix of code on the graph use the following notation:
 
 
 For example Quasi-cyclic (QC) multigraph product code (Chord like) AntinegoMETProduct3.txt:
+
 1	1	205
+
+
 0&154&3&2&65&85&70&97	
 
 
 1 column 1 row and QC  circulant of size 205
+
+
 circulant have weight 8 with shifts:  0, 154, 3, 2, 65, 85, 70, 97	
+
+
+
+
+
+WebkbCornell factorization Multi-edge Type (MET) QC-LDPC parity-check matrix  "3_3_65weight3.txt" :
+3 column 3 row and QC circulant of size 65
+
+
+3	3	65
+
+each circulant represented by following shifts:
+
+
+50&1&26	2&49&19	13&5&42	
+
+
+5&58	5&60	60&4	
+
+
+18&4&48	28&23&61	4&53&1	
+
+
+
+
 
 Here is a list of datasets with their respective sizes (N) and descriptions:
 
