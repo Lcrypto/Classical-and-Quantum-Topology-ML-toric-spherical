@@ -228,15 +228,24 @@ References:
 6. Usatyuk V. S., Egorov S., Svistunov G. Construction of Length and Rate Adaptive MET QC-LDPC Codes by Cyclic Group Decomposition. IEEE East-West Design & Test Symposium (EWDTS), Batumi, Georgia, 2019, pp. 1-5
 
 
- 
+
+
 # **Cite this reseach**
 ```
 @article{Usatyuk2023TopoML,
-  title={Spherical and Hyperbolic Toric Topology-Based Codes On Graph Embedding for Ising MRF Models: Classical and Quantum Topology Machine Learning},
-  author={Usatyuk, Vasiliy and Sapozhnikov, Denis and Egorov, Sergey},
-  year={2023},
-  archivePrefix = {arXiv},
-  eprint = {2307.15778},
-   primaryClass = {cs.IT},
+       author = {{Usatyuk}, Vasiliy and {Egorov}, Sergey and {Sapozhnikov}, Denis},
+        title = "{Spherical and Hyperbolic Toric Topology-Based Codes On Graph Embedding for Ising MRF Models: Classical and Quantum Topology Machine Learning}",
+      journal = {arXiv e-prints},
+     keywords = {Computer Science - Information Theory, Computer Science - Artificial Intelligence, Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning, Mathematics - Dynamical Systems},
+         year = 2023,
+        month = jul,
+          eid = {arXiv:2307.15778},
+        pages = {arXiv:2307.15778},
+          doi = {10.48550/arXiv.2307.15778},
+archivePrefix = {arXiv},
+       eprint = {2307.15778},
+ primaryClass = {cs.IT},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2023arXiv230715778U},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
 ```
