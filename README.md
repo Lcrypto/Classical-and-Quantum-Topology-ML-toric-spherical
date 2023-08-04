@@ -29,6 +29,17 @@ where $W^{(M)} $'s are sparse square matrices with non-zero positions specified 
 We modified the Matlab platform described in the paper “Sparse factorization of square matrices with application to neural attention modeling” by Ruslan Khalitov, Tong Yu, Lei Cheng, and Zhirong Yang, published in Neural Networks, Volume 152, 2022, Pages 160-168, as the base platform for Non-parametric Sparse Factorisation using LDPC codes, MET QC-LDPC codes and Multi-graph Product codes in our work https://github.com/RuslanKhalitov/SparseFactorization.  
 
 
+Parity-check matrix of code on the graph use the following notation:
+
+
+For example Quasi-cyclic (QC) multigraph product code (Chord like) AntinegoMETProduct3.txt:
+1	1	205
+0&154&3&2&65&85&70&97	
+
+
+1 column 1 row and QC  circulant of size 205
+circulant have weight 8 with shifts:  0, 154, 3, 2, 65, 85, 70, 97	
+
 Here is a list of datasets with their respective sizes (N) and descriptions:
 
 **AuralSonar** (N = 100): This dataset contains Aural Sonar data from the study by Philips et al. (2006) investigating human ability to distinguish different types of sonar signals by ear. The data has been presented in Chen et al. (2009).
