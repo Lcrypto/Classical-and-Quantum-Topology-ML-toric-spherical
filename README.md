@@ -54,9 +54,7 @@ $$
 
 
 The first row, on which the collapse was carried out, contains 6 circulants of size 8 and weight 1. 2 shift 0 circulants correspond to the first energy level, 4 shift 2 circulants correspond to the second energy level:
-$$
-1s^{2} ;2s^{2} 2p^{2}  
-$$
+$$ 1s^{2} ; 2s^{2} 2p^{2}  $$
 
 
 
