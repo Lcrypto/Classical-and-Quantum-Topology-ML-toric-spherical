@@ -18,8 +18,17 @@ The Mega-chunk model with two chunks of length 3 is represented in the Figure. A
 $$  H_{MEGA} =  {\left\lbrack \matrix{1 & 1 & 1 & 1\cr 0 & 1 & 1 & 1 \cr 0 & 0 & 1 & 1 \cr 0 & 0 & 0 & 1} \right\rbrack} $$
 
 The Mega and Mega-chunk Attention models use an Generalized Irregular Repeat Accumulate (GeIRA) protograph QC-LDPC codes (for detail read article https://arxiv.org/abs/2307.15778). Another state-of-the-art attention architecture from the long-range arena is presented in the article by ~\cite{Kha22}, which is based on the P2P Chord protocol, left.  ChordMixer utilizes Cage graphs as distance graphs to design its attention mechanism, as shown in the research paper by [1[. Using Cage graphs allows ChordMixer to construct the attention mechanism in a way that is equivalent to the parity-check matrix of cage/distance graph LDPC codes (for detail read article https://arxiv.org/abs/2307.15778).
+
+
+
 ![alt text](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/Chord_protocol_cage_distance_graph_parity-check_matrix.png)
+
+
+
 ![alt text](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/RA_embd.png)
+
+
+
 Convolutional model ("CDIL"). This is a convolutional code that uses the 2P Chord protocol as its basis and is considered a column weight 3 convolutional code (computation tree of weight 3).
 
 
