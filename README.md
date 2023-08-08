@@ -20,20 +20,26 @@ $$  H_{MEGA} =  {\left\lbrack \matrix{1 & 1 & 1 & 1\cr 0 & 1 & 1 & 1 \cr 0 & 0 &
 
 
 
-The Mega and Mega-chunk Attention models use an Generalized Irregular Repeat Accumulate (GeIRA) protograph QC-LDPC codes (for detail read article https://arxiv.org/abs/2307.15778).
+The Mega and Mega-chunk Attention models use an Generalized Irregular Repeat Accumulate (GeIRA) protograph QC-LDPC codes (Repeat Accumulate (RA) and GeIRA[0], for detail read article https://arxiv.org/abs/2307.15778).
 
 
 ![alt text](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/RA_embd.png)
 
 
 
+![alt text](https://github.com/Lcrypto/Topology-Signal-Processing/blob/master/RA_codes.png)
+
+
+RA LDPC codes and GeIRA codes under DNN allow to bypass non-linear processing (Fast feature).
+![alt text](https://github.com/Lcrypto/Topology-Signal-Processing/blob/master/Fast_slow_weigth.png)
 
 
 
 
 
 
-Another state-of-the-art attention architecture from the long-range arena is presented in the article by ~\cite{Kha22}, which is based on the P2P Chord protocol, left.  ChordMixer utilizes Cage graphs as distance graphs to design its attention mechanism, as shown in the research paper by [1[. Using Cage graphs allows ChordMixer to construct the attention mechanism in a way that is equivalent to the parity-check matrix of cage/distance graph LDPC codes (for detail read article https://arxiv.org/abs/2307.15778).
+
+Another state-of-the-art attention architecture from the long-range arena is presented in the article by ~\cite{Kha22}, which is based on the P2P Chord protocol, left.  ChordMixer utilizes Cage graphs as distance graphs to design its attention mechanism, as shown in the research paper by [1]. Using Cage graphs allows ChordMixer to construct the attention mechanism in a way that is equivalent to the parity-check matrix of cage/distance graph LDPC codes (for detail read article https://arxiv.org/abs/2307.15778).
 
 
 
@@ -318,6 +324,16 @@ Hastie, T., Tibshirani, R., Friedman, J., 2001. The Elements of Statistical Lear
 
 
 # References:
+
+-1. Schmidhuber J. Learning to control fast-weight memories: An alternative to recurrent nets. Technical Report FKI-147-91, Institut für Informatik, Technische Universität München, 26 March 1991. https://people.idsia.ch/~juergen/FKI-147-91ocr.pdf illustration https://people.idsia.ch/~juergen/fast-weight-programmer-1991-transformer.html
+
+0. D. Divsalar, H. Jin, and R. J. McEliece. "Coding theorems for ‘turbo-like’ codes." Proc. 36th Allerton Conf. on Communication, Control and Computing, Allerton, Illinois, Sept. 1998, pp. 201–210. 
+
+
+0. Divsalar D.,  Jones C.,  Dolinar S. ,  Thorpe J. "Protograph based LDPC codes with minimum distance linearly growing with block size," IEEE Global Telecomm. Conf., 2005., St. Louis, MO, 2005, pp. 5 
+
+
+0.Liva G. et al.’s "Simple Reconfigurable Low-Density Parity-Check Codes" in IEEE COMMUNICATIONS LETTERS, VOL. 9, NO. 2, FEBRUARY 2005
 
 
 1.  Ruslan Khalitov, Tong Yu, Lei Cheng, Zhirong Yang, Sparse factorization of square matrices with application to neural attention modeling, Neural Networks, Volume 152, 2022, Pages 160-168
