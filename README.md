@@ -20,7 +20,7 @@ $$  H_{MEGA} =  {\left\lbrack \matrix{1 & 1 & 1 & 1\cr 0 & 1 & 1 & 1 \cr 0 & 0 &
 
 
 
-The Mega and Mega-chunk Attention models use an Generalized Irregular Repeat Accumulate (GeIRA) protograph QC-LDPC codes (Repeat Accumulate (RA) and GeIRA[0], for detail read article https://arxiv.org/abs/2307.15778).
+The Mega and Mega-chunk Attention models use an Generalized Irregular Repeat Accumulate (GeIRA) protograph QC-LDPC codes (Repeat Accumulate (RA)[0] and GeIRA[0], for detail read article https://arxiv.org/abs/2307.15778).
 
 
 ![alt text](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/RA_embd.png)
@@ -30,7 +30,7 @@ The Mega and Mega-chunk Attention models use an Generalized Irregular Repeat Acc
 ![alt text](https://github.com/Lcrypto/Topology-Signal-Processing/blob/master/RA_codes.png)
 
 
-RA LDPC codes and GeIRA codes under DNN allow to bypass non-linear processing (Fast feature).
+The dynamic approach combines: convolutional and block codes by incorporating attention and convolution within a deep neural network (DNN) proposed by Schmidhube at 1991. RA LDPC codes and GeIRA codes under DNN allow to bypass non-linear processing (Fast feature), paper [-1].
 ![alt text](https://github.com/Lcrypto/Topology-Signal-Processing/blob/master/Fast_slow_weigth.png)
 
 
