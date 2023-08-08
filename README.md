@@ -31,6 +31,8 @@ The Mega and Mega-chunk Attention models use an Generalized Irregular Repeat Acc
 
 
 The dynamic approach combines: convolutional and block codes by incorporating attention and convolution within a deep neural network (DNN) proposed by Schmidhube at 1991. RA LDPC codes and GeIRA codes under DNN allow to bypass non-linear processing (Fast feature), paper [-1].
+
+
 ![alt text](https://github.com/Lcrypto/Topology-Signal-Processing/blob/master/Fast_slow_weigth.png)
 
 
