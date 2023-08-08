@@ -41,7 +41,7 @@ The dynamic approach combines: convolutional and block codes by incorporating at
 
 
 
-Another state-of-the-art attention architecture from the long-range arena is presented in the article by ~\cite{Kha22}, which is based on the P2P Chord protocol, left.  ChordMixer utilizes Cage graphs as distance graphs to design its attention mechanism, as shown in the research paper by [1]. Using Cage graphs allows ChordMixer to construct the attention mechanism in a way that is equivalent to the parity-check matrix of cage/distance graph LDPC codes (for detail read article https://arxiv.org/abs/2307.15778).
+Another state-of-the-art attention architecture from the long-range arena is presented in the article by [1], which is based on the P2P Chord protocol, left.  ChordMixer utilizes Cage graphs as distance graphs to design its attention mechanism, as shown in the research paper by [1]. Using Cage graphs allows ChordMixer to construct the attention mechanism in a way that is equivalent to the parity-check matrix of cage/distance graph LDPC codes (for detail read article https://arxiv.org/abs/2307.15778).
 
 
 
