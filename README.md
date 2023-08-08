@@ -249,11 +249,7 @@ Here is a list of datasets with their respective sizes (N) and descriptions:
 **Voting** (N = 435): This dataset, also presented in Chen et al. (2009), contains dissimilarities between 435 voting records with 16 scaled voting attributes.
 
 
-**Yeast** (N = 200): This dataset, from the same repository as AuralSonar in Chen et al. (2009), converts the pairwise Smith-Waterman similarities $s_{ij}$ (Lanckriet et al., 2004; Xu et al., 2014) to dissimilarities by $d_{ij}=\sqrt{s_{ii}+s_{jj}-s_{ji}-s_{ij}}.$ The data set converts the pairwise Smith-Waterman similarities $s_{ij}$ (Lanckriet et al., 2004; Xu et al., 2014) to dissimilarities by $d_{ij}=\sqrt{s_{ii}+s_{jj}-s_{ji}-s_{ij}}.$
-Lanckriet, G., Deng, M., Cristianini, N., Jordan, M., Noble, W., 2004. Kernel-based data fusion and its application to protein function prediction in yeast.
-150 Biocomputing 2004, Proceedings of the Pacific Symposium, Hawaii, USA , 300--311.  Xu, W., Hancock, E.R., Wilson, R.C., 2014. Ricci flow embedding for rectifying
-non-euclidean dissimilarity data. Pattern Recognition 47, 3709--3725.
-
+**Yeast** (N = 200):This dataset, from the same repository as AuralSonar in Chen et al. (2009), converts the pairwise Smith-Waterman similarities $s_{ij}$ (Lanckriet et al., 2004; Xu et al., 2014) to dissimilarities by $d_{ij}=\sqrt{s_{ii}+s_{jj}-s_{ji}-s_{ij}}.$ 
 
 **Sawmill** (N = 36): This dataset is a sparse matrix with 124 non-zero entries representing the Sawmill communication network from the Pajek data sets. Data available at http://vlado.fmf.uni-lj.si/pub/networks/data/
 
