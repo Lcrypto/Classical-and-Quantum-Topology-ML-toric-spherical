@@ -140,8 +140,7 @@ $$
 
 where $W^{(M)} $'s are sparse square matrices with non-zero positions specified by the Chord protocol (SF Chord), LDPC codes parity-check  using PEG+ACE and QC-LDPC codes parity-check matrix, MET QC-LDPC codes with circulant more than 1 and product multigraph MET QC-LDPC codes parity-check using SA+EMD, Simulated Annealing with exact cycle extrinsic message degree optimization (EMD). 
 
-![alt text](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/Table_1_v1.png)
-
+![alt text](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/Table_1_v2.png)
 
 
 We modified the Matlab platform from the paper [1], as the base platform for Non-parametric Sparse Factorisation using LDPC codes, MET QC-LDPC codes and Multi-graph Product codes in our work https://github.com/RuslanKhalitov/SparseFactorization for using Code on the Graph: LDPC Codes constructed using Progressive Edge Grown method with ACE optimization [2,3,4]; QC-LDPC Codes, Multi-Edge QC-LDPC Code, Multigraph product code (Chord like) using Simulated Annealing method with EMD and code distance sieving optimization [5, 6]. 
