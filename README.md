@@ -334,7 +334,7 @@ Hastie, T., Tibshirani, R., Friedman, J., 2001. The Elements of Statistical Lear
 0.Liva G. et al.’s "Simple Reconfigurable Low-Density Parity-Check Codes" in IEEE COMMUNICATIONS LETTERS, VOL. 9, NO. 2, FEBRUARY 2005
 
 
-1.  Ruslan Khalitov, Tong Yu, Lei Cheng, Zhirong Yang, Sparse factorization of square matrices with application to neural attention modeling, Neural Networks, Volume 152, 2022, Pages 160-168
+1.  **Ruslan Khalitov, Tong Yu, Lei Cheng, Zhirong Yang, Sparse factorization of square matrices with application to neural attention modeling, Neural Networks, Volume 152, 2022, Pages 160-168**
 
 
 
