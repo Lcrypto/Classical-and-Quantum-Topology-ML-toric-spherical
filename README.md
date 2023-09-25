@@ -61,7 +61,7 @@ Convolutional model ("CDIL"). This is a convolutional code that uses the 2P Chor
 
 
 
-QC codes correspond to certain types of chemical elements, with the carbon element being represented by the mixed automorphism Shu-Lin-Fossorier QC-LDPC code. 
+QC codes correspond to certain types of chemical elements, with the carbon element being represented by the mixed automorphism Shu-Lin-Fossorier QC-LDPC code. The feasibility of original parity-check matrix of Shu-Lin-Fossorier QC-LDPC code serving as a representation of Nitrogen can be confirmed effortlessly by employing the following logic
 
 
 
@@ -85,7 +85,7 @@ $$
 
 
 
-The first row, on which the collapse was carried out, contains 6 circulants of size 8 and weight 1. 2 shift 0 circulants correspond to the first energy level, 4 shift 2 circulants correspond to the second energy level:
+The first row, on which the collapse was carried out, contains 6 circulants of size 8 and weight 1. 2 shift 0 circulants correspond to the first energy level, 4 shift 2 circulants correspond to the second energy level (Carbon):
 
 
 $$
