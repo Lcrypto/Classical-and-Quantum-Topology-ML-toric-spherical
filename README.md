@@ -351,7 +351,7 @@ Hastie, T., Tibshirani, R., Friedman, J., 2001. The Elements of Statistical Lear
 5. Usatyuk V. , Vorobyev I. "Simulated Annealing Method for Construction of High-Girth QC-LDPC Codes," 2018 41st International Conference on Telecommunications and Signal Processing (TSP), Athens, Greece, 2018, pp. 1-5 Implementation available at: https://github.com/Lcrypto/Simulated-annealing-lifting-QC-LDPC
 
 
-6. Usatyuk V. S., Egorov S., Svistunov G. Construction of Length and Rate Adaptive MET QC-LDPC Codes by Cyclic Group Decomposition. IEEE East-West Design & Test Symposium (EWDTS), Batumi, Georgia, 2019, pp. 1-5
+6. Usatyuk V. S., Egorov S., Svistunov G. Construction of Length and Rate Adaptive MET QC-LDPC Codes by Cyclic Group Decomposition. IEEE East-West Design & Test Symposium (EWDTS), Batumi, Georgia, 2019, pp. 1-5  Implementation available at: https://github.com/Lcrypto/Length-und-Rate-adaptive-code
 
 
 
