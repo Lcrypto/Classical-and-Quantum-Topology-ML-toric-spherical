@@ -354,6 +354,9 @@ Hastie, T., Tibshirani, R., Friedman, J., 2001. The Elements of Statistical Lear
 6. Usatyuk V. S., Egorov S., Svistunov G. Construction of Length and Rate Adaptive MET QC-LDPC Codes by Cyclic Group Decomposition. IEEE East-West Design & Test Symposium (EWDTS), Batumi, Georgia, 2019, pp. 1-5  Implementation available at: https://github.com/Lcrypto/Length-und-Rate-adaptive-code
 
 
+7. Usatyuk V. S., Sapozhnikov D.  Egorov S., Spherical and Hyperbolic Toric Topology-Based Codes On Graph Embedding for Ising MRF Models: Classical and Quantum Topology Machine Learning   https://arxiv.org/abs/2307.15778
+
+
 
 
 # **Cite this reseach**
