@@ -12,6 +12,8 @@ The paper introduces the application of information geometry to describe the gro
 
 This proposed approach has implications for the development of new embedding methods based on trapping sets. Statistical physics and number geometry are utilized to optimize error-correcting codes, leading to these embedding and sparse factorization methods. The paper establishes a direct connection between DNN architecture and error-correcting coding by demonstrating how state-of-the-art DNN Transformer architectures (ChordMixer, Mega, Mega-chunk, CDIL, ...) from the long-range arena can be equivalent to specific types (Cage-graph, Repeat Accumulate) of block and convolutional LDPC codes.
 
+
+
 ![alt text](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/Mega_arch.png)
 
 
@@ -142,6 +144,11 @@ $$
 
 
 where $W^{(M)} $'s are sparse square matrices with non-zero positions specified by the Chord protocol (SF Chord), LDPC codes parity-check  using PEG+ACE and QC-LDPC codes parity-check matrix, MET QC-LDPC codes with circulant more than 1 and product multigraph MET QC-LDPC codes parity-check using SA+EMD, Simulated Annealing with exact cycle extrinsic message degree optimization (EMD). 
+
+
+
+![alt text](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/images_compare_27_02_.jpg)
+
 
 ![alt text](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/Table_1_v2.png)
 
