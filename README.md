@@ -367,6 +367,7 @@ Hastie, T., Tibshirani, R., Friedman, J., 2001. The Elements of Statistical Lear
 7. Usatyuk V. S., Sapozhnikov D.  Egorov S., Spherical and Hyperbolic Toric Topology-Based Codes On Graph Embedding for Ising MRF Models: Classical and Quantum Topology Machine Learning   https://arxiv.org/abs/2307.15778
 
 
+8. V. S. Usatyuk and S. I. Egorov, "Topology-Aware Sparse Factorization in Energy-Based Models: Tori QC-LDPC Codes and Circular Hyperboloid MET QC-LDPC Codes," 2024 26th International Conference on Digital Signal Processing and its Applications (DSPA), Moscow, Russian Federation, 2024, pp. 1-6  https://ieeexplore.ieee.org/document/10510073
 
 
 # **Cite this reseach**
