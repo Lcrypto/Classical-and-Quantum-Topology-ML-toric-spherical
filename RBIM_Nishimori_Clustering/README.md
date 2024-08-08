@@ -15,7 +15,7 @@ This repository contains Python code for clustering nodes in graphs generated us
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical
    ```
 2. Install the required Python packages:
    ```bash
