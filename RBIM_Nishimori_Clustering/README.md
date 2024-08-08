@@ -63,6 +63,7 @@ Laplacian = 0.72
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the  Apache Version 2.0 License  - see the [LICENSE](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/LICENSE) file for details.
 ```
 
+                     
