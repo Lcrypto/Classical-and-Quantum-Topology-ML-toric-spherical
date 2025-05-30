@@ -33,8 +33,7 @@ Synthetic data clustering scripts under Erdős–Rényi graphs:
 
 ### `/NB_clustering_cat_dog_from_GAN_Manifold`
 Image clustering application using QC graphs:
-- Two-class GAN-generated image dataset (Cats vs Dogs)
-- Manifold learning integration
+- Two-class GAN-generated image dataset (Cats vs Dogs) from [2]
 - QC graph spectral decomposition
 
 ## Key Features
