@@ -1,7 +1,7 @@
 # Nishimori-Bethe Spectral Clustering for Quasi-Cyclic Graphs
 
 ## Overview
-This repository implements spectral graph clustering (using data from two classes cat and dog GAN feature, [1]) using the **Nishimori Temperature Bethe-Hessian** method optimized for quasi-cyclic graph structures. The algorithm combines techniques from statistical physics and spectral graph theory to detect communities in graph-structured data with superior performance on quasi-cyclic codes, use as example graph from and methods inmplentation detailed described at [2].
+This repository implements spectral graph clustering (using data from two classes cat and dog GAN feature, [1]) using the **Nishimori Temperature Bethe-Hessian** method optimized for quasi-cyclic graph structures. The algorithm combines techniques from statistical physics and spectral graph theory to detect communities in graph-structured data with superior performance on quasi-cyclic codes, use as example graph from and methods inmplentation detailed described at [2]. Data file and features you can download from (googledisk)[https://drive.google.com/drive/folders/1b-Csoy27ATPN--F6CHJV4vznCieFwNL7?usp=share_link] .
 
 Key features:
 - Bethe-Hessian operator with Nishimori temperature optimization
