@@ -128,15 +128,16 @@ The cosine similarity metric (Eq.2) provides:
    Usatyuk, V.S., Sapozhnikov, D.A. & Egorov, S.I. (2024).  
    *Enhanced Image Clustering with Random-Bond Ising Models Using LDPC Graph Representations and Nishimori Temperature*.  
    Moscow Univ. Phys. 79 (Suppl 2), S647-S665.   
-  https://link.springer.com/article/10.3103/S0027134924702102
+  https://link.springer.com/article/10.3103/S0027134924702102    https://theory2.sinp.msu.ru/lib/exe/fetch.php/dlcp/dlcp2024/bphm647.pdf
 
 2. **Foundational Method**  
    Dall'Amico, L. et al. (2021).  
    *Nishimori meets Bethe: a spectral method for node classification in sparse weighted graphs*.  
-   J. Stat. Mech. 093405.  
+   J. Stat. Mech. 093405.
+   https://iopscience.iop.org/article/10.1088/1742-5468/ac21d3/meta   https://arxiv.org/abs/2103.03561
   
 
-3. **Graph Implementations**  
+4. **Graph Implementations**  
    - [PEG Algorithm (Matlab/C/Python)](https://github.com/Lcrypto/classic-PEG-)
    - [Erdős–Rényi Graph Model](https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model)
    - [Simulated Annealing Optimization](https://ieeexplore.ieee.org/document/8441303)
