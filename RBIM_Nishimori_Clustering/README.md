@@ -1,6 +1,6 @@
 
 ```markdown
-# Graph Clustering using PEG, QC-LDPC, MET QC-LDPC and ER Models
+# Spectral Clustering Bethe-Hessian with Bethe-Nisimori, Spin Glass, Laplace, Mean Field methods using PEG, QC-LDPC, MET QC-LDPC and ER Graph Models
 
 This repository contains Python code for clustering nodes in graphs generated using the Progressive Edge Growth (PEG) and Erdős–Rényi (ER) models. The code also includes methods for comparing these models using various clustering algorithms and visualizing the results.
 
