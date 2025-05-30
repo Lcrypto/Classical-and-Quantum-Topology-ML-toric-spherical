@@ -25,7 +25,7 @@ Contains graph generation implementations for:
 - Quasi-cyclic (QC) LDPC graphs  
 *(Used for Figure 8 in [1])*
 
-### `/BetheNishimori_ER`
+### [`/BetheNishimori_ER`](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/tree/main/RBIM_Nishimori_Clustering/BetheNishimori_ER)
 Synthetic data clustering scripts under Erdős–Rényi graphs:
 - Bethe-Hessian spectral clustering
 - Nishimori temperature optimization
