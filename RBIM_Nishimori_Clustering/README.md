@@ -15,7 +15,7 @@ Tested on diverse graph models:
 - Quasi-cyclic (QC) LDPC
 
 Developed as companion code for the research paper:  
-*Enhanced Image Clustering with Random-Bond Ising Models Using LDPC Graph Representations and Nishimori Temperature* [1].
+*Enhanced Image Clustering with Random-Bond Ising Models Using LDPC Graph Representations and Nishimori Temperature* [1]. Preprint can be read from https://theory2.sinp.msu.ru/lib/exe/fetch.php/dlcp/dlcp2024/bphm647.pdf
 
 ## Repository Structure
 
@@ -47,14 +47,14 @@ Image clustering application using QC graphs:
 1. **Primary Study**  
    Usatyuk, V.S., Sapozhnikov, D.A. & Egorov, S.I. (2024).  
    *Enhanced Image Clustering with Random-Bond Ising Models Using LDPC Graph Representations and Nishimori Temperature*.  
-   Moscow Univ. Phys. 79 (Suppl 2), S647-S665.  
-   [https://doi.org/10.3103/S002713492470008X](https://doi.org/10.3103/S002713492470008X)
+   Moscow Univ. Phys. 79 (Suppl 2), S647-S665.   
+  https://link.springer.com/article/10.3103/S0027134924702102
 
 2. **Foundational Method**  
    Dall'Amico, L. et al. (2021).  
    *Nishimori meets Bethe: a spectral method for node classification in sparse weighted graphs*.  
    J. Stat. Mech. 093405.  
-   [https://doi.org/10.1088/1742-5468/ac1f44](https://doi.org/10.1088/1742-5468/ac1f44)
+  
 
 3. **Graph Implementations**  
    - [PEG Algorithm (Matlab/C/Python)](https://github.com/Lcrypto/classic-PEG-)
