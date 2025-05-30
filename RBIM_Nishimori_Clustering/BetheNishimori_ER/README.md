@@ -1,4 +1,4 @@
-We are given a Jupyter notebook [BetheNishimori.ipynb](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/RBIM_Nishimori_Clustering/BetheNishimori_ER/BetheNishimori.ipynb) that performs clustering on a synthetic graph using four different algorithms and compares their performance.
+We are given a Jupyter notebook [BetheNishimori.ipynb](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/RBIM_Nishimori_Clustering/BetheNishimori_ER/BetheNishimori.ipynb) that performs clustering on a synthetic data under Erdős–Rényi graph using four different algorithms and compares their performance.
 
 ### Overview of the Notebook:
 
