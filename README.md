@@ -1,6 +1,6 @@
 # Classical and Quantum Topology Machine Learning: Spherical and Hyperbolic Toric Topologies Code on the Graph based Embedding
 
-Application of RBIM  approach for Spectral Feature Graph Clustering in [Python repository](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/tree/main/RBIM_Nishimori_Clustering). It implements spectral clustering for Random-Bond Ising Models (RBIM) using Bethe-Hessian matrices optimized at Nishimori temperature, applied to graph models like Erdős-Rényi and LDPC codes. It extends these methods to image clustering tasks, demonstrating enhanced accuracy with a novel cosine similarity metric on both synthetic data and GAN-generated image datasets.
+Application of this approach for Spectral Feature Graph Clustering in [Python repository](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/tree/main/RBIM_Nishimori_Clustering). It implements spectral clustering for Random-Bond Ising Models (RBIM) using Bethe-Hessian matrices optimized at Nishimori temperature, applied to graph models like Erdős-Rényi and LDPC codes. It extends these methods to image clustering tasks, demonstrating enhanced accuracy with a novel cosine similarity metric on both synthetic data and GAN-generated image datasets, [9].
 
 Short and brief description of idea, 16 pages articel Topology-Aware Exploration of Energy-Based Models Equilibrium: Toric QC-LDPC Codes and Hyperbolic MET QC-LDPC Codes [https://arxiv.org/abs/2401.14749] and  example of application [8]  https://ieeexplore.ieee.org/document/10510073 . 
 
@@ -371,6 +371,7 @@ Hastie, T., Tibshirani, R., Friedman, J., 2001. The Elements of Statistical Lear
 
 
 8. V. S. Usatyuk and S. I. Egorov, "Topology-Aware Sparse Factorization in Energy-Based Models: Tori QC-LDPC Codes and Circular Hyperboloid MET QC-LDPC Codes," 2024 26th International Conference on Digital Signal Processing and its Applications (DSPA), Moscow, Russian Federation, 2024, pp. 1-6  https://ieeexplore.ieee.org/document/10510073
+9. Usatyuk, V.S., Sapozhnikov, D.A. & Egorov, S.I. (2024).  *Enhanced Image Clustering with Random-Bond Ising Models Using LDPC Graph Representations and Nishimori Temperature*.  Moscow Univ. Phys. 79 (Suppl 2), S647-S665.   https://link.springer.com/article/10.3103/S0027134924702102
 
 
 # **Cite this reseach**
