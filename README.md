@@ -60,10 +60,10 @@ Application of this approach for Spectral Feature Graph Clustering in [Python re
 
 ### Edge Weight Metrics
 
-**Original Metric (Eq.1)** from Dall'Amico et al. [2]:  
+**Original Metric (Eq.1)** from Dall'Amico et al.:  
 J<sub>ij</sub> = |(z<sub>i</sub>, z<sub>j</sub>)| / l
 
-**Proposed Cosine Similarity Metric (Eq.2)** from our paper [1]:  
+**Proposed Cosine Similarity Metric (Eq.2)** from our paper [9]:  
 J<sub>ij</sub> = |(z<sub>i</sub>, z<sub>j</sub>)| / (|z<sub>i</sub>| |z<sub>j</sub>|)
 
 Where:
