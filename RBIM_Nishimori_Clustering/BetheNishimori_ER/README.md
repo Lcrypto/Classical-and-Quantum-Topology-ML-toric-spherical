@@ -97,3 +97,7 @@ The main code is in the Jupyter notebook `BetheNishimori.ipynb`. The notebook re
 - scipy
 
 ```
+
+## References
+1.  Lorenzo Dall'Amico et al. "Nishimori meets Bethe: a spectral method for node classification in sparse weighted graphs," J. Stat. Mech., 093405 (2021). 
+2. Usatyuk, V.S., Sapozhnikov, D.A. & Egorov, S.I. Enhanced Image Clustering with Random-Bond Ising Models Using LDPC Graph Representations and Nishimori Temperature. Moscow Univ. Phys. 79 (Suppl 2), S647-S665 (2024).  
