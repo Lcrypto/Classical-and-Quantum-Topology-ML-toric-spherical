@@ -97,6 +97,33 @@ Image clustering application using QC graphs:
 | **Size 48×48 (L=125)**       |                   |                   |                  |                  |
 | E(H)₄₂                       | 88.60%, 91.86%    | 87.73%, 90.46%    | 0.20%, 78.73%    | **87.23%**, 0.03%|
 
+
+### Edge Weight Metrics
+
+**Original Metric (Eq.1)** from Dall'Amico et al. [2]:  
+$$ J_{ij} = \frac{|(z_i, z_j)|}{l} $$
+
+**Proposed Cosine Similarity Metric (Eq.2)** from our paper [1]:  
+$$ J_{ij} = \frac{|(z_i, z_j)|}{|z_i||z_j|} $$
+
+Where:
+- $z_i, z_j$ = node feature vectors
+- $(\cdot,\cdot)$ = scalar product
+- $l$ = normalization constant (original)
+- $|\cdot|$ = vector norm
+
+### Key Differences
+| Metric         | Convergence Property               | Graph Density Sensitivity |
+|----------------|------------------------------------|---------------------------|
+| **Original (Eq.1)** | Slower convergence            | Fails on dense graphs     |
+| **Proposed (Eq.2)** | Faster convergence            | Robust to dense graphs    |
+
+The cosine similarity metric (Eq.2) provides:
+1. Better normalization for feature vectors
+2. Improved convergence in spectral clustering
+3. Reduced heterogeneity in adjacency matrices
+4. Enhanced performance on dense graphs
+
 ## References
 1. **Primary Study**  
    Usatyuk, V.S., Sapozhnikov, D.A. & Egorov, S.I. (2024).  
