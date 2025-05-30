@@ -1,26 +1,66 @@
+# Spectral Clustering with Bethe-Hessian and Nishimori Temperature for RBIM on Graph Models
 
-```markdown
-# Spectral Clustering Bethe-Hessian with Bethe-Nisimori, Spin Glass, Laplace, Mean Field methods using PEG, QC-LDPC, MET QC-LDPC and ER Graph Models
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/LICENSE)
 
+Python implementation of spectral graph clustering methods for Random-Bond Ising Models (RBIM) using Nishimori temperature, featuring:
+- **Bethe-Hessian with Nishimori temperature**
+- Spin Glass methods
+- Mean-field approximations
+- Laplacian techniques
 
-This repository companion for paper [1] contains Python code for spectral graph clustering Bethe-Hessian with Nishimori temperature, Spin Glass, Mean-field, Laplacian methods under  Erdős–Rényi (ER),  Progressive Edge Growth (PEG), Multi-Edge Quasi-cyclic graphs. Original methods under ER graph proposed in paper [2].  
+Tested on diverse graph models:
+- Erdős–Rényi (ER)
+- Progressive Edge Growth (PEG)
+- Multi-Edge QC-LDPC
+- Quasi-cyclic (QC) LDPC
 
+Developed as companion code for the research paper:  
+*Enhanced Image Clustering with Random-Bond Ising Models Using LDPC Graph Representations and Nishimori Temperature* [1].
 
-Folder Graph matrix contain Progressive Edge Grown, QC  Graphs used for Figure 8.
-Folder BetheNishimori_ER contain script related to synthetical data clustering example under ER graphs.
-Folder NB_clustering_cat_dog_from_GAN_Manifold contain QC Graphs Spectral Clustering under two classes images (Cat, Dog from GAN [1]) 
+## Repository Structure
 
+### `/Graph_matrix`
+Contains graph generation implementations for:
+- Progressive Edge Growth (PEG) graphs
+- Quasi-cyclic (QC) LDPC graphs  
+*(Used for Figure 8 in [1])*
+
+### `/BetheNishimori_ER`
+Synthetic data clustering scripts under Erdős–Rényi graphs:
+- Bethe-Hessian spectral clustering
+- Nishimori temperature optimization
+- Performance evaluation metrics
+
+### `/NB_clustering_cat_dog_from_GAN_Manifold`
+Image clustering application using QC graphs:
+- Two-class GAN-generated image dataset (Cats vs Dogs)
+- Manifold learning integration
+- QC graph spectral decomposition
+
+## Key Features
+- Implementation of spectral methods from Dall'Amico et al. [2] extended to LDPC graphs
+- Custom PEG and QC-LDPC graph generators
+- Simulated annealing integration for spin glass optimization
+- Comparative analysis framework for clustering methods
 
 ## References
-1. Usatyuk, V.S., Sapozhnikov, D.A. & Egorov, S.I. Enhanced Image Clustering with Random-Bond Ising Models Using LDPC Graph Representations and Nishimori Temperature. Moscow Univ. Phys. 79 (Suppl 2), S647-S665 (2024).   
-2. Lorenzo Dall'Amico et al. "Nishimori meets Bethe: a spectral method for node classification in sparse weighted graphs," J. Stat. Mech., 093405 (2021). 
-- [PEG Algorithm Matlab, C, Python implementations](https://github.com/Lcrypto/classic-PEG-)
-- [Erdős–Rényi Graph](https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model)
-- [Simulated Annealing](https://ieeexplore.ieee.org/document/8441303)
+1. **Primary Study**  
+   Usatyuk, V.S., Sapozhnikov, D.A. & Egorov, S.I. (2024).  
+   *Enhanced Image Clustering with Random-Bond Ising Models Using LDPC Graph Representations and Nishimori Temperature*.  
+   Moscow Univ. Phys. 79 (Suppl 2), S647-S665.  
+   [https://doi.org/10.3103/S002713492470008X](https://doi.org/10.3103/S002713492470008X)
+
+2. **Foundational Method**  
+   Dall'Amico, L. et al. (2021).  
+   *Nishimori meets Bethe: a spectral method for node classification in sparse weighted graphs*.  
+   J. Stat. Mech. 093405.  
+   [https://doi.org/10.1088/1742-5468/ac1f44](https://doi.org/10.1088/1742-5468/ac1f44)
+
+3. **Graph Implementations**  
+   - [PEG Algorithm (Matlab/C/Python)](https://github.com/Lcrypto/classic-PEG-)
+   - [Erdős–Rényi Graph Model](https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model)
+   - [Simulated Annealing Optimization](https://ieeexplore.ieee.org/document/8441303)
 
 ## License
-
-This project is licensed under the  Apache Version 2.0 License  - see the [LICENSE](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/LICENSE) file for details.
-```
-
-                     
+Distributed under **Apache License 2.0**.  
+See [LICENSE](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/LICENSE) for full terms.
