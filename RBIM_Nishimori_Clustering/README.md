@@ -19,7 +19,7 @@ Developed as companion code for the research paper:
 
 ## Repository Structure
 
-### `/Graph_matrix`
+### (`/Graph_matrix`)[https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/tree/main/RBIM_Nishimori_Clustering/Graph%20Matrix]
 Contains graph generation implementations for:
 - Progressive Edge Growth (PEG) graphs
 - Quasi-cyclic (QC) LDPC graphs  
