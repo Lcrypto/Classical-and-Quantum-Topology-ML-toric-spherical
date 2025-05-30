@@ -31,7 +31,7 @@ Synthetic data clustering scripts under Erdős–Rényi graphs:
 - Nishimori temperature optimization
 - Performance evaluation metrics
 
-### `/NB_clustering_cat_dog_from_GAN_Manifold`
+### [`/NB_clustering_cat_dog_from_GAN_Manifold`](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/tree/main/RBIM_Nishimori_Clustering/NB_clustering_cat_dog_from_GAN_Manifold)
 Image clustering application using QC graphs:
 - Two-class GAN-generated image dataset (Cats vs Dogs) from [2]
 - QC graph spectral decomposition
