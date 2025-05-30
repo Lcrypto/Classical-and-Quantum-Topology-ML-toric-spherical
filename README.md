@@ -60,10 +60,10 @@ Application of this approach for Spectral Feature Graph Clustering in [Python re
 
 ### Edge Weight Metrics
 
-**Original Metric (Eq.1)** from Dall'Amico et al.:  
+**Original Metric (Eq.1)** from Dall'Amico et al. [9]:  
 J<sub>ij</sub> = |(z<sub>i</sub>, z<sub>j</sub>)| / l
 
-**Proposed Cosine Similarity Metric (Eq.2)** from our paper [9]:  
+**Proposed Cosine Similarity Metric (Eq.2)** from our paper [10]:  
 J<sub>ij</sub> = |(z<sub>i</sub>, z<sub>j</sub>)| / (|z<sub>i</sub>| |z<sub>j</sub>|)
 
 Where:
@@ -441,7 +441,9 @@ Hastie, T., Tibshirani, R., Friedman, J., 2001. The Elements of Statistical Lear
 
 
 8. V. S. Usatyuk and S. I. Egorov, "Topology-Aware Sparse Factorization in Energy-Based Models: Tori QC-LDPC Codes and Circular Hyperboloid MET QC-LDPC Codes," 2024 26th International Conference on Digital Signal Processing and its Applications (DSPA), Moscow, Russian Federation, 2024, pp. 1-6  https://ieeexplore.ieee.org/document/10510073
-9. Usatyuk, V.S., Sapozhnikov, D.A. & Egorov, S.I. (2024).  *Enhanced Image Clustering with Random-Bond Ising Models Using LDPC Graph Representations and Nishimori Temperature*.  Moscow Univ. Phys. 79 (Suppl 2), S647-S665.   https://link.springer.com/article/10.3103/S0027134924702102
+
+9. Dall'Amico, L. et al. (2021). *Nishimori meets Bethe: a spectral method for node classification in sparse weighted graphs*.    J. Stat. Mech. 093405. 
+10.   Usatyuk, V.S., Sapozhnikov, D.A. & Egorov, S.I. (2024).  *Enhanced Image Clustering with Random-Bond Ising Models Using LDPC Graph Representations and Nishimori Temperature*.  Moscow Univ. Phys. 79 (Suppl 2), S647-S665.   https://link.springer.com/article/10.3103/S0027134924702102
 
 
 # **Cite this reseach**
