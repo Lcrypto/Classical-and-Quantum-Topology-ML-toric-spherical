@@ -134,7 +134,9 @@ The cosine similarity metric (Eq.2) provides:
    Dall'Amico, L. et al. (2021).  
    *Nishimori meets Bethe: a spectral method for node classification in sparse weighted graphs*.  
    J. Stat. Mech. 093405.
-   https://iopscience.iop.org/article/10.1088/1742-5468/ac21d3/meta   https://arxiv.org/abs/2103.03561
+   https://iopscience.iop.org/article/10.1088/1742-5468/ac21d3/meta
+
+  https://arxiv.org/abs/2103.03561
   
 
 4. **Graph Implementations**  
