@@ -106,6 +106,7 @@ $$ J_{ij} = \frac{|(z_i, z_j)|}{l} $$
 **Proposed Cosine Similarity Metric (Eq.2)** from our paper [1]:  
 $$ J_{ij} = \frac{|(z_i, z_j)|}{|z_i||z_j|} $$
 
+
 Where:
 - $z_i, z_j$ = node feature vectors
 - $(\cdot,\cdot)$ = scalar product
