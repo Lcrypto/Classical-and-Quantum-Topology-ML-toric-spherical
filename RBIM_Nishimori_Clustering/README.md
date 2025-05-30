@@ -101,10 +101,10 @@ Image clustering application using QC graphs:
 ### Edge Weight Metrics
 
 **Original Metric (Eq.1)** from Dall'Amico et al. [2]:  
-J_ij = |(z_i, z_j)| / l
+J<sub>ij</sub> = |(z<sub>i</sub>, z<sub>j</sub>)| / l
 
 **Proposed Cosine Similarity Metric (Eq.2)** from our paper [1]:  
-J_ij = |(z_i, z_j)| / (|z_i| |z_j|)
+J<sub>ij</sub> = |(z<sub>i</sub>, z<sub>j</sub>)| / (|z<sub>i</sub>| |z<sub>j</sub>|)
 
 Where:
 - $z_i, z_j$ = node feature vectors
