@@ -1,6 +1,6 @@
 # Classical and Quantum Topology Machine Learning: Spherical and Hyperbolic Toric Topologies Code on the Graph based Embedding
 
-Application of this approach for Spectral Graph Embedding for Feature Clustering and Classification in [Python repository](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/tree/main/RBIM_Nishimori_Clustering). It implements spectral clustering for Random-Bond Ising Models (RBIM) using Bethe-Hessian matrices optimized at Nishimori temperature, applied to graph models like Erdős-Rényi and LDPC codes. It extends these methods to image clustering tasks, demonstrating enhanced accuracy with a novel cosine similarity metric on both synthetic data and GAN-generated image datasets, [9].
+Application of this approach for Spectral Graph Embedding for Feature Clustering and Classification in [Python repository](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/tree/main/RBIM_Nishimori_Clustering), detail in [10]. It implements spectral clustering for Random-Bond Ising Models (RBIM) using Bethe-Hessian matrices optimized at Nishimori temperature, applied to graph models like Erdős-Rényi and LDPC codes. It extends these methods to image clustering tasks, demonstrating enhanced accuracy with a novel cosine similarity metric on both synthetic data and GAN-generated image datasets, [9].
 
 
 ### Comparison of Clustering Accuracy Using Different Methods
