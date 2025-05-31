@@ -72,6 +72,13 @@ Where:
 - $l$ = normalization constant (original)
 - $|\cdot|$ = vector norm
 
+All results related in Table currentrly improved by more carefull temperature estimation and feature selection, particulary Size 16×16 (L=375)  E(H)₂  Quasi-Cyclic graph overlap values became more that 99% (from 92.46%).
+
+### **Recent Improvements**  
+- **Nishimori temperature estimation** and **feature selection** now achieve **>99% clustering overlap** (previously 92.46% [10]) for **Quasi-Cyclic graph E(H)₂** (size 16×16, circulant permutation matrix \( L=375 \)).  
+
+
+
 Short and brief description of idea, 16 pages articel Topology-Aware Exploration of Energy-Based Models Equilibrium: Toric QC-LDPC Codes and Hyperbolic MET QC-LDPC Codes [https://arxiv.org/abs/2401.14749] and  example of application [8]  https://ieeexplore.ieee.org/document/10510073 . 
 
 
