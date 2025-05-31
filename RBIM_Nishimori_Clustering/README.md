@@ -123,8 +123,8 @@ The cosine similarity metric (Eq.2) provides:
 3. Reduced heterogeneity in adjacency matrices
 4. Enhanced performance on dense graphs
 
-### **Recent Improvements**  
-- **Nishimori temperature estimation** and **feature selection** now achieve **>99% clustering overlap** (previously 92.46% [1]) for **Quasi-Cyclic graph E(H)₂** (size 16×16, circulant permutation matrix \( L=375 \)).  
+### **Recent Improvements of Clustering**  
+- **Improved Nishimori temperature estimation** and **feature selection** now allow to achieve **>99% clustering overlap** (previously 92.46% [1]) for **Quasi-Cyclic graph E(H)₂** (size 16×16, circulant permutation matrix \( L=375 \)) at feature clustering (and large gain in classification).  
 
 
 
