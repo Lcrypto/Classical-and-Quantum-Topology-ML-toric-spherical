@@ -51,7 +51,7 @@ Provides 7 similarity measures for affinity matrix calculation:
 
 Accessed via `similarity_dict` mapping.
 
-### 4. Quasi-Cyclic Graph Processor (`qc2sparse.py`)
+### 4. Quasi-Cyclic Graph  (`qc2sparse.py`)
 Constructs sparse matrices from quasi-cyclic graph descriptions.
 
 Functions:
