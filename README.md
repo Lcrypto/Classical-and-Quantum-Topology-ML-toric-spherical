@@ -457,6 +457,12 @@ Hastie, T., Tibshirani, R., Friedman, J., 2001. The Elements of Statistical Lear
  Preprint                    https://theory2.sinp.msu.ru/lib/exe/fetch.php/dlcp/dlcp2024/bphm647.pdf
 
 
+11. V. S. Usatyuk, D. A. Sapozhnikov and S. I. Egorov, "Flattening Images Manifold at the Nishimori Point: Exploring Linearity in Polysemantic Embedding for Human-Aware Bayesian CNN Image Classification," 2025 27th International Conference on Digital Signal Processing and its Applications (DSPA), Moscow, Russian Federation, 2025, pp. 1-6, doi: 10.1109/DSPA64310.2025.10977938.   https://ieeexplore.ieee.org/document/10977938
+
+12. V. S. Usatyuk and S. I. Egorov, "Boosting DNN Efficiency: Replacing FC Layers with Graph Embeddings for Hardware Acceleration," 2025 27th International Conference on Digital Signal Processing and its Applications (DSPA), Moscow, Russian Federation, 2025, pp. 1-6, doi: 10.1109/DSPA64310.2025.10977895 https://ieeexplore.ieee.org/document/10977895
+    
+
+
 # **Cite this reseach**
 ```
 @article{Usatyuk2023TopoML,
