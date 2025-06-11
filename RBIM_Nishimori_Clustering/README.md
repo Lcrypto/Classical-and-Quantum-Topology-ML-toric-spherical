@@ -148,7 +148,7 @@ The cosine similarity metric (Eq.2) provides:
 4. **Graph Implementations**  
    - [PEG Algorithm (Matlab/C/Python)](https://github.com/Lcrypto/classic-PEG-)
    - [Erdős–Rényi Graph Model](https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model)
-   - [Simulated Annealing Optimization](https://ieeexplore.ieee.org/document/8441303)  [Source code](https://github.com/Lcrypto/Simulated-annealing-lifting-QC-LDPC)
+   - [Simulated Annealing Optimization paper](https://ieeexplore.ieee.org/document/8441303)       [Source code](https://github.com/Lcrypto/Simulated-annealing-lifting-QC-LDPC)
 
 ## License
 Distributed under **Apache License 2.0**.  
