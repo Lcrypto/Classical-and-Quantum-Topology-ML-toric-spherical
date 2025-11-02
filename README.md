@@ -150,7 +150,21 @@ This decomposition underlies many variational and message‑passing algorithms f
 - Reparameterizing the expectation value into local terms provides a practical route for approximate solutions.
 
 
-Short and brief description of idea, 16 pages articel Topology-Aware Exploration of Energy-Based Models Equilibrium: Toric QC-LDPC Codes and Hyperbolic MET QC-LDPC Codes [https://arxiv.org/abs/2401.14749] and  example of application [8]  https://ieeexplore.ieee.org/document/10510073 . 
+## Reparameterization & Trapping‑Set Elimination
+
+Classical machine learning (ML) and quantum machine learning (QML) both exploit a common idea: **reparameterization**.  
+In QML this takes the form of transformations familiar from quantum physics—unitary operations or gauge changes that leave the spectrum of a Hamiltonian invariant while reshaping the state representation.  
+In classical information theory, especially in LDPC decoding, reparameterization is used to **eliminate trapping sets**—small subgraphs that trap iterative message‑passing algorithms and cause decoding failures.
+
+The key insight is that **changing decoder parameters is equivalent to performing a gauge transformation on the Tanner graph**:
+
+| Classical ML | Quantum ML | Information Theory (LDPC) |
+|--------------|------------|---------------------------|
+| Variable/constraint reparameterization (e.g., belief propagation updates) | Unitary/gauge transformations of the Hamiltonian | Adjusting check‑node weights or local fields to reshape asymmetrical subgraphs |
+| Simplifies inference and improves convergence | Preserves eigenvalues while altering the wavefunction’s phase/amplitude distribution | Removes harmful trapping sets by modifying the graph’s local structure |
+
+Thus, whether we are reparameterizing a quantum state or tuning decoder parameters in an LDPC code, we are effectively **changing the gauge of the underlying graphical model**, thereby altering asymmetric local subgraphs and eliminating problematic trapping sets.
+Short and brief description of idea, 16 pages articel Topology-Aware Exploration of Energy-Based Models Equilibrium: Toric QC-LDPC Codes and Hyperbolic MET QC-LDPC Codes [https://arxiv.org/abs/2401.14749] and  examples of applications for feature compression, factorization problems and quantum feature mapping.  
 
 
 
