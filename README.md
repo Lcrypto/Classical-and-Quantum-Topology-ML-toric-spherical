@@ -78,12 +78,92 @@ All results related in Table currentrly improved by more carefull temperature es
 - **Nishimori temperature estimation** and **feature selection** now achieve **>99% clustering overlap** (previously 92.46% [10]) for **Quasi-Cyclic graph E(H)₂** (size 16×16, circulant permutation matrix \( L=375 \)).  
 
 
+# Sparse Low‑Density Parity‑Check Codes on Graphs
+
+## 1. Classical Machine Learning: Marginalization Problem on the Graph  
+
+In classical ML the marginalization problem is often visualized as inference on a graph.  
+A parity–check matrix \(H\) defines a Tanner graph that represents the constraints of an LDPC code; inference on this graph corresponds to MAP/ML estimation.
+
+## 2. Quantum System Representation  
+
+Consider a quantum system of \(N\) qubits, i.e. a Hilbert space of dimension \(2^{\,N}\).  
+In an arbitrary basis \(\{|\sigma\rangle\}\) the state vector is
+
+$$
+|\Psi\rangle = \sum_{\sigma} c_\sigma\, |\sigma\rangle ,
+$$
+
+and the associated probability distribution over configurations is
+
+$$
+p(\sigma)=|c_\sigma|^2 .
+$$
+
+For a chosen computational basis \(\{|x\rangle\}\) we can write the wavefunction as
+
+$$
+|\Psi\rangle = \sum_{x} \Psi(x)\, |x\rangle ,
+$$
+
+with \(p(x)=|\Psi(x)|^{\,2}\).
+
+
+
+## 3. Estimation Problem in Hilbert Space  
+
+The objective of quantum inference is to find the ground state (minimal eigenvector) and its energy for a Hamiltonian operator \(H\), which typically requires optimization over an exponentially large space—exactly analogous to MAP/ML estimation.
+
+The expected energy (Rayleigh quotient) is
+
+$$
+\frac{\langle \Psi | H | \Psi\rangle}{\langle \Psi|\Psi\rangle}.
+$$
+
+
+
+## 4. Approximate Solution via Reparameterization  
+
+A common strategy is to reparameterize the expectation value in terms of local quantities.  
+Using \(\Psi(x)=\langle x|\Psi\rangle\) we obtain
+
+$$
+\begin{aligned}
+\langle H \rangle
+&= \sum_{x,y} \overline{\Psi(x)}\,H_{xy}\,\Psi(y) \\
+&= \sum_x |\Psi(x)|^2 
+   \underbrace{\sum_y H_{xy}\,
+      \frac{\Psi(y)}{\Psi(x)}}_{\text{local energy of configuration }x}.
+\end{aligned}
+$$
+
+The first sum is the probability distribution over states, while the second term can be viewed as a *local energy* that depends on the ratio \(\Psi(y)/\Psi(x)\).  
+This decomposition underlies many variational and message‑passing algorithms for approximate quantum inference.
+
+
+
+### Key Takeaways  
+
+- LDPC codes are defined by sparse parity constraints represented by Tanner graphs.  
+- In quantum systems, the probability distribution over basis states is given by the squared amplitudes of the state vector.  
+- Finding the ground state of a Hamiltonian is mathematically equivalent to MAP/ML estimation in a graph‑based probabilistic model.  
+- Reparameterizing the expectation value into local terms provides a practical route for approximate solutions.
+
 
 Short and brief description of idea, 16 pages articel Topology-Aware Exploration of Energy-Based Models Equilibrium: Toric QC-LDPC Codes and Hyperbolic MET QC-LDPC Codes [https://arxiv.org/abs/2401.14749] and  example of application [8]  https://ieeexplore.ieee.org/document/10510073 . 
 
 
+
+
+
+
 The GitHub repositories referenced in this paper, titled “Spherical and Hyperbolic Toric Topology-Based Codes On Graph Embedding for Ising MRF Models: Classical and Quantum Topology Machine Learning”, contain the source code related to the research [https://doi.org/10.48550/arXiv.2307.15778](https://arxiv.org/abs/2307.15778). 
 The paper introduces the application of information geometry to describe the ground states of Ising models. This is achieved by utilizing parity-check matrices of cyclic and quasi-cyclic codes on toric and spherical topologies. The approach establishes a connection between machine learning and error-correcting coding, specifically in terms of automorphism and the size of the circulant of the quasi-cyclic code. The proposed approach ingeniously merges Tensor Networks, Bayesian networks, Markov Random Fields, and Factor graphs, harnessing the strengths of each graph model through a brilliant concept centered on the interplay of symmetry and asymmetry originating from Trapping sets. This proposed approach has implications for the development of new embedding methods based on trapping sets.  
+
+
+
+
+
 
 
 
