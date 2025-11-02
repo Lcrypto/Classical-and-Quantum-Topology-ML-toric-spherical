@@ -1,9 +1,8 @@
-# Classical and Quantum Topology Machine Learning: Spherical and Hyperbolic Toric Topologies Code on the Graph based Feature Spectral Embedding for CNN (top MLP layers), Transformer and Diffusions
+# Classical and Quantum Topology Machine Learning: Spherical and Hyperbolic Toric Topologies Code on the Graph based Feature Spectral Embedding for CNN (top MLP layers), Transformer and Diffusions 
 
 
-# Sparse Low‑Density Parity‑Check Codes on Graphs
+## 1. Classical Machine Learning: Marginalization Problem on the Sparse Low‑Density Parity‑Check Codes on Graphs   
 
-## 1. Classical Machine Learning: Marginalization Problem on the Graph  
 
 In classical ML the marginalization problem is often visualized as inference on a graph.  
 A parity–check matrix \(H\) defines a Tanner graph that represents the constraints of an LDPC code; inference on this graph corresponds to MAP/ML estimation.
