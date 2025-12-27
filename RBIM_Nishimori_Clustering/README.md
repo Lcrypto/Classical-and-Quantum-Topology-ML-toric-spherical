@@ -143,6 +143,11 @@ The cosine similarity metric (Eq.2) provides:
    https://iopscience.iop.org/article/10.1088/1742-5468/ac21d3/meta
 
   https://arxiv.org/abs/2103.03561
+
+
+3. Alaa Saade, Florent Krzakala, and Lenka Zdeborová. 2014. Spectral clustering of graphs with the Bethe Hessian. In Proceedings of the 28th International Conference on Neural Information Processing Systems - Volume 1 (NIPS'14), Vol. 1. MIT Press, Cambridge, MA, USA, 406–414.
+
+
   
 
 4. **Graph Implementations**  
@@ -153,3 +158,4 @@ The cosine similarity metric (Eq.2) provides:
 ## License
 Distributed under **Apache License 2.0**.  
 See [LICENSE](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/LICENSE) for full terms.
+
