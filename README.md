@@ -170,7 +170,7 @@ The proposed approach has direct implications for new embedding methods based on
 
 The Mega-chunk model with two chunks of length 3 is represented above. Its bipartite graph representation shows that such a neural network is equivalent to a parity-check matrix of protograph:
 
-$$
+$
 H_{\text{MEGA}} = 
 \begin{bmatrix}
 1 & 1 & 1 & 1\\
@@ -178,7 +178,7 @@ H_{\text{MEGA}} =
 0 & 0 & 1 & 1 \\
 0 & 0 & 0 & 1
 \end{bmatrix}.
-$$
+$
 
 Mega and Mega-chunk Attention models use Generalized Irregular Repeat Accumulate (GeIRA) protograph QC-LDPC codes (Repeat Accumulate (RA) [0] and GeIRA [0]); for details see the article https://arxiv.org/abs/2307.15778.
 
