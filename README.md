@@ -422,9 +422,11 @@ Code constructions used:
 
 10. Usatyuk V.S., Sapozhnikov D.A., Egorov S.I. (2024). **Enhanced Image Clustering with Random-Bond Ising Models Using LDPC Graph Representations and Nishimori Temperature.** *Moscow Univ. Phys.* 79 (Suppl 2), S647-S665. https://link.springer.com/article/10.3103/S0027134924702102; Preprint: https://theory2.sinp.msu.ru/lib/exe/fetch.php/dlcp/dlcp2024/bphm647.pdf
 
-11. Usatyuk V.S., Sapozhnikov D.A., Egorov S.I. "Flattening Images Manifold at the Nishimori Point: Exploring Linearity in Polysemantic Embedding for Human-Aware Bayesian CNN Image Classification," *DSPA*, Moscow, 2025. https://ieeexplore.ieee.org/document/10977938
+11. Usatyuk V.S., Sapozhnikov D.A., Egorov S.I. Natural Image Classification via Quasi-Cyclic Graph Ensembles and Random-Bond Ising Models with Enhanced Nishimori Temperature. Moscow Univ. Phys. 80 (Suppl. 3), S1039–S1053 (2025).   
 
-12. Usatyuk V.S., Egorov S.I. "Boosting DNN Efficiency: Replacing FC Layers with Graph Embeddings for Hardware Acceleration," *DSPA*, Moscow, 2025. https://ieeexplore.ieee.org/document/10977895
+13. Usatyuk V.S., Sapozhnikov D.A., Egorov S.I. "Flattening Images Manifold at the Nishimori Point: Exploring Linearity in Polysemantic Embedding for Human-Aware Bayesian CNN Image Classification," *DSPA*, Moscow, 2025. https://ieeexplore.ieee.org/document/10977938
+
+14. Usatyuk V.S., Egorov S.I. "Boosting DNN Efficiency: Replacing FC Layers with Graph Embeddings for Hardware Acceleration," *DSPA*, Moscow, 2025. https://ieeexplore.ieee.org/document/10977895
 
 ---
 
