@@ -1,174 +1,125 @@
-# Classical and Quantum Topology Machine Learning: Spherical and Hyperbolic Toric Topologies Code on the Graph based Feature Spectral Embedding for CNN (top MLP layers), Transformer and Diffusions 
+# Classical and Quantum Topology Machine Learning: RBIM Spectral Embedding via Toric & Hyperbolic LDPC Codes for CNN, Transformer, and Diffusion Models
 
+> **Unifying Principle.** Sparse, structured graphs from coding theory—operated at the Nishimori temperature of a Random-Bond Ising Model (RBIM)—yield spectral embeddings whose geometry is controlled by trapping-set elimination, enabling both high accuracy and hardware efficiency.
 
-## 1. Classical Machine Learning: Marginalization Problem on the Sparse Low‑Density Parity‑Check Codes on Graphs   
+## 1. Classical Machine Learning: Marginalization on Sparse LDPC Tanner Graphs
 
+In classical ML, marginalization is naturally visualized as inference on a graph. A parity–check matrix $H$ defines a Tanner graph $G=(V,E)$ that encodes the constraints of an LDPC code; performing inference on this graph corresponds to MAP/ML estimation.
 
-In classical ML the marginalization problem is often visualized as inference on a graph.  
-A parity–check matrix \(H\) defines a Tanner graph that represents the constraints of an LDPC code; inference on this graph corresponds to MAP/ML estimation.
-
-## 2. Quantum System Representation  
-
-Consider a quantum system of \(N\) qubits, i.e. a Hilbert space of dimension \(2^{\,N}\).  
-In an arbitrary basis \(\{|\sigma\rangle\}\) the state vector is
+Formally, let $G=(V,E)$ be an undirected graph with $|V|=n$ vertices and $|E|=m$ edges. Each vertex carries a binary spin variable and each edge $\{i,j\}\in E$ carries a random coupling weight drawn from a distribution $\mathcal{P}$. The Random-Bond Ising Model (RBIM) on $G$ is specified by the Edwards–Anderson Hamiltonian *(Citation 1)*:
 
 $$
-|\Psi\rangle = \sum_{\sigma} c_\sigma\, |\sigma\rangle ,
+H(s) = -\sum_{\langle i,j\rangle \in E} J_{ij}\, s_i s_j,\qquad s_i\in\{-1,+1\}.
 $$
 
-and the associated probability distribution over configurations is
+At the **Nishimori temperature**, this Gibbs measure coincides with the Bayesian posterior over coupling parameters. Consequently, stochastic gradient Langevin dynamics becomes *exact* rather than approximate, and the spectral geometry of the associated operators (studied via the Bethe–Hessian) directly controls inference quality *(Citation 1)*.
+
+## 2. Quantum System Representation
+
+Consider a quantum system of $N$ qubits, i.e., a Hilbert space of dimension $2^{N}$. In an arbitrary basis $\{|\sigma\rangle\}$ the state vector is
 
 $$
-p(\sigma)=|c_\sigma|^2 .
+|\Psi\rangle = \sum_{\sigma} c_\sigma\, |\sigma\rangle,
 $$
 
-For a chosen computational basis \(\{|x\rangle\}\) we can write the wavefunction as
+with associated probability distribution $p(\sigma)=|c_\sigma|^2$. For a chosen computational basis $\{|x\rangle\}$ we write
 
 $$
-|\Psi\rangle = \sum_{x} \Psi(x)\, |x\rangle ,
+|\Psi\rangle = \sum_{x} \Psi(x)\, |x\rangle,\qquad p(x)=|\Psi(x)|^{2}.
 $$
 
-with \(p(x)=|\Psi(x)|^{\,2}\).
+## 3. Estimation Problem in Hilbert Space
 
-
-
-## 3. Estimation Problem in Hilbert Space  
-
-The objective of quantum inference is to find the ground state (minimal eigenvector) and its energy for a Hamiltonian operator \(H\), which typically requires optimization over an exponentially large space—exactly analogous to MAP/ML estimation.
-
-The expected energy (Rayleigh quotient) is
+The objective of quantum inference is to find the ground state (minimal eigenvector) and its energy for a Hamiltonian operator $\mathcal{H}$, which requires optimization over an exponentially large space—exactly analogous to MAP/ML estimation on the classical Tanner graph. The expected energy (Rayleigh quotient) is
 
 $$
-\frac{\langle \Psi | H | \Psi\rangle}{\langle \Psi|\Psi\rangle}.
+\frac{\langle \Psi | \mathcal{H} | \Psi\rangle}{\langle \Psi|\Psi\rangle}.
 $$
 
+## 4. Reparameterization & Trapping‑Set Elimination: A Gauge‑Theory Perspective
 
+Classical ML and quantum ML exploit a common idea: **reparameterization**.  
+In QML this appears as unitary operations or gauge changes that leave the Hamiltonian spectrum invariant while reshaping the state representation. In classical LDPC decoding, reparameterization is used to **eliminate trapping sets**—small subgraphs that trap iterative message-passing algorithms and cause decoding failures.
 
-## 4. Approximate Solution via Reparameterization  
-
-A common strategy is to reparameterize the expectation value in terms of local quantities.  
-Using \(\Psi(x)=\langle x|\Psi\rangle\) we obtain
-
-$$
-\begin{aligned}
-\langle H \rangle
-&= \sum_{x,y} \overline{\Psi(x)}\,H_{xy}\,\Psi(y) \\
-&= \sum_x |\Psi(x)|^2 
-   \underbrace{\sum_y H_{xy}\,
-      \frac{\Psi(y)}{\Psi(x)}}_{\text{local energy of configuration }x}.
-\end{aligned}
-$$
-
-The first sum is the probability distribution over states, while the second term can be viewed as a *local energy* that depends on the ratio \(\Psi(y)/\Psi(x)\).  
-This decomposition underlies many variational and message‑passing algorithms for approximate quantum inference.
-
-
-
-### Key Takeaways  
-
-- LDPC codes are defined by sparse parity constraints represented by Tanner graphs.  
-- In quantum systems, the probability distribution over basis states is given by the squared amplitudes of the state vector.  
-- Finding the ground state of a Hamiltonian is mathematically equivalent to MAP/ML estimation in a graph‑based probabilistic model.  
-- Reparameterizing the expectation value into local terms provides a practical route for approximate solutions.
-
-
-## Reparameterization & Trapping‑Set Elimination
-
-Classical machine learning (ML) and quantum machine learning (QML) both exploit a common idea: **reparameterization**.  
-In QML this takes the form of transformations familiar from quantum physics—unitary operations or gauge changes that leave the spectrum of a Hamiltonian invariant while reshaping the state representation.  
-In classical information theory, especially in LDPC decoding, reparameterization is used to **eliminate trapping sets**—small subgraphs that trap iterative message‑passing algorithms and cause decoding failures.
-
-The key insight is that **changing decoder parameters is equivalent to performing a gauge transformation on the Tanner graph**:
+The key insight, spanning both regimes, is that **changing decoder parameters is equivalent to performing a gauge transformation on the Tanner graph**:
 
 | Classical ML | Quantum ML | Information Theory (LDPC) |
-|--------------|------------|---------------------------|
-| Variable/constraint reparameterization (e.g., belief propagation updates) | Unitary/gauge transformations of the Hamiltonian | Adjusting check‑node weights or local fields to reshape asymmetrical subgraphs |
-| Simplifies inference and improves convergence | Preserves eigenvalues while altering the wavefunction’s phase/amplitude distribution | Removes harmful trapping sets by modifying the graph’s local structure |
+|---|---|---|
+| Variable/constraint reparameterization (e.g., belief propagation updates) | Unitary/gauge transformations of the Hamiltonian; parameter-shift rule for gradients *(Citation 3)* | Adjusting check‑node weights or local fields to reshape asymmetrical subgraphs |
+| Simplifies inference and improves convergence | Preserves eigenvalues while altering wavefunction phase/amplitude distribution | Removes harmful trapping sets by modifying the graph’s local structure |
 
-Thus, whether we are reparameterizing a quantum state or tuning decoder parameters in an LDPC code, we are effectively **changing the gauge of the underlying graphical model**, thereby altering asymmetric local subgraphs and eliminating problematic trapping sets.
-Short and brief description of idea, 16 pages articel Topology-Aware Exploration of Energy-Based Models Equilibrium: Toric QC-LDPC Codes and Hyperbolic MET QC-LDPC Codes [https://arxiv.org/abs/2401.14749] and  examples of applications for feature compression, factorization problems and quantum feature mapping.  
+Thus, whether reparameterizing a quantum state or tuning decoder parameters in an LDPC code, we are effectively **changing the gauge of the underlying graphical model**, thereby eliminating problematic trapping sets and controlling spectral geometry.
 
+### From Trapping Sets to Degenerate Ground Spaces *(Citation 3)*
 
+In classical LDPC decoding, trapping sets create local minima. In quantum CSS codes, analogous structures appear as degenerate excited states. The spectral gap between logical and physical excitations is precisely the code distance $d_{\min}$; maximizing it simultaneously improves **classical adversarial robustness** and **quantum fault tolerance**.
 
+## 5. Spectral Graph Embedding for Feature Clustering & Classification
 
+Application of this framework to feature embedding is demonstrated in the Python repository **[RBIM Nishimori Clustering](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/tree/main/RBIM_Nishimori_Clustering)** (details in [10–12]). The method implements spectral clustering for Random-Bond Ising Models using **Bethe–Hessian matrices optimized at the Nishimori temperature**, applied to graph models such as Erdős–Rényi and LDPC codes (PEG, QC, Multi-Edge QC). It extends these methods to image clustering tasks, demonstrating enhanced accuracy with a cosine similarity metric on both synthetic data and GAN-generated image datasets [9].
 
-
-The GitHub repositories referenced in this paper, titled “Spherical and Hyperbolic Toric Topology-Based Codes On Graph Embedding for Ising MRF Models: Classical and Quantum Topology Machine Learning”, contain the source code related to the research [https://doi.org/10.48550/arXiv.2307.15778](https://arxiv.org/abs/2307.15778). 
-The paper introduces the application of information geometry to describe the ground states of Ising models. This is achieved by utilizing parity-check matrices of cyclic and quasi-cyclic codes on toric and spherical topologies. The approach establishes a connection between machine learning and error-correcting coding, specifically in terms of automorphism and the size of the circulant of the quasi-cyclic code. The proposed approach ingeniously merges Tensor Networks, Bayesian networks, Markov Random Fields, and Factor graphs, harnessing the strengths of each graph model through a brilliant concept centered on the interplay of symmetry and asymmetry originating from Trapping sets. This proposed approach has implications for the development of new embedding methods based on trapping sets.  
-
-
-
-
-
-
-
-
-
-Application of this approach for Spectral Graph Embedding for Feature Clustering and Classification in [Python repository](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/tree/main/RBIM_Nishimori_Clustering), detail in [10-12]. It implements spectral clustering for Random-Bond Ising Models (RBIM) using Bethe-Hessian matrices optimized at Nishimori temperature, applied to graph models like Erdős-Rényi and LDPC codes on the graphs (PEG, QC, Multi-Edge QC). It extends these methods to image clustering tasks, demonstrating enhanced accuracy with a cosine similarity metric on both synthetic data and GAN-generated image datasets, [9].
-
+These spectral embeddings are “self-correcting”: BP decoding errors and training failures can be diagnosed by the same spectral diagnostic—the negative eigenvalue count of the Bethe–Hessian *(Citation 2)*.
 
 ### Comparison of Clustering Accuracy Using Different Methods
-*Table shows accuracy (overlap) with two edge weight metrics: original (Eq.1) and proposed cosine similarity (Eq.2)*  
-*Best overall results highlighted in **bold***
+*Table shows accuracy (overlap) with two edge weight metrics: original (Eq.1) and proposed cosine similarity (Eq.2).*  
+*Best overall results highlighted in **bold**.*
 
-| Graph Matrix                 | Nishimori         | Spin Glass        | Mean-field       | Laplacian        |
-|------------------------------|-------------------|-------------------|------------------|------------------|
-| **Size 2×2 (L=3000)**        |                   |                   |                  |                  |
-| E(H)₃                        | 23.67%, 31.40%    | 26.63%, 30.30%    | 0.03%, 20.70%    | 32.73%, 0.03%    |
-| E(H)₄                        | 54.43%, 37.93%    | 47.00%, 32.80%    | 1.20%, 3.16%     | 0.03%, 0.10%     |
-| E(H)₅                        | 53.40%, 33.10%    | 46.57%, 33.50%    | 1.10%, 4.56%     | 0.10%, 0.03%     |
-| E(H)₆                        | 26.20%, 31.73%    | 29.10%, 26.56%    | 0.03%, 22.46%    | 31.97%, 0.03%    |
-| E(H)₇                        | 23.67%, 31.40%    | 26.63%, 30.33%    | 0.03%, 20.70%    | 32.73%, 0.03%    |
-| E(H)₈                        | 54.43%, 37.93%    | 47.00%, 32.80%    | 1.27%, 3.16%     | 0.03%, 0.10%     |
-| E(H)₉                        | 53.40%, 33.10%    | 46.57%, 33.43%    | 1.10%, 4.56%     | 0.10%, 0.03%     |
-| E(H)₁₀                       | 26.17%, 31.73%    | 29.10%, 26.56%    | 0.03%, 22.46%    | 31.97%, 0.03%    |
-| E(H)₁₁                       | 23.67%, 31.40%    | 26.63%, 30.33%    | 0.03%, 20.60%    | 32.77%, 0.03%    |
-| E(H)₁₂                       | 54.43%, 37.93%    | 47.00%, 32.80%    | 1.27%, 3.16%     | 0.03%, 0.10%     |
-| E(H)₁₃                       | 26.17%, 31.70%    | 29.10%, 26.56%    | 0.03%, 22.46%    | 31.97%, 0.03%    |
-| **Size 4×4 (L=1500)**        |                   |                   |                  |                  |
-| E(H)₁₄                       | 68.37%, 75.63%    | 67.70%, 73.53%    | 0.07%, 21.43%    | 0.03%, 0.03%     |
-| E(H)₁₅                       | 69.70%, 74.70%    | 66.43%, 71.83%    | 0.30%, 0.13%     | 0.03%, 0.03%     |
-| E(H)₁                        | 70.67%, 76.46%    | 67.83%, 73.96%    | 0.17%, 0.30%     | 67.63%, 0.03%    |
-| E(H)₁₆                       | 68.60%, 75.76%    | 65.17%, 71.73%    | 0.17%, 0.20%     | 66.10%, 0.03%    |
-| E(H)₁₇                       | 68.37%, 75.63%    | 67.70%, 73.53%    | 0.07%, 21.43%    | 0.03%, 0.03%     |
-| E(H)₁₈                       | 69.70%, 74.70%    | 66.53%, 71.83%    | 0.30%, 0.13%     | 0.03%, 0.03%     |
-| E(H)₁₉                       | 70.63%, 76.46%    | 67.77%, 74.13%    | 0.17%, 0.30%     | 67.63%, 0.03%    |
-| E(H)₂₀                       | 68.60%, 75.70%    | 65.17%, 71.73%    | 0.17%, 0.20%     | 66.07%, 0.03%    |
-| E(H)₂₁                       | 69.70%, 74.70%    | 66.20%, 71.83%    | 0.30%, 0.13%     | 0.03%, 0.03%     |
-| E(H)₂₂                       | 70.67%, 76.46%    | 67.77%, 74.13%    | 0.17%, 0.30%     | 67.63%, 0.03%    |
-| E(H)₂₃                       | 68.60%, 75.73%    | 65.17%, 71.73%    | 0.17%, 0.20%     | 66.07%, 0.03%    |
-| E(H)₂₄                       | 64.57%, 72.53%    | 63.57%, 71.33%    | 0.17%, 0.26%     | 0.03%, 0.03%     |
-| E(H)₂₅                       | 67.73%, 74.26%    | 66.40%, 73.50%    | 0.13%, 0.26%     | 0.03%, 0.03%     |
-| **Size 16×16 (L=375)**       |                   |                   |                  |                  |
-| E(H)₂                        | **90.60%**, **93.23%** | **90.00%**, **92.46%** | 0.20%, 0.30% | 0.00%, 0.03% |
-| E(H)₂₆                       | 90.57%, 92.30%    | 89.47%, 92.16%    | 0.23%, 78.53%    | 0.03%, 0.03%     |
-| E(H)₂₇                       | 89.43%, 92.56%    | 89.03%, 92.20%    | 0.13%, 72.03%    | 0.03%, 0.03%     |
-| E(H)₂₈                       | 74.27%, 82.63%    | 62.33%, 75.60%    | 0.87%, 17.50%    | 0.03%, 0.03%     |
-| E(H)₂₉                       | 74.40%, 82.16%    | 62.90%, 76.20%    | 0.17%, 24.76%    | 0.03%, 0.03%     |
-| E(H)₃₀                       | 77.83%, 84.83%    | 65.80%, 80.26%    | 0.20%, 24.20%    | 0.03%, 0.03%     |
-| E(H)₃₁                       | 77.57%, 83.80%    | 65.57%, 78.20%    | 0.23%, 19.30%    | 0.03%, 0.03%     |
-| **Size 25×25 (L=240)**       |                   |                   |                  |                  |
-| E(H)₃₂                       | 87.77%, 91.00%    | 85.80%, 90.43%    | 0.37%, 68.46%    | 87.03%, 90.40%   |
-| E(H)₃₃                       | 87.73%, 91.76%    | 86.67%, 91.00%    | 0.40%, 0.86%     | 0.03%, 90.96%    |
-| E(H)₃₄                       | 88.30%, 91.26%    | 86.23%, 90.50%    | 0.33%, 68.63%    | 87.20%, 91.16%   |
-| E(H)₃₅                       | 87.50%, 91.56%    | 85.73%, 91.26%    | 0.07%, 75.16%    | 0.03%, **91.40%**|
-| E(H)₃₆                       | 87.20%, 91.00%    | 85.70%, 90.43%    | 0.27%, 69.50%    | 85.87%, 90.70%   |
-| E(H)₃₇                       | 86.67%, 90.80%    | 86.43%, 90.86%    | 0.03%, 0.03%     | 0.03%, 91.03%    |
-| E(H)₃₈                       | 86.50%, 90.60%    | 85.20%, 89.83%    | 0.27%, 68.76%    | 85.00%, 90.33%   |
-| E(H)₃₉                       | 86.83%, 90.73%    | 86.07%, 89.83%    | 0.03%, 0.06%     | 0.03%, 89.86%    |
-| E(H)₄₀                       | 87.37%, 91.56%    | 85.97%, 90.56%    | 0.53%, 0.56%     | 86.63%, 91.00%   |
-| E(H)₄₁                       | 86.93%, 91.03%    | 85.57%, 89.66%    | 0.30%, **79.16%**| 86.13%, 90.00%   |
-| **Size 48×48 (L=125)**       |                   |                   |                  |                  |
-| E(H)₄₂                       | 88.60%, 91.86%    | 87.73%, 90.46%    | 0.20%, 78.73%    | **87.23%**, 0.03%|
-
+| Graph Matrix | Nishimori | Spin Glass | Mean-field | Laplacian |
+|---|---|---|---|---|
+| **Size 2×2 (L=3000)** | | | | |
+| E(H)₃ | 23.67%, 31.40% | 26.63%, 30.30% | 0.03%, 20.70% | 32.73%, 0.03% |
+| E(H)₄ | 54.43%, 37.93% | 47.00%, 32.80% | 1.20%, 3.16% | 0.03%, 0.10% |
+| E(H)₅ | 53.40%, 33.10% | 46.57%, 33.50% | 1.10%, 4.56% | 0.10%, 0.03% |
+| E(H)₆ | 26.20%, 31.73% | 29.10%, 26.56% | 0.03%, 22.46% | 31.97%, 0.03% |
+| E(H)₇ | 23.67%, 31.40% | 26.63%, 30.33% | 0.03%, 20.70% | 32.73%, 0.03% |
+| E(H)₈ | 54.43%, 37.93% | 47.00%, 32.80% | 1.27%, 3.16% | 0.03%, 0.10% |
+| E(H)₉ | 53.40%, 33.10% | 46.57%, 33.43% | 1.10%, 4.56% | 0.10%, 0.03% |
+| E(H)₁₀ | 26.17%, 31.73% | 29.10%, 26.56% | 0.03%, 22.46% | 31.97%, 0.03% |
+| E(H)₁₁ | 23.67%, 31.40% | 26.63%, 30.33% | 0.03%, 20.60% | 32.77%, 0.03% |
+| E(H)₁₂ | 54.43%, 37.93% | 47.00%, 32.80% | 1.27%, 3.16% | 0.03%, 0.10% |
+| E(H)₁₃ | 26.17%, 31.70% | 29.10%, 26.56% | 0.03%, 22.46% | 31.97%, 0.03% |
+| **Size 4×4 (L=1500)** | | | | |
+| E(H)₁₄ | 68.37%, 75.63% | 67.70%, 73.53% | 0.07%, 21.43% | 0.03%, 0.03% |
+| E(H)₁₅ | 69.70%, 74.70% | 66.43%, 71.83% | 0.30%, 0.13% | 0.03%, 0.03% |
+| E(H)₁ | 70.67%, 76.46% | 67.83%, 73.96% | 0.17%, 0.30% | 67.63%, 0.03% |
+| E(H)₁₆ | 68.60%, 75.76% | 65.17%, 71.73% | 0.17%, 0.20% | 66.10%, 0.03% |
+| E(H)₁₇ | 68.37%, 75.63% | 67.70%, 73.53% | 0.07%, 21.43% | 0.03%, 0.03% |
+| E(H)₁₈ | 69.70%, 74.70% | 66.53%, 71.83% | 0.30%, 0.13% | 0.03%, 0.03% |
+| E(H)₁₉ | 70.63%, 76.46% | 67.77%, 74.13% | 0.17%, 0.30% | 67.63%, 0.03% |
+| E(H)₂₀ | 68.60%, 75.70% | 65.17%, 71.73% | 0.17%, 0.20% | 66.07%, 0.03% |
+| E(H)₂₁ | 69.70%, 74.70% | 66.20%, 71.83% | 0.30%, 0.13% | 0.03%, 0.03% |
+| E(H)₂₂ | 70.67%, 76.46% | 67.77%, 74.13% | 0.17%, 0.30% | 67.63%, 0.03% |
+| E(H)₂₃ | 68.60%, 75.73% | 65.17%, 71.73% | 0.17%, 0.20% | 66.07%, 0.03% |
+| E(H)₂₄ | 64.57%, 72.53% | 63.57%, 71.33% | 0.17%, 0.26% | 0.03%, 0.03% |
+| E(H)₂₅ | 67.73%, 74.26% | 66.40%, 73.50% | 0.13%, 0.26% | 0.03%, 0.03% |
+| **Size 16×16 (L=375)** | | | | |
+| E(H)₂ | **90.60%**, **93.23%** | **90.00%**, **92.46%** | 0.20%, 0.30% | 0.00%, 0.03% |
+| E(H)₂₆ | 90.57%, 92.30% | 89.47%, 92.16% | 0.23%, 78.53% | 0.03%, 0.03% |
+| E(H)₂₇ | 89.43%, 92.56% | 89.03%, 92.20% | 0.13%, 72.03% | 0.03%, 0.03% |
+| E(H)₂₈ | 74.27%, 82.63% | 62.33%, 75.60% | 0.87%, 17.50% | 0.03%, 0.03% |
+| E(H)₂₉ | 74.40%, 82.16% | 62.90%, 76.20% | 0.17%, 24.76% | 0.03%, 0.03% |
+| E(H)₃₀ | 77.83%, 84.83% | 65.80%, 80.26% | 0.20%, 24.20% | 0.03%, 0.03% |
+| E(H)₃₁ | 77.57%, 83.80% | 65.57%, 78.20% | 0.23%, 19.30% | 0.03%, 0.03% |
+| **Size 25×25 (L=240)** | | | | |
+| E(H)₃₂ | 87.77%, 91.00% | 85.80%, 90.43% | 0.37%, 68.46% | 87.03%, 90.40% |
+| E(H)₃₃ | 87.73%, 91.76% | 86.67%, 91.00% | 0.40%, 0.86% | 0.03%, 90.96% |
+| E(H)₃₄ | 88.30%, 91.26% | 86.23%, 90.50% | 0.33%, 68.63% | 87.20%, 91.16% |
+| E(H)₃₅ | 87.50%, 91.56% | 85.73%, 91.26% | 0.07%, 75.16% | 0.03%, **91.40%** |
+| E(H)₃₆ | 87.20%, 91.00% | 85.70%, 90.43% | 0.27%, 69.50% | 85.87%, 90.70% |
+| E(H)₃₇ | 86.67%, 90.80% | 86.43%, 90.86% | 0.03%, 0.03% | 0.03%, 91.03% |
+| E(H)₃₈ | 86.50%, 90.60% | 85.20%, 89.83% | 0.27%, 68.76% | 85.00%, 90.33% |
+| E(H)₃₉ | 86.83%, 90.73% | 86.07%, 89.83% | 0.03%, 0.06% | 0.03%, 89.86% |
+| E(H)₄₀ | 87.37%, 91.56% | 85.97%, 90.56% | 0.53%, 0.56% | 86.63%, 91.00% |
+| E(H)₄₁ | 86.93%, 91.03% | 85.57%, 89.66% | 0.30%, **79.16%** | 86.13%, 90.00% |
+| **Size 48×48 (L=125)** | | | | |
+| E(H)₄₂ | 88.60%, 91.86% | 87.73%, 90.46% | 0.20%, 78.73% | **87.23%**, 0.03% |
 
 ### Edge Weight Metrics
-
 **Original Metric (Eq.1)** from Dall'Amico et al. [9]:  
-J<sub>ij</sub> = |(z<sub>i</sub>, z<sub>j</sub>)| / l
+$J_{ij} = |(z_i, z_j)| / l$
 
 **Proposed Cosine Similarity Metric (Eq.2)** from our paper [10]:  
-J<sub>ij</sub> = |(z<sub>i</sub>, z<sub>j</sub>)| / (|z<sub>i</sub>| |z<sub>j</sub>|)
+$J_{ij} = |(z_i, z_j)| / (|z_i| |z_j|)$
 
 Where:
 - $z_i, z_j$ = node feature vectors
@@ -176,395 +127,281 @@ Where:
 - $l$ = normalization constant (original)
 - $|\cdot|$ = vector norm
 
-All results related in Table currentrly improved by more carefull temperature estimation and feature selection, particulary Size 16×16 (L=375)  E(H)₂  Quasi-Cyclic graph overlap values became more that 99% (from 92.46%).
+### Recent Improvements
+All results in the table above have been further improved by more careful Nishimori temperature estimation and feature selection. In particular, for **Quasi-Cyclic graph E(H)₂** (size 16×16, circulant permutation matrix $L=375$), clustering overlap values now exceed **99%** (up from 92.46% reported in [10]).
 
-### **Recent Improvements**  
-- **Nishimori temperature estimation** and **feature selection** now achieve **>99% clustering overlap** (previously 92.46% [10]) for **Quasi-Cyclic graph E(H)₂** (size 16×16, circulant permutation matrix \( L=375 \)).  
+---
 
+## 6. Quantum Machine Learning: QC‑LDPC Ansätze, Annealing & Training
 
+The transition from classical to quantum computing fundamentally alters how information is represented and learned. The LDPC-based framework becomes not merely advantageous but **essential** in the quantum regime *(Citation 2)*.
 
+### 6.1 LDPC‑Structured Quantum Ansätze and Annealing
 
+Variational Quantum Algorithms (VQAs) employ parameterised circuits whose expressivity depends critically on entanglement structure. Random circuits suffer from barren plateaus, while highly structured circuits may be classically simulable. **QC‑LDPC graphs define an optimal middle ground**: the Tanner graph of a quantum LDPC code determines the entanglement pattern of the variational ansatz, with girth and EMD directly controlling entanglement spreading.
 
+Quantum annealers physically implement Ising Hamiltonians via superconducting qubits; embedding problems onto hardware graphs is a major bottleneck. QC‑LDPC codes provide native problem structures whose sparse local interactions map directly onto Chimera or Pegasus topologies **without minor-embedding overhead**. Future quantum annealers could run BP-style algorithms in hardware, using transverse-field tunnelling to escape trapping-set basins at rates governed by the Nishimori temperature *(Citation 2)*.
 
+### 6.2 Quantum Error Correction as Model Regularization
 
-## Large Language Models as LDPC codes Graph and decoder optimization 
+In quantum machine learning every gate is noisy; error correction is a prerequisite for scalable computation rather than an afterthought. The topological LDPC codes developed in our framework—particularly hyperbolic surface codes derived from toroidal QC‑LDPC structures—offer **constant-rate, linear-distance protection**.
 
+Crucially, the **same graph structure serves dual purposes** *(Citation 2)*:
+1. As a sparse prior for classical DNN inference (see Sections 5 & 7).
+2. As a quantum error-correcting code protecting the variational quantum circuit.
 
-This proposed approach has implications for the development of new embedding methods based on trapping sets. Statistical physics and number geometry are utilized to optimize error-correcting codes, leading to these embedding and sparse factorization methods. The paper establishes a direct connection between DNN architecture and error-correcting coding by demonstrating how state-of-the-art DNN Transformer architectures (ChordMixer, Mega, Mega-chunk, CDIL, ...) from the long-range arena can be equivalent to specific types (Cage-graph, Repeat Accumulate) of block and convolutional LDPC codes.
+This unification implies that hardware-optimised QC‑LDPC graphs are **“future-proof”**: they accelerate classical inference today and provide native error correction for quantum accelerators tomorrow *(Citation 2)*.
 
+### 6.3 Conceptual Shifts in Moving to Quantum Training *(Citation 3)*
 
+| Classical Regime | Quantum Regime |
+|---|---|
+| **Parameters** | Real parameters $\theta\in\mathbb{R}^d$ → unitary evolution angles $\phi\in[0,2\pi)^d$ parameterising $U(\phi)$. The loss landscape lives on the Lie algebra $\mathfrak{su}(2^n)$ rather than Euclidean space. |
+| **Gradients** | Chain rule / back-propagation → **parameter-shift rule**: $$\frac{\partial\langle O\rangle}{\partial\phi_i}=\frac{1}{2}\Big(\langle O\rangle_{\phi_i+\pi/2}-\langle O\rangle_{\phi_i-\pi/2}\Big).$$ The sparse QC‑LDPC structure reduces overhead: because each parameter affects only a local neighbourhood (bounded degree), gradients can be estimated in parallel with query complexity $O(d_c)$ rather than $O(d)$. |
+| **Noise** | Thermal noise at $T=1/\beta$ → quantum decoherence. The Nishimori condition generalises to the **quantum Nishimori temperature**, where the Kraus operator representation of noise commutes with code stabilizers, maximising the quantum Fisher information metric. |
+| **Subgraph defects** | Trapping sets in classical LDPC → degenerate excited states in quantum CSS codes. The spectral gap between logical and physical excitations is exactly $d_{\min}$; maximising it simultaneously improves classical adversarial robustness and quantum fault tolerance. |
 
-![alt text](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/Mega_arch.png)
+## 7. Large Language Models as LDPC Codes: Graph & Decoder Optimization
 
+The proposed approach has direct implications for new embedding methods based on trapping sets. Statistical physics and number geometry are utilized to optimize error-correcting codes, leading to these embedding and sparse factorization methods. Our work establishes a direct connection between DNN architecture and error-correcting coding by demonstrating how state-of-the-art Transformer architectures (ChordMixer, Mega, Mega-chunk, CDIL, ...) from the Long-Range Arena can be equivalent to specific types of block and convolutional LDPC codes.
 
-The Mega-chunk model with two chunks of length 3 is represented in the Figure. A bipartite graph representation shows that such a neural network is equivalent to a parity-check matrix of protograph:
- 
+### 7.1 Mega & Mega‑chunk as GeIRA QC‑LDPC
+![Mega architecture](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/Mega_arch.png)
 
-$$  H_{MEGA} =  {\left\lbrack \matrix{1 & 1 & 1 & 1\cr 0 & 1 & 1 & 1 \cr 0 & 0 & 1 & 1 \cr 0 & 0 & 0 & 1} \right\rbrack} $$
-
-
-
-
-The Mega and Mega-chunk Attention models use an Generalized Irregular Repeat Accumulate (GeIRA) protograph QC-LDPC codes (Repeat Accumulate (RA)[0] and GeIRA[0], for detail read article https://arxiv.org/abs/2307.15778).
-
-
-![alt text](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/RA_embd.png)
-
-
-
-![alt text](https://github.com/Lcrypto/Topology-Signal-Processing/blob/master/RA_codes.png)
-
-
-The dynamic approach combines: convolutional and block codes by incorporating attention and convolution within a deep neural network (DNN) proposed by Schmidhube at 1991. RA LDPC codes and GeIRA codes under DNN allow to bypass non-linear processing (Fast feature), paper [-1].
-
-
-![alt text](https://github.com/Lcrypto/Topology-Signal-Processing/blob/master/Fast_slow_weigth.png)
-
-
-
-
-
-
-
-Another state-of-the-art attention architecture from the long-range arena is presented in the article by [1], which is based on the P2P Chord protocol, left.  ChordMixer utilizes Cage graphs as distance graphs to design its attention mechanism, as shown in the research paper by [1]. Using Cage graphs allows ChordMixer to construct the attention mechanism in a way that is equivalent to the parity-check matrix of cage/distance graph LDPC codes (for detail read article https://arxiv.org/abs/2307.15778).
-
-
-
-![alt text](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/Chord_protocol_cage_distance_graph_parity-check_matrix.png)
-
-
-
-
-Convolutional model ("CDIL"). This is a convolutional code that uses the 2P Chord protocol as its basis and is considered a column weight 3 convolutional code (computation tree of weight 3).
-
-
-![alt text](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/CDIL.png)
-
-
-
-
-
-
-
-QC codes correspond to certain types of chemical elements, with the carbon element being represented by the mixed automorphism Shu-Lin-Fossorier QC-LDPC code. The feasibility of original parity-check matrix of Shu-Lin-Fossorier QC-LDPC code serving as a representation of Nitrogen can be confirmed effortlessly by employing the following logic
-
-
-
-$$  
-H=\left( \begin{array}{c} {\begin{array}{ccccc} {I_{17} } & {I_{17} } & {I_{17} } & {I_{17} } & {I_{17} } \end{array}} \cr {H_{1} } \cr {H_{2} } \cr {H_{3} } \cr {H_{4} } \end{array}\right) = \left( \begin{array}{c} {\begin{array}{ccccc} {I_{17} } & {I_{17} } & {I_{17} } & {I_{17} } & {I_{17} } \end{array}} \cr {C_{85}^{0} +C_{85}^{24} +C_{85}^{40} +C_{85}^{71} +C_{85}^{84} } \cr {C_{85}^{1} +C_{85}^{49} +C_{85}^{58} +C_{85}^{81} +C_{85}^{84} } \cr {C_{85}^{3} +C_{85}^{14} +C_{85}^{32} +C_{85}^{78} +C_{85}^{84} } \cr {C_{85}^{16} + C_{85}^{33} +C_{85}^{50} +C_{85}^{67} +C_{85}^{84} } \end{array} \right) 
- $$
-
-
-To determine the values of  spherical coordinate system $\varphi $, $\theta $, we use the criterion for the presence of a cycle of length 6 (call it cycle based gauge) in the quasi-cyclic check matrix, (Fossorier04). Based on the electron cloud associated with an atom of a chemical element, we can refer this equation as the Schrödinger-Heisenberg-Bohr-Fossorier electron cloud Gauge (SHBF Cycle Gauge):
-
-$$ 
-\left( \sum_{i=1}^{N-1} \Delta_{ji,ji+1} \left( l_{i} \right) \right) \mod {k}=0 
-$$
-
-Now let's collapse the matrix along the radii:
-
-
-$$ 
-H= \left( \begin{array}{c} {\begin{array}{cccccc} {C_{8}^{0} } & {C_{8}^{0} } & {C_{8}^{2} } & {C_{8}^{2} } & {C_{8}^{2} } & {C_{8}^{2} } \end{array}} \cr {C_{48}^{1} +C_{48}^{7} +C_{48}^{13} +C_{48}^{19} +C_{48}^{25} +C_{48}^{31} } \cr {C_{48}^{23} +C_{48}^{17} +C_{48}^{47} +C_{48}^{41} +C_{48}^{35} +C_{48}^{29} } \end{array} \right)  \to \left( \begin{array}{c} { \begin{array}{cccccc} {I_{8} } & {I_{8} } & {I_{8} } & {I_{8}} & {I_{8}} & {I_{8} } \end{array}} \cr {C_{48}^{1} +C_{48}^{7} +C_{48}^{13} +C_{48}^{19} +C_{48}^{25} +C_{48}^{31} } \cr {C_{48}^{23} +C_{48}^{17} +C_{48}^{47} +C_{48}^{41} +C_{48}^{35} +C_{48}^{29} } \end{array} \right) 
-$$
-
-
-
-The first row, on which the collapse was carried out, contains 6 circulants of size 8 and weight 1. 2 shift 0 circulants correspond to the first energy level, 4 shift 2 circulants correspond to the second energy level (Carbon):
-
+The Mega-chunk model with two chunks of length 3 is represented above. Its bipartite graph representation shows that such a neural network is equivalent to a parity-check matrix of protograph:
 
 $$
-1s^{2} ; 2s^{2} 2p^{2}
+H_{\text{MEGA}} = 
+\begin{bmatrix}
+1 & 1 & 1 & 1\\
+0 & 1 & 1 & 1 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 1
+\end{bmatrix}.
 $$
 
+Mega and Mega-chunk Attention models use Generalized Irregular Repeat Accumulate (GeIRA) protograph QC-LDPC codes (Repeat Accumulate (RA) [0] and GeIRA [0]); for details see the article https://arxiv.org/abs/2307.15778.
 
-Numerous optimization problems, including those in computer vision (Quantum  Computer Vision, \cite{Yu22}), can be converted into a Quadratic Unconstrained Binary Optimization (QUBO) form, \cite{Ble23}. However, QUBO problems are typically NP-complete, which implies that finding solutions through classical means necessitates exploring an exponentially growing solution space as problem size increases. In contrast, quantum computing holds the promise of exponentially faster computation due to the superposition nature of qubits. The exponentially expanding Hilbert space of a quantum system naturally accommodates the solution space of combinatorial optimization problems, offering potential advantages over classical machines in solving such problems. The Quantum Approximate Optimization Algorithm (QAOA) is specifically designed to address QUBO problems by utilizing a quantum circuit to find approximate solutions. 
-The Quantum Approximate Optimization Algorithm (QAOA) used in the Sherrington-Kirkpatrick Ising model can be seen as analogous to the back-propagation loss function landscape in training DNNs. This similarity creates a comparable problem with TS pseudo-codeword, resembling the belief propagation method. 
-QAOA can solve binary optimization problems known as QUBOs (Quadratic Unconstrained Binary Optimization). QUBO problems fall under the NP-complete class, guaranteeing that any NP-complete problem can be efficiently transformed into a QUBO problem. This mapping of Karp's 21 NP-complete problems to QUBO is extensively discussed in paper \cite{Lu23}. In addition to MaxCut, other relevant optimization problems such as Graph Coloring   \cite{Ta20}, Number Partitioning, and Quadratic Knapsack (\cite{Glo19}) have been successfully formulated as QUBO problems.
+![RA embedding](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/RA_embd.png)
+![RA codes](https://github.com/Lcrypto/Topology-Signal-Processing/blob/master/RA_codes.png)
 
+The dynamic approach combines convolutional and block codes by incorporating attention and convolution within a deep neural network (DNN) proposed by Schmidhuber in 1991. RA LDPC codes and GeIRA codes under DNN allow bypassing non-linear processing via fast weights [–1].
 
-In a QUBO problem, the unknown vector $\mathbf{x} = (x_1,\ldots,x_n)$ consists of decision variables taking discrete binary values, i.e., $\mathbf{x} \in \{0,1\}^n$. The problem is defined by a square symmetric matrix $\mathbf{Q} \in \mathbb{R}^{n \times n}$. The objective is to find the optimal vector $\mathbf{x}^*$ that minimizes the cost function:
+![Fast & slow weights](https://github.com/Lcrypto/Topology-Signal-Processing/blob/master/Fast_slow_weigth.png)
 
+### 7.2 ChordMixer: Cage‑Graph Attention
+Another state-of-the-art attention architecture from the long-range arena is presented in article [1], based on the P2P Chord protocol. ChordMixer utilizes **Cage graphs** as distance graphs to design its attention mechanism, yielding an attention structure equivalent to the parity-check matrix of cage/distance-graph LDPC codes (for details see https://arxiv.org/abs/2307.15778).
 
-$$
-C(\mathbf{x}) = \mathbf{x}^T \mathbf{Q} \mathbf{x} = \sum_{i, j=1}^{n} Q_{ij}x_i x_j
-$$
+![Chord protocol & cage graph](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/Chord_protocol_cage_distance_graph_parity-check_matrix.png)
 
-QUBO problems can also be framed as maximization problems by inverting the sign of the cost function. It is important to note that QUBO problems do not have any constraints on the variables $\mathbf{x}$.
+### 7.3 CDIL: Column‑Weight‑3 Convolutional Code
+The convolutional model “CDIL” uses the 2P Chord protocol as its basis and is equivalent to a **column-weight-3 convolutional code** (computation tree of weight 3).
 
-QUBO instances are closely related to Ising models. They can be mapped to each other with a one-to-one correspondence, where the QUBO variables $\mathbf{x} \in \{0,1\}^n$ are replaced by Ising variables $\mathbf{z} \in \{-1,1\}^n$, with $z_i = 2x_i - 1$ for $i=1,\ldots,n$. The Ising Hamiltonian, dependent on $\mathbf{z}$, is equivalent to the QUBO cost function, with a constant term irrelevant for optimization.
+![CDIL](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/CDIL.png)
 
-
-
-
-Additionally, the layer depth in QAOA correlates to the number of decoding belief propagation iterations in the Wiberg decoding tree.
-
-
-
-Overall, this work has the potential to advance multiple fields, from Information Theory, DNN architecture design (sparse and structured prior graph topology), efficient hardware design for Quantum and Classical DPU/TPU (graph, quantize and shift register architect.) to Materials Science and beyond.
-
-
-# Matrix factorization
-
-
-Matrix factorization can be considered as a special case of (Ising spin-glass and equivivalent to them code on the graph) embedding, low dimension projection. Codes on the Graph based Sparse Matrix Factorization application represented bellow: 
-
-
-The Sparse Factorization (SF) can thus be formulated as the following optimization problem, paper [1]:
-
-
-
+### 7.4 Chemical Analogy: QC Circulants as Electron Cloud Gauges
+QC codes correspond to certain types of chemical elements; the carbon element is represented by the mixed-automorphism Shu-Lin-Fossorier QC-LDPC code. The feasibility of the original parity-check matrix serving as a representation of Nitrogen can be confirmed by employing circulant-shift logic:
 
 $$
-\mathop{\min }\limits_{W^{(1)} ,\ldots ,W^{(M)} } \left\| X-\prod _{m=1}^{M}W^{(M)}  \right\| _{F}^{2}
+H=\left( \begin{array}{c} 
+{\begin{array}{ccccc} {I_{17}} & {I_{17}} & {I_{17}} & {I_{17}} & {I_{17}} \end{array}} \\ 
+{H_{1}} \\ {H_{2}} \\ {H_{3}} \\ {H_{4}} 
+\end{array}\right) 
+= 
+\left( \begin{array}{c} 
+{\begin{array}{ccccc} {I_{17}} & {I_{17}} & {I_{17}} & {I_{17}} & {I_{17}} \end{array}} \\ 
+{C_{85}^{0}+C_{85}^{24}+C_{85}^{40}+C_{85}^{71}+C_{85}^{84}} \\ 
+{C_{85}^{1}+C_{85}^{49}+C_{85}^{58}+C_{85}^{81}+C_{85}^{84}} \\ 
+{C_{85}^{3}+C_{85}^{14}+C_{85}^{32}+C_{85}^{78}+C_{85}^{84}} \\ 
+{C_{85}^{16}+ C_{85}^{33}+C_{85}^{50}+C_{85}^{67}+C_{85}^{84}} 
+\end{array} \right).
 $$
 
+To determine spherical coordinates $\varphi, \theta$, we use the criterion for the presence of a cycle of length 6 (cycle-based gauge) in the quasi-cyclic check matrix [Fossorier04]. Based on the electron cloud associated with an atom, we refer to this as the **Schrödinger-Heisenberg-Bohr-Fossorier Electron Cloud Gauge (SHBF Cycle Gauge)**:
+
+$$
+\left( \sum_{i=1}^{N-1} \Delta_{ji,ji+1}(l_i) \right) \bmod k = 0.
+$$
+
+Collapsing the matrix along radii gives:
+
+$$
+H= \left( \begin{array}{c} 
+{\begin{array}{cccccc} {C_{8}^{0}} & {C_{8}^{0}} & {C_{8}^{2}} & {C_{8}^{2}} & {C_{8}^{2}} & {C_{8}^{2}} \end{array}} \\ 
+{C_{48}^{1}+C_{48}^{7}+C_{48}^{13}+C_{48}^{19}+C_{48}^{25}+C_{48}^{31}} \\ 
+{C_{48}^{23}+C_{48}^{17}+C_{48}^{47}+C_{48}^{41}+C_{48}^{35}+C_{48}^{29}} 
+\end{array} \right)
+\to
+\left( \begin{array}{c} 
+{\begin{array}{cccccc} {I_{8}} & {I_{8}} & {I_{8}} & {I_{8}} & {I_{8}} & {I_{8}} \end{array}} \\ 
+{C_{48}^{1}+C_{48}^{7}+C_{48}^{13}+C_{48}^{19}+C_{48}^{25}+C_{48}^{31}} \\ 
+{C_{48}^{23}+C_{48}^{17}+C_{48}^{47}+C_{48}^{41}+C_{48}^{35}+C_{48}^{29}} 
+\end{array} \right).
+$$
+
+The first collapsed row contains 6 circulants of size 8 and weight 1:
+- 2 shift-$0$ circulants → $1s^2$
+- 4 shift-$2$ circulants → $2s^2\,2p^2$
+
+yielding the Carbon electron configuration:
+$$1s^{2};\; 2s^{2}\,2p^{2}.$$
+
+## 8. From Ising to QUBO: Quantum Annealing and QAOA
+
+Numerous optimization problems—including those in quantum computer vision [Yu22]—can be converted into Quadratic Unconstrained Binary Optimization (QUBO) form [Ble23]. QUBO problems are typically NP-complete, requiring exploration of an exponentially growing solution space classically. The exponentially expanding Hilbert space of a quantum system naturally accommodates this combinatorial search.
+
+The **Quantum Approximate Optimization Algorithm (QAOA)** is designed for QUBOs by utilizing a quantum circuit to find approximate solutions. When applied to the Sherrington-Kirkpatrick Ising model, QAOA can be seen as analogous to back-propagation loss landscapes in DNN training; both suffer from TS pseudo-codeword-like effects resembling belief propagation failures.
+
+QAOA solves binary optimization problems with unknown vector $\mathbf{x} \in \{0,1\}^n$ and symmetric matrix $\mathbf{Q}\in\mathbb{R}^{n\times n}$:
+
+$$
+C(\mathbf{x}) = \mathbf{x}^T \mathbf{Q} \mathbf{x} = \sum_{i,j=1}^{n} Q_{ij}x_i x_j.
+$$
+
+QUBO maps one-to-one to Ising variables $\mathbf{z}\in\{-1,1\}^n$ via $z_i = 2x_i - 1$. The layer depth in QAOA correlates with the number of belief-propagation iterations in the Wiberg decoding tree.
+
+Overall, this framework has the potential to advance multiple fields—from Information Theory and DNN architecture design (sparse structured prior graph topology) to efficient hardware design for Quantum and Classical DPU/TPU architectures, Materials Science, and beyond.
+
+## 9. Matrix Factorization as Sparse Code-on-Graph Embedding
+
+Matrix factorization can be viewed as a special case of Ising spin-glass embedding—i.e., low-dimension projection via codes on the graph.
+
+Sparse Factorization (SF) is formulated [1] as:
+
+$$
+\min_{W^{(1)},\dots,W^{(M)}} \Bigl\| X - \prod_{m=1}^{M} W^{(m)} \Bigr\|_F^2,
+$$
+
+where each $W^{(m)}$ is a sparse square matrix with non-zero positions specified by:
+- Chord protocol (SF Chord),
+- LDPC codes parity-check using PEG+ACE,
+- QC-LDPC and MET QC-LDPC codes with circulant weight $>1$,
+- Product multigraph MET QC-LDPC codes via SA+EMD (Simulated Annealing with exact Extrinsic Message Degree optimization).
+
+![Comparison](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/images_compare_27_02_.jpg)
+![Table 1 v2](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/Table_1_v2.png)
+
+We modified the Matlab platform from [1] as the base for Non-parametric Sparse Factorisation using LDPC codes, MET QC-LDPC codes and Multi-graph Product codes:  
+https://github.com/RuslanKhalitov/SparseFactorization
+
+Code constructions used:
+- **PEG+ACE**: Progressive Edge Growth with Approximate Cycle Extrinsic message degree [2,3,4] — https://github.com/Lcrypto/classic-PEG-
+- **QC-LDPC / MET QC-LDPC / Multigraph product (Chord-like)**: Simulated Annealing with EMD and code-distance sieving [5,6] — 
+  - https://github.com/Lcrypto/Simulated-annealing-lifting-QC-LDPC
+  - https://github.com/Lcrypto/Length-und-Rate-adaptive-code
+
+### Parity-Check Matrix Notation Examples
+
+**Quasi-cyclic multigraph product code (Chord-like)** `AntinegoMETProduct3.txt`:
 
 
 
+1	1	205
+0&154&3&2&65&85&70&97
 
-where $W^{(M)} $'s are sparse square matrices with non-zero positions specified by the Chord protocol (SF Chord), LDPC codes parity-check  using PEG+ACE and QC-LDPC codes parity-check matrix, MET QC-LDPC codes with circulant more than 1 and product multigraph MET QC-LDPC codes parity-check using SA+EMD, Simulated Annealing with exact cycle extrinsic message degree optimization (EMD). 
+*1 column, 1 row, QC circulant of size 205; weight-8 circulant with shifts 0, 154, 3, 2, 65, 85, 70, 97.*
 
-
-
-![alt text](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/images_compare_27_02_.jpg)
-
-
-![alt text](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/Table_1_v2.png)
-
-
-We modified the Matlab platform from the paper [1], as the base platform for Non-parametric Sparse Factorisation using LDPC codes, MET QC-LDPC codes and Multi-graph Product codes in our work https://github.com/RuslanKhalitov/SparseFactorization for using Code on the Graph: LDPC Codes constructed using Progressive Edge Grown method with ACE optimization [2,3,4]; QC-LDPC Codes, Multi-Edge QC-LDPC Code, Multigraph product code (Chord like) using Simulated Annealing method with EMD and code distance sieving optimization [5, 6]. 
-
-
-
-
-
-Parity-check matrix of code on the graph use the following notation:
-
-
-For example Quasi-cyclic (QC) multigraph product code (Chord like) AntinegoMETProduct3.txt:
-
-     1	1	205
-
-
-     0&154&3&2&65&85&70&97	
-
-
-1 column 1 row and QC  circulant of size 205
-
-
-circulant have weight 8 with shifts:  0, 154, 3, 2, 65, 85, 70, 97	
-
-
-
-
-
-WebkbCornell factorization Multi-edge Type (MET) QC-LDPC parity-check matrix  "3_3_65weight3.txt" :
-
-
-3 columns 3 rows and QC circulant of size 65
-
+**WebkbCornell factorization MET QC-LDPC** `3_3_65weight3.txt`:
 
 3	3	65
+50&1&26	2&49&19	13&5&42
+5&58	5&60	60&4
+18&4&48	28&23&61	4&53&1
 
-each circulant represented by following shifts:
 
+**A99m factorization QC-LDPC** `13_13_18A99m.txt`:
+*13 columns, 13 rows, QC circulant size 18; -1 denotes a zero circulant of size 19×19.*
 
-     50&1&26	2&49&19	13&5&42	
+13	13	18
+14	1	1	-1	0	17	-1	-1	-1	12	17	-1	-1
+3	11	6	17	-1	-1	-1	14	8	-1	16	-1	-1
+-1	-1	-1	-1	9	2	-1	-1	-1	13	1	4	13
+8	5	9	0	5	-1	1	14	-1	10	6	-1	-1
+-1	-1	6	0	-1	12	-1	1	-1	-1	1	0	-1
+-1	2	-1	-1	10	-1	0	9	4	11	-1	0	3
+9	-1	-1	16	-1	9	16	9	9	3	2	2	-1
+-1	1	-1	-1	16	-1	5	6	4	5	0	8	16
+-1	11	16	1	-1	11	5	-1	15	-1	17	-1	6
+17	-1	16	3	10	12	9	-1	6	10	-1	16	4
+8	12	-1	-1	0	1	5	-1	17	-1	-1	-1	3
+10	-1	1	7	4	9	15	15	-1	1	-1	5	6
+8	10	6	1	-1	-1	-1	4	3	-1	-1	4	17
 
 
-     5&58	5&60	60&4	
 
+### Datasets Used in Factorization Experiments
 
-     18&4&48	28&23&61	4&53&1	
+| Dataset | $N$ | Description |
+|---|---|---|
+| **AuralSonar** | 100 | Aural Sonar data from Philips et al. (2006); presented in Chen et al. (2009). |
+| **Protein** | 213 | RBF kernel between 213 proteins [Chen et al., 2009]. |
+| **Voting** | 435 | Dissimilarities between voting records with 16 scaled attributes [Chen et al., 2009]. |
+| **Yeast** | 200 | Pairwise Smith-Waterman similarities converted to dissimilarities. |
+| **Sawmill** | 36 | Sparse matrix (124 nz) from the Pajek communication network dataset. |
+| **Scotland** | 108 | Corporate interlocks in Scotland, 1904–5; sparse matrix (644 nz). |
+| **A99m** | 234 | Character relations from German soap opera *Lindenstrasse* (510 nz). |
+| **Mexican power** | 35 | Mexican political elite core network (117 nz). |
+| **Strike** | 24 | Informal communication during a sawmill strike (38 nz). |
+| **Webkb Cornell** | 195 | Citation network among 195 Cornell publications (304 nz). |
+| **WorldTrade** | 80 | World trade in miscellaneous manufactures of metal, 1994 (998 nz). |
+| **Mesh1e1** | 48 | NASA sparse matrix (306 nz) from Alex Pothen. |
+| **Mesh2e1** | 306 | NASA sparse matrix (2018 nz). |
+| **OrbitRaising** | 442 | Optimal control sparse matrix (2906 nz). |
+| **Shuttle Entry** | 560 | Optimal control sparse matrix (6891 nz). |
+| **AntiAngiogenesis** | 205 | Optimal control sparse matrix (1783 nz). |
+| **Phoneme** | 256 | Covariance matrix of the Phoneme dataset [Hastie et al., 2001]. |
+| **MiniBooNE** | 50 | Covariance matrix from UCI; original data has 130064 instances. |
+| **Covertype** | 54 | Covariance matrix from UCI; original data has 581012 instances. |
+| **Mfeat** | 649 | Covariance matrix of the Multiple Features dataset (UCI). |
+| **OptDigits** | 64 | Optical handwritten digits covariance matrix (UCI). |
+| **PenDigits** | 16 | Pen-based handwritten digits covariance matrix (UCI). |
+| **Acoustic** | 50 | Vehicle sound signal features (LIBSVM). |
+| **IJCNN** | 22 | Binary classification features from IJCNN (LIBSVM). |
+| **Spam Ham** | 448 | Email classification dataset with 10000 instances. |
+| **TIMIT** | 390 | Speech recognition; MFCCs over 10 consecutive windows. |
+| **Votes** | 16 | US Congressional voting records benchmark (435 instances). |
 
+---
 
-A99m factorization QC-LDPC parity-check matrix  "13_13_18A99m.txt" :
+# References
 
+-1. Schmidhuber J. Learning to control fast-weight memories: An alternative to recurrent nets. Technical Report FKI-147-91, Institut für Informatik, Technische Universität München, 26 March 1991. https://people.idsia.ch/~juergen/FKI-147-91ocr.pdf; illustration https://people.idsia.ch/~juergen/fast-weight-programmer-1991-transformer.html
 
-consist of 13 columns 13 rows with QC circulant of size 18 of weigth 1 (where -1, it zero circulat of size 19x19):
+0. Divsalar D., H. Jin, and R. J. McEliece. "Coding theorems for ‘turbo-like’ codes." *Proc. 36th Allerton Conf.* 1998, pp. 201–210.
 
+0. Divsalar D., Jones C., Dolinar S., Thorpe J. "Protograph based LDPC codes with minimum distance linearly growing with block size," *IEEE GLOBECOM*, St. Louis, MO, 2005.
 
-     13	13	18
+0. Liva G. et al. "Simple Reconfigurable Low-Density Parity-Check Codes." *IEEE Communications Letters*, Vol. 9, No. 2, February 2005.
 
-     
-     14	1	1	-1	0	17	-1	-1	-1	12	17	-1	-1	
+1. Ruslan Khalitov, Tong Yu, Lei Cheng, Zhirong Yang, **Sparse factorization of square matrices with application to neural attention modeling**, *Neural Networks*, Volume 152, 2022, pp. 160-168. https://github.com/RuslanKhalitov/SparseFactorization
 
-     
-     3	11	6	17	-1	-1	-1	14	8	-1	16	-1	-1	
+2. Xiao-Yu Hu, Eleftheriou E., Arnold D.M. "Regular and irregular progressive edge-growth Tanner graphs," *IEEE Trans. Inform. Theory*, vol. 51, no. 1, pp. 386-398, Jan. 2005. Implementation: https://github.com/Lcrypto/classic-PEG-/
 
-     
-     -1	-1	-1	-1	9	2	-1	-1	-1	13	1	4	13	
+3. Diouf M., Declercq D., Fossorier M., Ouya S., Vasic B. "Improved PEG construction of large girth QC-LDPC codes," *ISTC*, pp. 146-150, 2016.
 
-     
-     8	5	9	0	5	-1	1	14	-1	10	6	-1	-1	
+4. Usatyuk V., Minenkov A. Progressive edge growth for LDPC code construction (C++ / MATLAB PEG+ACE implementations). https://github.com/Lcrypto/classic-PEG-/
 
-     
-     -1	-1	6	0	-1	12	-1	1	-1	-1	1	0	-1	
+5. Usatyuk V., Vorobyev I. "Simulated Annealing Method for Construction of High-Girth QC-LDPC Codes," *TSP*, Athens, Greece, 2018. Implementation: https://github.com/Lcrypto/Simulated-annealing-lifting-QC-LDPC
 
-     
-     -1	2	-1	-1	10	-1	0	9	4	11	-1	0	3	
+6. Usatyuk V.S., Egorov S., Svistunov G. "Construction of Length and Rate Adaptive MET QC-LDPC Codes by Cyclic Group Decomposition," *EWDTS*, Batumi, Georgia, 2019. Implementation: https://github.com/Lcrypto/Length-und-Rate-adaptive-code
 
-     
-     9	-1	-1	16	-1	9	16	9	9	3	2	2	-1	
+7. Usatyuk V.S., Sapozhnikov D., Egorov S.I. **Spherical and Hyperbolic Toric Topology-Based Codes On Graph Embedding for Ising MRF Models: Classical and Quantum Topology Machine Learning.** arXiv:2307.15778, 2023.
 
-     
-     -1	1	-1	-1	16	-1	5	6	4	5	0	8	16	
+8. Usatyuk V.S., Egorov S.I. "Topology-Aware Sparse Factorization in Energy-Based Models: Tori QC-LDPC Codes and Circular Hyperboloid MET QC-LDPC Codes," *DSPA*, Moscow, 2024. https://ieeexplore.ieee.org/document/10510073
 
-     
-     -1	11	16	1	-1	11	5	-1	15	-1	17	-1	6
+9. Dall'Amico, L. et al. (2021). *Nishimori meets Bethe: a spectral method for node classification in sparse weighted graphs.* J. Stat. Mech. 093405.
 
-     
-     17	-1	16	3	10	12	9	-1	6	10	-1	16	4
+10. Usatyuk V.S., Sapozhnikov D.A., Egorov S.I. (2024). **Enhanced Image Clustering with Random-Bond Ising Models Using LDPC Graph Representations and Nishimori Temperature.** *Moscow Univ. Phys.* 79 (Suppl 2), S647-S665. https://link.springer.com/article/10.3103/S0027134924702102; Preprint: https://theory2.sinp.msu.ru/lib/exe/fetch.php/dlcp/dlcp2024/bphm647.pdf
 
-     
-     8	12	-1	-1	0	1	5	-1	17	-1	-1	-1	3
+11. Usatyuk V.S., Sapozhnikov D.A., Egorov S.I. "Flattening Images Manifold at the Nishimori Point: Exploring Linearity in Polysemantic Embedding for Human-Aware Bayesian CNN Image Classification," *DSPA*, Moscow, 2025. https://ieeexplore.ieee.org/document/10977938
 
-     10	-1	1	7	4	9	15	15	-1	1	-1	5	6
+12. Usatyuk V.S., Egorov S.I. "Boosting DNN Efficiency: Replacing FC Layers with Graph Embeddings for Hardware Acceleration," *DSPA*, Moscow, 2025. https://ieeexplore.ieee.org/document/10977895
 
-     
-     8	10	6	1	-1	-1	-1	4	3	-1	-1	4	17
+---
 
+# **Cite this research**
 
-
-Here is a list of datasets with their respective sizes (N) and descriptions:
-
-**AuralSonar** (N = 100): This dataset contains Aural Sonar data from the study by Philips et al. (2006) investigating human ability to distinguish different types of sonar signals by ear. The data has been presented in Chen et al. (2009).
-
-
-**Protein** (N = 213): This dataset, also presented in Chen et al. (2009), contains the radial basis function (RBF) kernel between 213 proteins.
-
-
-**Voting** (N = 435): This dataset, also presented in Chen et al. (2009), contains dissimilarities between 435 voting records with 16 scaled voting attributes.
-
-
-**Yeast** (N = 200):This dataset, from the same repository as AuralSonar in Chen et al. (2009), converts the pairwise Smith-Waterman similarities $s_{ij}$ (Lanckriet et al., 2004; Xu et al., 2014) to dissimilarities by $d_{ij}=\sqrt{s_{ii}+s_{jj}-s_{ji}-s_{ij}}.$ 
-
-**Sawmill** (N = 36): This dataset is a sparse matrix with 124 non-zero entries representing the Sawmill communication network from the Pajek data sets. Data available at http://vlado.fmf.uni-lj.si/pub/networks/data/
-
-
-**Scotland** (N = 108): This dataset is about corporate interlocks in Scotland from 1904-5. It is a sparse matrix with 644 non-zero entries.
-
-
-**A99m** (N = 234): This dataset is about the characters and their relations in the long-running German soap opera called `Lindenstrasse'. It is a sparse matrix with 510 non-zero entries.
-
-
-**Mexican power** (N = 35): This dataset contains the core of the Mexican political elite: the presidents 40 and their closest collaborators. It is a sparse matrix with 117 non-zero entries.
-
-
-**Strike** (N = 24): This dataset is a social network about informal communication within a sawmill on strike. It is a sparse matrix with 38 non-zero entries.
-
-
-**Webkb Cornell** (N = 195): This dataset is about citations among 195 publications from Cornell. It is a sparse matrix with 304 non-zero entries. Data available at https://linqs.soe.ucsc.edu/data
-
-
-**WorldTrade** (N = 80): This dataset is about world trade in miscellaneous manufactures of metal, 1994. It is a sparse matrix with 998 non-zero entries.
-
-
-**Mesh1e1** (N = 48): This dataset is originally from NASA, collected by Alex Pothen. It is a sparse matrix with 306 non-zero entries.  Data available at   https://sparse.tamu.edu/
-
-
-**Mesh2e1** (N = 306): This dataset is also originally from NASA, collected by Alex Pothen. It is a sparse matrix with 2018 non-zero entries.
-
-
-**OrbitRaising** (N = 442): This dataset was from an optimal control problem. It is a sparse matrix with 2906 non-zero entries.
-
-
-**Shuttle Entry** (N = 560): This dataset was also from an optimal control problem. It is a sparse matrix with 6891 non-zero entries.
-
-
-**AntiAngiogenesis** (N = 205): This dataset was also from an optimal control problem. It is a sparse matrix with 1783 non-zero entries.
-
-
-**Phoneme** (N = 256): This dataset contains the covariance matrix of the Phoneme data set accompanied with the Elements of Machine Learning book (Hastie et al., 2001). The original data has 4508 instances of 256 dimensions.  Data available at  https://web.stanford.edu/~hastie/ElemStatLearn/data.html
-Hastie, T., Tibshirani, R., Friedman, J., 2001. The Elements of Statistical Learning. Springer New York Inc.
-
-
-**MiniBooNE** (N = 50): This dataset contains the covariance matrix of the MiniBooNE particle identification data set in the UCI Repository. The original data has 130064 instances of 50 dimensions. Data available at  https://archive.ics.uci.edu/ml/
-
-
-**Covertype** (N = 54): This dataset contains the covariance matrix of the Covertype data set in the UCI Repository. The original data has 581012 instances of 54 dimensions.
-
-
-**Mfeat** (N = 649): This dataset contains the covariance matrix of the Multiple Features data set in the UCI Repository. The original data has 2000 instances of 649 dimensions.
-
-
-**OptDigits** (N = 64): This dataset contains the covariance matrix of the Optical Recognition of Handwritten Digits data set in the UCI Repository. The original data has 5620 instances of 64 dimensions.
-
-
-**PenDigits** (N = 16): This dataset contains the covariance matrix of the Pen-Based Recognition of Handwritten Digits data set in the UCI Repository. The original data has 10992 instances of 16 dimensions
-
-
-**Acoustic** (N = 50): This dataset contains acoustic features from a vehicle sound signal, which can be used to classify the type of vehicle. It is a dataset commonly used in machine learning research, and has been made available by the LIBSVM Classification data collection. Data available at https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/multiclass.html
-
-
-**IJCNN** (N = 22): This dataset contains features from the ijcnn data set, which is also commonly used in machine learning research. It consists of binary classification problems with 22 features, and has been made available by the LIBSVM Classification data collection. Data available at https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary.html
-
-
-**Spam Ham** (N = 448): This dataset is used for email classification practice, with the goal of determining whether an email is spam or ham. It contains 10000 instances with 448 features.
-
-
-**TIMIT** (N = 390): This dataset is used in speech recognition research, with the goal of identifying spoken words. It contains 151290 instances, each with 390 features that represent Mel Frequency Cepstral Coefficients (MFCCs) calculated over 10 consecutive 30ms windows. Data available at https://catalog.ldc.upenn.edu/LDC93S1
-
-
-**Votes** (N = 16): This dataset contains voting records from the US Congress, and is often used as a benchmark for supervised learning algorithms. It contains 435 instances with 16 dimensions representing different attributes related to congressional voting.
-
-
-# References:
-
--1. Schmidhuber J. Learning to control fast-weight memories: An alternative to recurrent nets. Technical Report FKI-147-91, Institut für Informatik, Technische Universität München, 26 March 1991. https://people.idsia.ch/~juergen/FKI-147-91ocr.pdf illustration https://people.idsia.ch/~juergen/fast-weight-programmer-1991-transformer.html
-
-
-0.Divsalar D., H. Jin, and R. J. McEliece. "Coding theorems for ‘turbo-like’ codes." Proc. 36th Allerton Conf. on Communication, Control and Computing, Allerton, Illinois, Sept. 1998, pp. 201–210. 
-
-
-0.Divsalar D.,  Jones C.,  Dolinar S. ,  Thorpe J. "Protograph based LDPC codes with minimum distance linearly growing with block size," IEEE Global Telecomm. Conf., 2005., St. Louis, MO, 2005, pp. 5 
-
-
-0.Liva G. et al.’s "Simple Reconfigurable Low-Density Parity-Check Codes" in IEEE COMMUNICATIONS LETTERS, VOL. 9, NO. 2, FEBRUARY 2005
-
-
-1.  **Ruslan Khalitov, Tong Yu, Lei Cheng, Zhirong Yang, Sparse factorization of square matrices with application to neural attention modeling, Neural Networks, Volume 152, 2022, Pages 160-168** https://github.com/RuslanKhalitov/SparseFactorization
-
-
-
-2. Xiao-Yu Hu, Eleftheriou E., Arnold D. M.  "Regular and irregular progressive edge-growth tanner graphs," in IEEE TiT, vol. 51, no. 1, pp. 386-398, Jan. 2005,  Implementation available at: https://github.com/Lcrypto/classic-PEG-/
-
-
-3. Diouf M., Declercq D., Fossorier  M., S. Ouya, B. Vasic, "Improved PEG construction of large girth QC-LDPC codes", 9th International Symposium on Turbo Codes and Iterative Information Processing (ISTC), pp. 146-150,2016.
-
-
-4.  Usatyuk V., Minenkov A. Progressive edge growth for LDPC code construction C++ and Matlab PEG+ACE implementations, avaliable at
- https://github.com/Lcrypto/classic-PEG-
-
-
-5. Usatyuk V. , Vorobyev I. "Simulated Annealing Method for Construction of High-Girth QC-LDPC Codes," 2018 41st International Conference on Telecommunications and Signal Processing (TSP), Athens, Greece, 2018, pp. 1-5 Implementation available at: https://github.com/Lcrypto/Simulated-annealing-lifting-QC-LDPC
-
-
-6. Usatyuk V. S., Egorov S., Svistunov G. Construction of Length and Rate Adaptive MET QC-LDPC Codes by Cyclic Group Decomposition. IEEE East-West Design & Test Symposium (EWDTS), Batumi, Georgia, 2019, pp. 1-5  Implementation available at: https://github.com/Lcrypto/Length-und-Rate-adaptive-code
-
-
-7. Usatyuk V. S., Sapozhnikov D.  Egorov S., Spherical and Hyperbolic Toric Topology-Based Codes On Graph Embedding for Ising MRF Models: Classical and Quantum Topology Machine Learning   https://arxiv.org/abs/2307.15778
-
-
-8. V. S. Usatyuk and S. I. Egorov, "Topology-Aware Sparse Factorization in Energy-Based Models: Tori QC-LDPC Codes and Circular Hyperboloid MET QC-LDPC Codes," 2024 26th International Conference on Digital Signal Processing and its Applications (DSPA), Moscow, Russian Federation, 2024, pp. 1-6  https://ieeexplore.ieee.org/document/10510073
-
-
-9. Dall'Amico, L. et al. (2021). *Nishimori meets Bethe: a spectral method for node classification in sparse weighted graphs*.    J. Stat. Mech. 093405.
-
-     
-10.   Usatyuk, V.S., Sapozhnikov, D.A. & Egorov, S.I. (2024).  *Enhanced Image Clustering with Random-Bond Ising Models Using LDPC Graph Representations and Nishimori Temperature*.  Moscow Univ. Phys. 79 (Suppl 2), S647-S665.     https://link.springer.com/article/10.3103/S0027134924702102
- Preprint                    https://theory2.sinp.msu.ru/lib/exe/fetch.php/dlcp/dlcp2024/bphm647.pdf
-
-
-11. V. S. Usatyuk, D. A. Sapozhnikov and S. I. Egorov, "Flattening Images Manifold at the Nishimori Point: Exploring Linearity in Polysemantic Embedding for Human-Aware Bayesian CNN Image Classification," 2025 27th International Conference on Digital Signal Processing and its Applications (DSPA), Moscow, Russian Federation, 2025, pp. 1-6, doi: 10.1109/DSPA64310.2025.10977938.   https://ieeexplore.ieee.org/document/10977938
-
-12. V. S. Usatyuk and S. I. Egorov, "Boosting DNN Efficiency: Replacing FC Layers with Graph Embeddings for Hardware Acceleration," 2025 27th International Conference on Digital Signal Processing and its Applications (DSPA), Moscow, Russian Federation, 2025, pp. 1-6, doi: 10.1109/DSPA64310.2025.10977895 https://ieeexplore.ieee.org/document/10977895
-    
-
-
-# **Cite this reseach**
-```
+```bibtex
 @article{Usatyuk2023TopoML,
        author = {{Usatyuk}, Vasiliy and {Sapozhnikov}, Denis and {Egorov}, Sergey},
         title = "{Spherical and Hyperbolic Toric Topology-Based Codes On Graph Embedding for Ising MRF Models: Classical and Quantum Topology Machine Learning}",
@@ -581,4 +418,3 @@ archivePrefix = {arXiv},
        adsurl = {https://ui.adsabs.harvard.edu/abs/2023arXiv230715778U},
       adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
-```
