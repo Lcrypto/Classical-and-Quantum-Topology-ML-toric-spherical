@@ -202,21 +202,12 @@ The convolutional model “CDIL” uses the 2P Chord protocol as its basis and i
 ### 7.4 Chemical Analogy: QC Circulants as Electron Cloud Gauges
 QC codes correspond to certain types of chemical elements; the carbon element is represented by the mixed-automorphism Shu-Lin-Fossorier QC-LDPC code. The feasibility of the original parity-check matrix serving as a representation of Nitrogen can be confirmed by employing circulant-shift logic:
 
-$$
-H=\left( \begin{array}{c} 
-{\begin{array}{ccccc} {I_{17}} & {I_{17}} & {I_{17}} & {I_{17}} & {I_{17}} \end{array}} \\ 
-{H_{1}} \\ {H_{2}} \\ {H_{3}} \\ {H_{4}} 
-\end{array}\right) 
-= 
-\left( \begin{array}{c} 
-{\begin{array}{ccccc} {I_{17}} & {I_{17}} & {I_{17}} & {I_{17}} & {I_{17}} \end{array}} \\ 
-{C_{85}^{0}+C_{85}^{24}+C_{85}^{40}+C_{85}^{71}+C_{85}^{84}} \\ 
-{C_{85}^{1}+C_{85}^{49}+C_{85}^{58}+C_{85}^{81}+C_{85}^{84}} \\ 
-{C_{85}^{3}+C_{85}^{14}+C_{85}^{32}+C_{85}^{78}+C_{85}^{84}} \\ 
-{C_{85}^{16}+ C_{85}^{33}+C_{85}^{50}+C_{85}^{67}+C_{85}^{84}} 
-\end{array} \right).
-$$
 
+$$  
+H=\left( \begin{array}{c} {\begin{array}{ccccc} {I_{17} } & {I_{17} } & {I_{17} } & {I_{17} } & {I_{17} } \end{array}} \cr {H_{1} } \cr {H_{2} } \cr {H_{3} } \cr {H_{4} } \end{array}\right) = \left( \begin{array}{c} {\begin{array}{ccccc} {I_{17} } & {I_{17} } & {I_{17} } & {I_{17} } & {I_{17} } \end{array}} \cr {C_{85}^{0} +C_{85}^{24} +C_{85}^{40} +C_{85}^{71} +C_{85}^{84} } \cr {C_{85}^{1} +C_{85}^{49} +C_{85}^{58} +C_{85}^{81} +C_{85}^{84} } \cr {C_{85}^{3} +C_{85}^{14} +C_{85}^{32} +C_{85}^{78} +C_{85}^{84} } \cr {C_{85}^{16} + C_{85}^{33} +C_{85}^{50} +C_{85}^{67} +C_{85}^{84} } \end{array} \right) 
+ $$
+
+ 
 To determine spherical coordinates $\varphi, \theta$, we use the criterion for the presence of a cycle of length 6 (cycle-based gauge) in the quasi-cyclic check matrix [Fossorier04]. Based on the electron cloud associated with an atom, we refer to this as the **Schrödinger-Heisenberg-Bohr-Fossorier Electron Cloud Gauge (SHBF Cycle Gauge)**:
 
 $$
