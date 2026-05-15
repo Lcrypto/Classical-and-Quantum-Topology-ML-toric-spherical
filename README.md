@@ -1,6 +1,6 @@
 # Classical and Quantum Topology Machine Learning: RBIM Spectral Embedding via Toric & Hyperbolic LDPC Codes for CNN, Transformer, and Diffusion Models
 
-> **Unifying Principle.** Sparse, structured graphs from coding theory—operated at the Nishimori temperature of a Random-Bond Ising Model (RBIM)—yield spectral embeddings whose geometry is controlled by trapping-set elimination, enabling both high accuracy and hardware efficiency.
+> **Unifying Principle.** Sparse, structured graphs from coding theory—operated at the Nishimori temperature of a Random-Bond Ising Model (RBIM)—yield spectral embeddings whose geometry is controlled by trapping-set elimination (cycles of bipartited graph formed by parity-check -> hypercube map), enabling both high accuracy (very flat manifold representation) and hardware efficiency (large authomorphism, circulant, quasi-circulant with low order chaotical behaviour).
 
 ## 1. Classical Machine Learning: Marginalization on Sparse LDPC Tanner Graphs
 
