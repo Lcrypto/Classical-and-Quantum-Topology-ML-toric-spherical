@@ -114,7 +114,7 @@ H_{\mathrm{TS}(4,44)} =
 $$
 
 
-![TS(4, 44), graph representation](figures/TS(4.44))
+![TS(4, 44), graph representation](figures/TS(4.44).png)
 
 
 
@@ -178,7 +178,7 @@ H_{\mathrm{TS}(4,48)} =
 \end{bmatrix}
 $$
 
-![TS(4, 48), graph representation](figures/TS(4.48))
+![TS(4, 48), graph representation](figures/TS(4.48).png)
 
 
 
@@ -261,7 +261,7 @@ H_{\mathrm{TS}(6,54)} =
 $$
 
 
-![TS(6, 54), graph representation](figures/TS(6.54))
+![TS(6, 54), graph representation](figures/TS(6.54).png)
 
 $$
 H_{\mathrm{TS}(6,60)} =
@@ -345,7 +345,7 @@ H_{\mathrm{TS}(6,60)} =
 $$
 
 
-![TS(6, 60), graph representation](figures/TS(6.60))
+![TS(6, 60), graph representation](figures/TS(6.60).png)
 
 
 $$
@@ -443,7 +443,7 @@ H_{\mathrm{TS}(8,58)} =
 \end{bmatrix}
 $$
 
-![TS(8, 58), graph representation](figures/TS(8.58))
+![TS(8, 58), graph representation](figures/TS(8.58).png)
 
 
 $$
@@ -544,7 +544,7 @@ H_{\mathrm{TS}(8,64)} =
 \end{bmatrix}
 $$
 
-![TS(8, 64), graph representation](figures/TS(8.64))
+![TS(8, 64), graph representation](figures/TS(8.64).png)
 
 
 ## License
