@@ -19,11 +19,11 @@
 
 
 
-
+Clustering of features under Torical graph 
 
 [![Torical SBM](figures/Torical_SBM.png)
 
-[![Torical SBM](figures/Spherical_SBM.png)
+
 
 
 
@@ -74,6 +74,9 @@
 
 
 
+Clustering of features  under Spherical  graph 
+
+[![Torical SBM](figures/Spherical_SBM.png)
 
 
 **Table 3:** Trapping-set spectrum of the spherical $S^{0}$ graph (each entry repeated in $2\,600$ cyclic translates).
