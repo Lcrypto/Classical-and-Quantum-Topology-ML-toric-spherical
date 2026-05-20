@@ -207,7 +207,7 @@ where, for $i\neq j$ with $(i,j)\in E(\mathcal T)$,
 
 $$
 \begin{aligned}
-B_{ij}^{\mathcal T}(\beta)&=\frac{\tanh(\beta J_{ij})}{1-\tanh^{2}(\beta J_{ij})}, && i\neq j,\\[4pt]
+B_{ij}^{\mathcal T}(\beta)&=\frac{\tanh(\beta J_{ij})}{1-\tanh^{2}(\beta J_{ij})}, && i\neq j,\\
 D_{ii}^{\mathcal T}(\beta)&=1+\sum_{j:\,(i,j)\in E_{\mathcal T}}
    \frac{\tanh^{2}(\beta J_{ij})}{1-\tanh^{2}(\beta J_{ij})}.
 \end{aligned}
