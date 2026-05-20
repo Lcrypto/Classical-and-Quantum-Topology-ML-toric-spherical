@@ -951,6 +951,22 @@ The empirical impact of the proposed approach on ImageNet‑100 is reported in T
 
 
 
+## Summary
+
+This repository presents a novel approach to improve CNN feature usage in the final MLP layers by replacing them with **trapping‑set optimized graph embeddings** derived from MET QC‑LDPC graphs. The method leverages the Nishimori temperature and random‑bond Ising models to enhance cluster‑state features extracted by standard CNN backbones.
+
+Key contributions include:
+
+- **Trapping set theory** – Formal definition and spectral‑topological analysis of trapping sets $\mathrm{TS}(a,b)$, linking them to the restricted Bethe–Hessian and Ihara–Bass zeta function.
+- **Graph constructions** – Toroidal ($\mathcal G_{\rm tor}^{\star}$, $\mathcal G_{\rm tor}^{-}$) and spherical ($S^{0}$, $S^{1}$) graphs with detailed trapping‑set spectra (Tables 1–4).
+- **Empirical results on ImageNet‑100** – The hard ensemble achieves **82.70%** top‑1 accuracy; a soft ensemble raises it to **84.92%** with only 1.33M parameters and 141.3M FLOPs, outperforming lightweight CNNs and approaching heavyweight architectures like ResNet‑50.
+- **Uncertainty‑aware arbitration** – An MLP arbitrator boosts accuracy from 77.84% to 82.73% by resolving low‑margin predictions.
+- **Topological invariants** – Betti numbers, continuous genus, Stiefel–Whitney classes, and bordism obstructions for trapping sets (Table 6).
+
+The accompanying figures and tables illustrate graph embeddings, confusion matrices, and accuracy comparisons. Full citation information for the underlying research papers (2024, 2025) is provided.
+
+**License** – Apache 2.0.
+
 
 
 ## How to cite this work
@@ -962,6 +978,12 @@ DOI: [10.3103/S0027134925702947](https://doi.org/10.3103/S0027134925702947)
 **Preliminary research (2024)**  
 Usatyuk, V.S., Sapozhnikov, D.A. & Egorov, S.I. (2024). Enhanced Image Clustering with Random-Bond Ising Models Using LDPC Graph Representations and Nishimori Temperature. *Moscow University Physics Bulletin*, 79(Suppl 2), S647–S665.  
 DOI: [10.3103/S0027134924702102](https://doi.org/10.3103/S0027134924702102)
+
+
+
+
+
+
 
 
 
