@@ -191,6 +191,138 @@ $$
 
 
 
+
+
+## Discussion of results
+
+The table reveals striking correlations between trapping-set structure and classifier behaviour.
+
+**$G_{\rm tor}^{-}$ (toroidal 0).** With abundant small trapping sets down to $\TS{8}{6}$ (see the toroidal bad trapping‑set table), the embedding landscape is riddled with spurious basins. Both classifiers collapse—top‑1 accuracy stays below $14\%$—because the spectral mass leaks into pseudocodeword modes rather than concentrating on the true $100$ class centroids. Training time is also highest ($\sim 740$ s) because the eigensolver requires many Arnoldi iterations to resolve a fragmented spectrum.
+
+**$G_{\rm tor}^{\star}$ (toroidal 1).** Eliminating all trapping sets with $a<20$ removes the dominant low‑energy defects. Accuracy jumps to $67.24\%$ top‑1 with Bayesian smoothing, confirming that when small TS are absent the spectral embedding captures meaningful semantic structure. The reduced training time ($337$ s) reflects a cleaner spectrum.
+
+**$S^{-}$ (spherical 0).** This single‑ring code offers strong uniform performance across both classifiers ($68.94\%$ top‑1 Bayesian), indicating that its trapping‑set distribution—while dense in small $a$—has large enough $b$ (hence high harm values) to avoid deep pseudocodeword basins.
+
+**$S^{+}$ (spherical 1).** The most intriguing case: centroid clustering reaches the highest top‑1 score ($67.26\%$), yet Bayesian classification plummets to $28.5\%$. The explanation lies in the *morphology* of the spectral clusters. Because sph1 retains many low‑EMD trapping sets, its free‑energy landscape is multimodal: each true class is surrounded by shifted “ghost” replicas created by cyclic symmetries in the single‑ring graph. A geometric centroid rule is insensitive to these replicas (it simply finds the middle of the cloud), whereas a parametric Gaussian Bayes model tries to fit a unimodal distribution and is destroyed by the hidden mixture structure. This dichotomy underscores that trapping sets influence not only raw accuracy but also the *choice* of classifier head that can be safely deployed.
+
+Ensembling spectral embeddings exploits the Top‑1 and Top‑3 accuracy tradeoffs between spherical and torical graphs. Using a hierarchical or voting framework (hard/soft), the ensemble first maximizes Top‑3 prediction accuracy, then selects the graph topology with the optimal Top‑1 performance.
+
+**Table 6:** Topological and spectral invariants of trapping sets.
+
+<table>
+  <thead>
+    <tr>
+      <th>Invariant</th>
+      <th>TS$(4,2)$</th>
+      <th>TS$(4,6)$</th>
+      <th>TS$(26,20)$</th>
+      <th>TS$(9,2)$</th>
+      <th>TS$(13,6)$</th>
+      <th>TS$(28,22)$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$\rho$ (spectral radius)</td>
+      <td>$1.618$</td>
+      <td>$4.000$</td>
+      <td>$2.755$</td>
+      <td>$8.917$</td>
+      <td>$10.42$</td>
+      <td>$13.56$</td>
+    </tr>
+    <tr>
+      <td>$r_{\rm crit}=\sqrt\rho$</td>
+      <td>$1.272$</td>
+      <td>$2.000$</td>
+      <td>$1.660$</td>
+      <td>$2.986$</td>
+      <td>$3.227$</td>
+      <td>$3.683$</td>
+    </tr>
+    <tr>
+      <td>$\#\{\lambda(H_1)<0\}$</td>
+      <td>$1$</td>
+      <td>$2$</td>
+      <td>$1$</td>
+      <td>$1$</td>
+      <td>$0$</td>
+      <td>$0$</td>
+    </tr>
+    <tr>
+      <td>$\widehat A$ (continuous genus)</td>
+      <td>$1.007$</td>
+      <td>$1.529$</td>
+      <td>$3.590$</td>
+      <td>$3.069$</td>
+      <td>$4.031$</td>
+      <td>$7.267$</td>
+    </tr>
+    <tr>
+      <td>$K_0$ ($\beta_0$)</td>
+      <td>$1$</td>
+      <td>$5$</td>
+      <td>$7$</td>
+      <td>$12$</td>
+      <td>$17$</td>
+      <td>$45$</td>
+    </tr>
+    <tr>
+      <td>$K_1$ ($\beta_1$)</td>
+      <td>$1$</td>
+      <td>$1$</td>
+      <td>$1$</td>
+      <td>$0$</td>
+      <td>$1$</td>
+      <td>$1$</td>
+    </tr>
+    <tr>
+      <td>Kervaire $\kappa$</td>
+      <td>$1$</td>
+      <td>$1$</td>
+      <td>$1$</td>
+      <td>$0$</td>
+      <td>$0$</td>
+      <td>$0$</td>
+    </tr>
+    <tr>
+      <td>$w_2$ (Stiefel–Whitney)</td>
+      <td>$1$</td>
+      <td>$1$</td>
+      <td>$1$</td>
+      <td>$1$</td>
+      <td>$1$</td>
+      <td>$1$</td>
+    </tr>
+    <tr>
+      <td>Bordism obstruction</td>
+      <td>$0$</td>
+      <td>$0$</td>
+      <td>$0$</td>
+      <td>$0$</td>
+      <td>$0$</td>
+      <td>$1$</td>
+    </tr>
+  </tbody>
+</table>
+
+A non‑zero bordism obstruction between two classes $i$ and $j$ means the disjoint union of their feature manifolds $M_i\sqcup(-M_j)$ is not null‑bordant; no graph embedding can achieve perfect linear separation in that subspace. The presence of TS$(28,22)$—with bordism obstruction $1$ and genus $\widehat A=7.267$—therefore signals a fundamental topological barrier to classification unless the set is excised.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ![TS(4, 2), TS(4, 6), TS(9, 2) graph representation](figures/TS(4.2)_TS(4,6)_TS(9,2).png)
 
 
