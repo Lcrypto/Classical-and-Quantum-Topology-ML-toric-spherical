@@ -168,56 +168,6 @@ Clustering of features  under Spherical  graph
 
 
 
-$$
-\begin{align}
-H_{\mathrm{TS}(4,2)} &= 
-\begin{bmatrix}
-1 & 0 & 0 & 0 \\
-1 & 1 & 0 & 0 \\
-0 & 1 & 1 & 0 \\
-0 & 0 & 1 & 1 \\
-0 & 0 & 0 & 1
-\end{bmatrix},
-&
-H_{\mathrm{TS}(4,6)} &= 
-\begin{bmatrix}
-0 & 1 & 0 & 0 \\
-1 & 0 & 0 & 0 \\
-1 & 1 & 0 & 0 \\
-0 & 1 & 0 & 0 \\
-1 & 0 & 0 & 0 \\
-1 & 1 & 0 & 0 \\
-0 & 1 & 0 & 1 \\
-1 & 0 & 1 & 0 \\
-0 & 1 & 0 & 1 \\
-1 & 0 & 1 & 0 \\
-0 & 1 & 0 & 0 \\
-1 & 0 & 0 & 0 \\
-1 & 1 & 0 & 0
-\end{bmatrix},
-H_{\mathrm{TS}(9,2)} &= 
-\begin{bmatrix}
-1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
-0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
-1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
-1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
-0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
-1 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 \\
-1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
-0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\
-1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
-0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
-0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 \\
-1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
-1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
-\end{bmatrix}.
-\end{align}
-$$
-
-
-
 ## Spectral–Topological Correspondence
 
 When a trapping set is embedded into an RBIM operated at the Nishimori temperature, its combinatorial structure translates directly into spectral and topological invariants of the feature manifold. This section makes that correspondence precise.
@@ -407,6 +357,56 @@ A non‑zero bordism obstruction between two classes $i$ and $j$ means the disjo
 
 
 
+
+
+
+$$
+\begin{align}
+H_{\mathrm{TS}(4,2)} &= 
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+1 & 1 & 0 & 0 \\
+0 & 1 & 1 & 0 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 1
+\end{bmatrix},
+&
+H_{\mathrm{TS}(4,6)} &= 
+\begin{bmatrix}
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+1 & 1 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+1 & 1 & 0 & 0 \\
+0 & 1 & 0 & 1 \\
+1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 1 \\
+1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+1 & 1 & 0 & 0
+\end{bmatrix},
+H_{\mathrm{TS}(9,2)} &= 
+\begin{bmatrix}
+1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+1 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 \\
+1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\
+1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 \\
+1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
+\end{bmatrix}.
+\end{align}
+$$
 
 
 
