@@ -1,6 +1,145 @@
 # Improving CNN Feature Usage in Final MLP Layers Through Nishimori Clustering and Classification, Leveraging Upper Bounds on Trapping Sets (Codewords & Pseudocodewords) Derived from MacKay-Davey-Vontobel-Smarandache-Butler-Siegel Theory, and Incorporating Topology-Aware Optimized RBIM Trapping Sets
-
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/LICENSE)
+
+
+
+**Table 1:** Trapping-set spectrum (each entry shows $(a,b)$ and the number of trapping sets multiple 520) of torical Multi-Edge LDPC $\mathcal G_{\rm tor}^{\star}$.
+
+| $TS(a,b)$ [count] | $TS(a,b)$ [count] | $TS(a,b)$ [count] | $TS(a,b)$ [count] |
+|:------------------:|:------------------:|:------------------:|:------------------:|
+| (29, 28) [5] | (27, 24) [4] | (25, 22) [3] | (23, 18) [3] |
+| (29, 26) [4] | (27, 22) [2] | (25, 20) [6] | (22, 22) [11] |
+| (29, 24) [2] | (27, 18) [2] | (24, 24) [4] | (22, 20) [2] |
+| (29, 20) [1] | (26, 26) [6] | (24, 22) [3] | (21, 20) [6] |
+| (29, 16) [2] | (26, 24) [3] | (24, 20) [1] | (21, 18) [1] |
+| (28, 28) [9] | (26, 22) [2] | (23, 22) [2] | (20, 20) [2] |
+| (28, 26) [5] | (26, 20) [1] | (23, 20) [3] | (20, 18) [1] |
+| (28, 24) [3] | (26, 18) [2] | (19, 18) [6] | (18, 18) [1] |
+| (28, 20) [2] | (25, 24) [4] | — | — |
+| (28, 18) [1] | (27, 26) [1] | — | — |
+
+
+
+
+
+
+
+
+
+
+
+**Table 2:** Trapping-set spectrum (each entry shows $(a,b)$ and the number of trapping sets multiple 520) of torical Multi-Edge LDPC $\mathcal G_{\rm tor}^{-}$.
+
+| $(a,b)$ [count] | $(a,b)$ [count] | $(a,b)$ [count] | $(a,b)$ [count] |
+|:---------------:|:---------------:|:---------------:|:---------------:|
+| (24, 8) [1] | (16, 12) [2] | (13, 10) [4] | (10, 8) [2] |
+| (21, 12) [1] | (16, 10) [2] | (13, 8) [2] | (10, 6) [4] |
+| (21, 10) [1] | (16, 8) [3] | (13, 6) [1] | (10, 4) [5] |
+| (19, 12) [1] | (15, 12) [3] | (13, 4) [1] | (10, 2) [1] |
+| (19, 10) [2] | (15, 10) [2] | (12, 10) [1] | (9, 6) [9] |
+| (18, 14) [1] | (15, 8) [2] | (12, 8) [1] | (9, 4) [1] |
+| (18, 12) [2] | (15, 6) [1] | (12, 6) [3] | (8, 6) [10] |
+| (18, 10) [2] | (15, 2) [1] | (11, 8) [6] | (8, 4) [6] |
+| (18, 8) [2] | (14, 10) [2] | (11, 6) [7] | (7, 4) [6] |
+| (18, 6) [1] | (14, 8) [2] | (11, 4) [3] | (7, 2) [2] |
+| (17, 12) [3] | (14, 6) [3] | — | (6, 4) [2] |
+| (17, 10) [1] | (13, 12) [1] | — | (6, 2) [2] |
+| (17, 8) [2] | — | — | (4, 2) [2] |
+| (17, 6) [1] | — | — | — |
+| (16, 14) [1] | — | — | — |
+
+
+
+
+
+**Table 3:** Trapping-set spectrum of the spherical $S^{0}$ graph (each entry repeated in $2\,600$ cyclic translates).
+
+| $(a,b)$ | $(a,b)$ | $(a,b)$ | $(a,b)$ |
+|:-------:|:-------:|:-------:|:-------:|
+| (4, 48) | (12, 48) | (20, 60) | (28, 46) |
+| (5, 55) | (13, 39) | (21, 65) | (29, 35) |
+| (6, 60) | (14, 28) | (22, 68) | (30, 26) |
+| (7, 63) | (15, 15) | (23, 69) | — |
+| (8, 64) | (16, 26) | (24, 68) | — |
+| (9, 63) | (17, 35) | (25, 65) | — |
+| (10, 60) | (18, 46) | (26, 60) | — |
+| (11, 55) | (19, 53) | (27, 53) | — |
+
+**Table 4:** Trapping-set spectrum of the spherical $S^{1}$ graph (each entry repeated in $2\,600$ cyclic translates).
+
+| $TS(a,b)$ | $TS(a,b)$ | $TS(a,b)$ | $TS(a,b)$ |
+|:---------:|:---------:|:---------:|:---------:|
+| (4, 44) | (12, 42) | (20, 56) | (28, 44) |
+| (5, 49) | (13, 33) | (21, 59) | (29, 35) |
+| (6, 54) | (14, 24) | (22, 58) | (30, 28) |
+| (7, 57) | (15, 15) | (23, 49) | — |
+| (8, 58) | (16, 26) | (24, 44) | — |
+| (9, 57) | (17, 35) | (25, 39) | — |
+| (10, 54) | (18, 44) | (26, 26) | — |
+| (11, 49) | (19, 51) | (27, 35) | — |
+
+
+
+
+
+
+**Table 5:** ImageNet-100 classification accuracy (%) and spectral‑embedding training time.
+
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Graph</th>
+      <th colspan="2">Centroid</th>
+      <th colspan="2">Bayesian</th>
+      <th rowspan="2">Train time (sec)</th>
+    </tr>
+    <tr>
+      <th>Top‑1</th>
+      <th>Top‑3</th>
+      <th>Top‑1</th>
+      <th>Top‑3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$\mathcal G_{\rm tor}^{-}$</td>
+      <td>5.90</td>
+      <td>16.54</td>
+      <td>13.68</td>
+      <td>24.50</td>
+      <td>739.95</td>
+    </tr>
+    <tr>
+      <td>$\mathcal G_{\rm tor}^{\star}$</td>
+      <td>59.66</td>
+      <td>83.06</td>
+      <td>67.24</td>
+      <td>85.82</td>
+      <td>336.66</td>
+    </tr>
+    <tr>
+      <td>$S^{-}$</td>
+      <td>63.20</td>
+      <td>85.44</td>
+      <td>68.94</td>
+      <td>87.16</td>
+      <td>281.17</td>
+    </tr>
+    <tr>
+      <td>$S^{+}$</td>
+      <td><strong>67.26</strong></td>
+      <td><strong>87.52</strong></td>
+      <td>28.50</td>
+      <td>65.46</td>
+      <td>291.58</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
 
 $$
 \begin{align}
