@@ -1,18 +1,12 @@
 # Improving CNN Feature Usage in Final MLP Layers Through Nishimori Clustering and Classification, Leveraging Upper Bounds on Trapping Sets (Codewords & Pseudocodewords) Derived from MacKay-Davey-Vontobel-Smarandache-Butler-Siegel Theory, and Incorporating Topology-Aware Optimized RBIM Trapping Sets
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/Lcrypto/Classical-and-Quantum-Topology-ML-toric-spherical/blob/main/LICENSE)
+In this approach we change final top layer (FeedForward) by Trapping sets optimized graph embeeding using MET QC-LDPC graphs to improve cluster state features produced from feature extraction CNN layers, example represented below.
+A **trapping set** $\mathrm{TS}(a,b)$ consists of $a$ variable nodes and $b$ odd‑degree check nodes in the subgraph they induce.
 
 
 
 
-
-
-
-
-[![Graph Embedding under Trapping Sets Optimized Graph](figures/Figure2_MobileNet2.png)
-
-
-
-
+[![Graph Embedding under Trapping Sets Optimized Graph](figures/Figure2_MobileNet2.png)]
 
 
 
