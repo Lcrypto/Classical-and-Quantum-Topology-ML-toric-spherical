@@ -3,6 +3,28 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 **Table 1:** Trapping-set spectrum (each entry shows $(a,b)$ and the number of trapping sets multiple 520) of torical Multi-Edge LDPC $\mathcal G_{\rm tor}^{\star}$.
 
 | $TS(a,b)$ [count] | $TS(a,b)$ [count] | $TS(a,b)$ [count] | $TS(a,b)$ [count] |
@@ -878,6 +900,64 @@ H_{\mathrm{TS}(8,64)} =
 $$
 
 ![TS(8, 64), graph representation](figures/TS(8.64).png)
+
+
+
+
+
+
+
+
+
+
+### Results and Discussion
+
+Table 7 (shown below) reports top‑1 accuracy, precision, recall and $F_1$ scores for ImageNet‑10. Spherical graph spectral embedding achieves $98.7\%$ top‑1 accuracy on ImageNet‑10, while the confusion matrix for ImageNet‑100 is shown in a separate figure. The mixed ensemble combining spherical and toroidal graphs through majority voting yields the best performance.
+
+For ten classes, discriminative features rarely overlap, but scaling to one hundred classes causes many informative dimensions to intersect, reducing accuracy for both plain CNNs and spectral classifiers. Our experiments identified optimal graphs for ImageNet‑100 consisting of a spherical adjacency with weight $k=10$ and circulant size $L=2600$, paired with a toroidal graph having weight $k=10$, protograph size $26 \times 26$ (containing five non‑zero MET CPMs of weight $2$), and CPM size $L=100$, as visualised in the figure “SBMs_Hist”. This configuration delivers $77.84\%$ top‑1 accuracy when processed through the spectral pipeline.
+
+To address frequent confusion between the two highest class probabilities, we introduced a lightweight MLP arbitrator trained on the same embeddings. The arbitrator achieves $98.43\%$ average pairwise accuracy on training data, though the most challenging pairs remain at approximately $67\%$ accuracy. During inference, the system examines the three largest spectral scores $\{p_{(1)}, p_{(2)}, p_{(3)}\}$, invoking the arbitrator when the margin $p_{(1)} - p_{(2)}$ falls below a preset threshold $T$. This uncertainty‑driven fallback mechanism boosts top‑1 accuracy from $77.84\%$ to **$82.73\%$** while maintaining the original runtime efficiency and memory footprint of the single‑graph approach.
+
+The Erdős–Rényi graph spectral embedding demonstrates $69.1\% \pm 2.88\times10^{-5}$ precision under Nishimori temperature across five trials, averaged over all random seeds. Our three‑graph hard ensemble achieves **$82.7\%$** accuracy on ImageNet‑100 while using just one twentieth of the original feature dimension and memory footprint, representing a $13.6\%$ improvement over standard Erdős–Rényi graphs without large weights.
+
+Classification difficulties are most evident between class 7 (“cock”) and class 8 (“hen”), as shown in the confusion figure. Although the network reaches a training accuracy of $85\%$ on these two categories, validation performance collapses to $63\%$, indicating severe over‑fitting. The spectral embedding histogram obtained at the Nishimori temperature (figure “Most_problem”) reveals that the corresponding Gaussian clusters intersect with heavy tails in this problematic region, which explains the pronounced confusion.
+
+A second troublesome area occurs around class 44 (“spider”). In the heat‑map visualisation of stochastic block‑model embeddings (figure “SBMs_Hist”), a three‑class overlap can be observed, suggesting that the underlying feature distributions are not well separated.
+
+To alleviate these ambiguities, we construct a soft ensemble consisting of three $64$‑dimensional graph embeddings. The three vectors are concatenated and fed to a classifier trained with standard softmax cross‑entropy loss. This strategy directly addresses the heavy‑tailed intersections observed in the “Most_problem” figure by smoothing decision boundaries through complementary relational information.
+
+The empirical impact of the proposed approach on ImageNet‑100 is reported in Table 2 below (cf. [1]). Compared with our hard‑embedding baseline, the soft ensemble raises Top‑1 accuracy from $82.70\%$ to $84.92\%$, while only modestly increasing model size (from $1.09\,\text{M}$ to $1.33\,\text{M}$ parameters) and computational cost (from $117.1\,\text{M}$ to $141.3\,\text{M}$ FLOPs). Although the soft‑embedding model is still considerably smaller than heavyweight architectures such as ResNet‑50 ($86.01\%$, $23.7$M parameters) and Vision Transformer ($88.69\%$, $85.7$M parameters), it attains a competitive accuracy–efficiency trade‑off.
+
+**Table 7:** Top‑1 accuracy, number of parameters and FLOPs for various DNN models [1].
+
+| Model | ImageNet‑100 Top‑1 Accuracy (%) | Params | FLOPs |
+|:-------|:-------------------------------:|:------:|:-----:|
+| Vgg16 | 82.07 | 134.7M | 15.5G |
+| MobileNetV2 | 82.60 | 2.4M | 313.0M |
+| MobileNetV3 | 83.15 | 4.3M | 224.9M |
+| CSPdarknet53 | 75.50 | 1.1M | 159.5M |
+| LightCSPNet dropout (p=0.2) | 82.64 | 0.9M | 143.9M |
+| Hard Ensemble graph embedding (our) | 82.70 | 1.09M | 117.1M |
+| Soft Ensemble graph embedding (our) | **84.92** | 1.33M | 141.3M |
+| ResNet50 | 86.01 | 23.7M | 4109.7M |
+| Vision Transformer | 88.69 | 85.7M | 16.9G |
+
+
+
+
+
+
+## How to cite this work
+
+**Main work (2025)**  
+Usatyuk, V.S., Sapozhnikov, D.A. & Egorov, S.I. (2025). Natural Image Classification via Quasi-Cyclic Graph Ensembles and Random-Bond Ising Models at the Nishimori Temperature. *Moscow University Physics Bulletin*, 80(Suppl 3), S1042–S1056.  
+DOI: [10.3103/S0027134925702947](https://doi.org/10.3103/S0027134925702947)
+
+**Preliminary research (2024)**  
+Usatyuk, V.S., Sapozhnikov, D.A. & Egorov, S.I. (2024). Enhanced Image Clustering with Random-Bond Ising Models Using LDPC Graph Representations and Nishimori Temperature. *Moscow University Physics Bulletin*, 79(Suppl 2), S647–S665.  
+DOI: [10.3103/S0027134924702102](https://doi.org/10.3103/S0027134924702102)
+
+
 
 
 ## License
