@@ -107,7 +107,7 @@
 
 
 
-**Table 5:** ImageNet-100 classification accuracy (%) and spectral‑embedding training time.
+**Table 5:** ImageNet-100 classification accuracy (%) and spectral‑embedding training time under TS optimized and non-optimized Graph embedding.
 
 <table>
   <thead>
