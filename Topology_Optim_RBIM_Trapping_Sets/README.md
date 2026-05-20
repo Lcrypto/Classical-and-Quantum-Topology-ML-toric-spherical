@@ -191,6 +191,68 @@ $$
 
 
 
+## Spectral–Topological Correspondence
+
+When a trapping set is embedded into an RBIM operated at the Nishimori temperature, its combinatorial structure translates directly into spectral and topological invariants of the feature manifold. This section makes that correspondence precise.
+
+### The restricted Bethe–Hessian as a signed Laplacian
+
+Let $\mathcal T\subseteq\zeta$ be a trapping‑set subgraph induced by variable‑node set $S$, with local adjacency $A_{\mathcal T}$ and degree sequence $\deg_{\mathcal T}$. Restricting the Bethe–Hessian (see the full expression elsewhere) to $\mathcal T$ yields
+
+$$
+H_{\beta,J}^{\mathcal T}=D^{\mathcal T}(\beta)-B^{\mathcal T}(\beta),
+$$
+
+where, for $i\neq j$ with $(i,j)\in E(\mathcal T)$,
+
+$$
+\begin{aligned}
+B_{ij}^{\mathcal T}(\beta)&=\frac{\tanh(\beta J_{ij})}{1-\tanh^{2}(\beta J_{ij})}, && i\neq j,\\[4pt]
+D_{ii}^{\mathcal T}(\beta)&=1+\sum_{j:\,(i,j)\in E_{\mathcal T}}
+   \frac{\tanh^{2}(\beta J_{ij})}{1-\tanh^{2}(\beta J_{ij})}.
+\end{aligned}
+$$
+
+Thus $H_{\beta,J}^{\mathcal T}$ is the weighted signed Laplacian of $\mathcal T$.
+
+### Critical modes and Betti numbers
+
+The first Betti number (cycle rank) of $\mathcal T$ is
+
+$$
+\beta_1(\mathcal T)=|E(\mathcal T)|-|V(\mathcal T)|+c(\mathcal T).
+$$
+
+**Theorem 1 (Spectrum of trapping sets).**  
+Let $\mathcal T$ be a trapping‑set subgraph and let $H_{\beta_N,J}^{\mathcal T}$ be its restricted Bethe–Hessian at the Nishimori temperature. In the strong‑coupling limit ($|\tanh(\beta_N J_{ij})|\to1$ on cycle edges), the number of non‑positive eigenvalue modes equals $\beta_1(\mathcal T)$:
+
+$$
+q_{\mathcal T}=\#\{\lambda\le0\text{ of }H_{\beta_N,J}^{\mathcal T}\}=\beta_1(\mathcal T).
+$$
+
+Each independent cycle contributes exactly one critical eigenvalue crossing through zero at $\beta=\beta_N$; for $\beta>\beta_N$ these modes become negative.
+
+**Corollary 1 (Ihara–Bass correspondence).**  
+Every zero of $\det H_{\beta_N,J}$ produced by a trapping set corresponds to a pole of the Ihara–Bass zeta function
+
+$$
+\zeta_{\mathcal G}(u)=\prod_{[C]}\bigl(1-u^{\ell(C)}\bigr)^{-1},
+$$
+
+where $[C]$ runs over primitive cycles. Removing trapping sets eliminates the associated poles and restores a clean spectral gap.
+
+### Topological invariants of common trapping sets
+
+Table 6 (presented earlier) collects the geometric and topological signatures of six frequently occurring structures. The continuous genus
+
+$$
+\widehat A(\mathcal T)=\frac{1}{2\sqrt{n_V}}\Biggl(
+    \sum_{\lambda_i\in\Lambda^+}\!\sqrt{\lambda_i}
+    -\sum_{\lambda_j\in\Lambda^-}\!\sqrt{-\lambda_j}
+\Biggr)
+$$
+
+measures how “twisted” the subgraph is; larger values correlate with more severe degradation of downstream classification performance. Example of TS(4, 2), TS(4, 6), TS(9, 2) …
 
 
 ## Discussion of results
