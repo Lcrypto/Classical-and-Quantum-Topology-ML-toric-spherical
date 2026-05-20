@@ -8,6 +8,7 @@
 
 
 
+[![Graph Embedding under Trapping Sets Optimized Graph](figures/Figure2_MobileNet2.png)
 
 
 
@@ -20,8 +21,9 @@
 
 
 
+[![Torical SBM](figures/Torical_SBM.png)
 
-
+[![Torical SBM](figures/Spherical_SBM.png)
 
 
 
@@ -912,6 +914,10 @@ $$
 
 ### Results and Discussion
 
+
+
+
+
 Table 7 (shown below) reports top‑1 accuracy, precision, recall and $F_1$ scores for ImageNet‑10. Spherical graph spectral embedding achieves $98.7\%$ top‑1 accuracy on ImageNet‑10, while the confusion matrix for ImageNet‑100 is shown in a separate figure. The mixed ensemble combining spherical and toroidal graphs through majority voting yields the best performance.
 
 For ten classes, discriminative features rarely overlap, but scaling to one hundred classes causes many informative dimensions to intersect, reducing accuracy for both plain CNNs and spectral classifiers. Our experiments identified optimal graphs for ImageNet‑100 consisting of a spherical adjacency with weight $k=10$ and circulant size $L=2600$, paired with a toroidal graph having weight $k=10$, protograph size $26 \times 26$ (containing five non‑zero MET CPMs of weight $2$), and CPM size $L=100$, as visualised in the figure “SBMs_Hist”. This configuration delivers $77.84\%$ top‑1 accuracy when processed through the spectral pipeline.
@@ -942,6 +948,9 @@ The empirical impact of the proposed approach on ImageNet‑100 is reported in T
 | ResNet50 | 86.01 | 23.7M | 4109.7M |
 | Vision Transformer | 88.69 | 85.7M | 16.9G |
 
+[![TOP-1 Accuracy](figures/Accuracy_ImageNet100.png)
+
+[![Confussion](figures/Confussion_ImageNet100.png)
 
 
 
