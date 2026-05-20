@@ -227,7 +227,7 @@ $$
 Let $\mathcal T$ be a trapping‑set subgraph and let $H_{\beta_N,J}^{\mathcal T}$ be its restricted Bethe–Hessian at the Nishimori temperature. In the strong‑coupling limit ($|\tanh(\beta_N J_{ij})|\to1$ on cycle edges), the number of non‑positive eigenvalue modes equals $\beta_1(\mathcal T)$:
 
 $$
-q_{\mathcal T}=\#\{\lambda\le0\text{ of }H_{\beta_N,J}^{\mathcal T}\}=\beta_1(\mathcal T).
+q_{\mathcal T}=\lambda\{\lambda\le0\text{ of }H_{\beta_N,J}^{\mathcal T}\}=\beta_1(\mathcal T).
 $$
 
 Each independent cycle contributes exactly one critical eigenvalue crossing through zero at $\beta=\beta_N$; for $\beta>\beta_N$ these modes become negative.
