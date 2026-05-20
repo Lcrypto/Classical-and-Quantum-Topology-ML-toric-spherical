@@ -969,19 +969,14 @@ The accompanying figures and tables illustrate graph embeddings, confusion matri
 
 ## How to cite this work
 
-**Main work (2025)**  
+**Main work (2025)** – Preprint & published version  
 Usatyuk, V.S., Sapozhnikov, D.A. & Egorov, S.I. (2025). Natural Image Classification via Quasi-Cyclic Graph Ensembles and Random-Bond Ising Models at the Nishimori Temperature. *Moscow University Physics Bulletin*, 80(Suppl 3), S1042–S1056.  
+arXiv preprint: [2508.18717](https://arxiv.org/abs/2508.18717)  
 DOI: [10.3103/S0027134925702947](https://doi.org/10.3103/S0027134925702947)
 
 **Preliminary research (2024)**  
 Usatyuk, V.S., Sapozhnikov, D.A. & Egorov, S.I. (2024). Enhanced Image Clustering with Random-Bond Ising Models Using LDPC Graph Representations and Nishimori Temperature. *Moscow University Physics Bulletin*, 79(Suppl 2), S647–S665.  
 DOI: [10.3103/S0027134924702102](https://doi.org/10.3103/S0027134924702102)
-
-
-
-
-
-
 
 
 
