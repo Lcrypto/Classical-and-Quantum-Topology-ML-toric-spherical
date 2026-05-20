@@ -965,8 +965,6 @@ Key contributions include:
 
 The accompanying figures and tables illustrate graph embeddings, confusion matrices, and accuracy comparisons. Full citation information for the underlying research papers (2024, 2025) is provided.
 
-**License** – Apache 2.0.
-
 
 
 ## How to cite this work
