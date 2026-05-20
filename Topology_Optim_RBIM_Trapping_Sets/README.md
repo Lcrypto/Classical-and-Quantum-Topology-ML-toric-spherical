@@ -52,7 +52,7 @@ $$
 
 
 
-[TS(4, 2), TS(4, 6), TS(9, 2) graph representation](figures/TS(4.2)_TS(4,6)_TS(9,2).png)
+![TS(4, 2), TS(4, 6), TS(9, 2) graph representation](figures/TS(4.2)_TS(4,6)_TS(9,2).png)
 
 
 
