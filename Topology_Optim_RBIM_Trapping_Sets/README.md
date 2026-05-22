@@ -977,7 +977,7 @@ DOI: [10.3103/S0027134925702947](https://doi.org/10.3103/S0027134925702947)
 **Preliminary research (2024)**  
 Usatyuk, V.S., Sapozhnikov, D.A. & Egorov, S.I. (2024). Enhanced Image Clustering with Random-Bond Ising Models Using LDPC Graph Representations and Nishimori Temperature. *Moscow University Physics Bulletin*, 79(Suppl 2), S647–S665.  
 DOI: [10.3103/S0027134924702102](https://doi.org/10.3103/S0027134924702102)
-
+preprint of early draft article: [Draft_ver_Mosc.Univ.](https://theory2.sinp.msu.ru/lib/exe/fetch.php/dlcp/dlcp2024/bphm647.pdf)
 
 
 
