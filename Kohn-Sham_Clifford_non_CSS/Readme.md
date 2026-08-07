@@ -123,7 +123,7 @@ The inference pipeline consists of the following stages (conceptually, no implem
 | Swin‑L (ImageNet‑21K) | 197 M | 34–104 G | 86.4–87.3 % |
 | ViT‑H/14 (ImageNet‑21K) | 632 M | 167–616 G | 88.0–89.5 % |
 | EfficientNet‑B7 | 66 M | – | 84.3 % |
-| **KSSE + EfficientNet‑B4** | **≈21 M** | **≈15 G** | **88.93 %** |
+| **KSSE + EfficientNet‑B4** | **≈21 M** | **≈4.2 G** | **88.93 %** |
 
 > *Note*: KSSE is evaluated under a transductive protocol (joint graph embedding of test and training representatives).  
 > A matched \(k\)-NN baseline on the same frozen features achieves only ~78.8 %, indicating that the
