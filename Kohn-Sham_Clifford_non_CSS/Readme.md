@@ -136,17 +136,17 @@ The inference pipeline consists of the following stages (conceptually, no implem
 If you use KSSE in your research, please cite:
 
 ```bibtex
-@article{usatyuk2026kohn,
-  title={Kohn–Sham Spectral Embedding on Sparse Graphs at the Nishimori Temperature for Image Classification},
-  author={Usatyuk, V.S. and Sapozhnikov, D.A. and Egorov, S.I.},
-  journal={Moscow Univ. Phys. Bulletin},
-  volume={80},
-  number={9},
-  pages={x--xx},
-  year={2026}
+@misc{usatyuk2026kohnsham,
+  title         = {Kohn--Sham Spectral Embedding on Sparse Graphs at the Nishimori Temperature for Image Classification}, 
+  author        = {Vasiliy S. Usatyuk and Denis A. Sapozhnikov and Sergei I. Egorov},
+  year          = {2026},
+  eprint        = {2607.28428},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2607.28428}
 }
 ```
 
-(Full publication is currently under review.)
+(Work was presented at The 10th International Conference in Deep Learning in Computational Physics {https://theory.sinp.msu.ru/doku.php/dlcp2026/program}. Publication is currently under review.)
 
 ---
